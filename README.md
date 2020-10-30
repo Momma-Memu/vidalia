@@ -4,7 +4,7 @@ Vidalia is a random Dungeons and Dragons campaign and event generator. It's frie
 
 ## How does this work?
 
-* New users can create an array of characters, as many as they like, and choose from a single base plot point. From their, "events" are triggered, each event has an amount of branching events that can occur after depending on your choices. 
+* New users can create an array of characters, as many as they like, and choose from a single base plot point. From there, "events" are triggered. Each event has an amount of branching events that can occur after depending on your choices. 
 
 * Not all events are choice based, in that situation, a random selected outcome is given on each playthrough, changing your experience on each playthrough of the base campaign.
 
