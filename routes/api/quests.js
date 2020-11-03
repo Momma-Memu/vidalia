@@ -11,7 +11,7 @@ const router = express.Router();
 router.get('/', asyncHandler(async function (req, res, next) {
     const quests = await Quest.findAll({ include: [ { model: User, attributes:['username'] } ], order: [ ['id', 'DESC'] ]});
 
-    res.json([quests])
+    res.json(quests)
 }));
 
 module.exports = router;

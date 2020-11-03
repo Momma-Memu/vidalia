@@ -9,7 +9,9 @@ const Nav = () => {
     return(
         <div className='nav-bar'>
             <img className='logo' src={logo} alt='logo' />
-            <p className='vidalia-landing-title'>Vidalia</p>
+            <NavLink to='/' className='logo-nav-link'>
+                <p className='vidalia-nav-title-home'>Vidalia</p>
+            </NavLink>
             <Tooltip title='Barracks'>
             <i className="fab fa-fort-awesome barracks-icon"></i>
             </Tooltip>
