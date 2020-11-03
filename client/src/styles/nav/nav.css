@@ -10,15 +10,48 @@
 }
 
 .barracks-icon{
-    min-height: 45px;
-    min-width: 45px;
-    background-image: url('../icons/swords-icon.png');
-    background-size: 45px;
-    background-repeat: no-repeat;
+    font-size: 30px;
+    text-align: center;
+    min-height: 30px;
+    min-width: 30px;
+    color: #8453d3;
+    background-color: white;
+    padding: 4px 5px 4px 5px;
+    border-radius: 6px;
     align-self: center;
     margin-right: auto;
 }
 
 .barracks-icon:hover{
+    cursor: pointer;
+}
+
+.sign-icon{
+    font-size: 28px;
+    text-align: center;
+    min-height: 28px;
+    min-width: 28px;
+    color: #ec9b31;
+    background-color: white;
+    padding: 4px 5px 4px 5px;
+    border-radius: 6px;
+    align-self: center;
+    margin-right: auto;
+    margin-left: 3px;
+}
+
+.sign-icon:hover{
+    cursor: pointer;
+}
+
+.more-icon{
+    font-size: 35px;
+    text-align: center;
+    color: #ffffff;
+    align-self: center;
+    margin-right: auto;
+}
+
+.more-icon:hover{
     cursor: pointer;
 }
