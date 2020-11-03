@@ -1,9 +1,10 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { PrivateRoute } from './privateRoute';
 import Landing from './components/landingComponents/Landing';
 import Home from './components/homeComponents/Home'
 import { loadUser } from './helpers/auth'
+import PageNotFound from './components/PageNotFound';
 
 
 function App() {
@@ -13,8 +14,11 @@ function App() {
 
   return (
     <BrowserRouter>
-      <PrivateRoute exact path='/' isLoggedIn={id} component={Home} />
-      <Route path='/login' component={Landing}/>
+      <Switch>
+        <Route path='/login' component={Landing}/>
+        <PrivateRoute exact path='/' isLoggedIn={id} component={Home} />
+        <Route component={PageNotFound}/>
+      </Switch>
     </BrowserRouter>
   );
 }

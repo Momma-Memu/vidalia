@@ -2,17 +2,8 @@ import React from 'react';
 import Login from './Login';
 import LandingBody from './LandingBody';
 import logo from '../../images/logo.png';
-import { loadUser } from '../../helpers/auth';
-import { Redirect } from 'react-router-dom';
 
 const Landing = () => {
-
-    const { id } = loadUser();
-
-    if (id) {
-        console.log('line 38 entered.')
-        return <Redirect to="/"/>;
-    }
 
     return (
         <>
