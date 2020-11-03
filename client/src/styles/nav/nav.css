@@ -55,3 +55,8 @@
 .more-icon:hover{
     cursor: pointer;
 }
+
+.nav-links{
+    align-self: center;
+    margin-right: auto;
+}
