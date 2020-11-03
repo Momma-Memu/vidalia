@@ -17,14 +17,21 @@ module.exports = {
       ],
       { returning: true }
     );
+
+    const quests = await queryInterface.bulkInsert(
+      'Quests',
+      [
+        {
+          title: 'Warring Matriarchs',
+          description: 'The islands of Vidalia are at war. The Matriarchs seem unwilling to let go of their grudges.',
+          creatorId: users[0].id,
+        }
+      ]
+    )
   },
 
   down: async (queryInterface, Sequelize) => {
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
+    await queryInterface.bulkDelete('Quests', null, {});
+    return queryInterface.bulkDelete('Users', null, {});
   }
 };
