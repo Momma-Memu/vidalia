@@ -20,12 +20,12 @@ const QuestResults = () => {
 
     const questElements = questList.map((quest) => {
         return (
-            <div>
-                <div>
-                    <div>{quest.title}</div>
-                    <div>{quest.User.username}</div>
+            <div className='quest-container' key={quest.id}>
+                <div className='quest-header'>
+                    <div className='quest-title'>{quest.title}</div>
+                    <div className='quest-creator'>{`Created by: ${quest.User.username}`}</div>
                 </div>
-                <div>{quest.description}</div>
+                <div className='quest-description'>{quest.description}</div>
             </div>
         )
     })
