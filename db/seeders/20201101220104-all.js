@@ -32,6 +32,68 @@ module.exports = {
       { returning: true }
     );
 
+    const items = await queryInterface.bulkdInsert(
+      'Items',
+      [
+        {
+          name: 'Antidote',
+          description: 'Renders poison useless.',
+          cost: 5,
+        },
+        {
+          name: 'Bottled wish',
+          description: 'Resurrect a teamate on the brink of death.',
+          cost: 60,
+        },
+        {
+          name: 'Bomb',
+          description: 'Deals 100 damage...if it hits them.',
+          cost: 20,
+        },
+        {
+          name: 'Chips',
+          description: 'Why are these so overpriced? Heals 5 health if consumed.',
+          cost: 100,
+        },
+        {
+          name: 'Curious Orange Cake',
+          description: 'Restore an ability for two additional uses.',
+          cost: 20,
+        },
+        {
+          name: 'Fire Arrow',
+          description: 'Deals fire damage.',
+          cost: 8,
+        },
+        {
+          name: 'Healing Potion (Small)',
+          description: 'Heals 10 health.',
+          cost: 15,
+        },
+        {
+          name: 'Healing Potion (Medium)',
+          description: 'Heals 20 health.',
+          cost: 25,
+        },
+        {
+          name: 'Healing Potion (Large)',
+          description: 'Heals 60 health.',
+          cost: 50,
+        },
+        {
+          name: 'Poison Arrow',
+          description: 'Deals poison damage.',
+          cost: 8,
+        },
+        {
+          name: 'Shock Arrow',
+          description: 'Deals lightning damage.',
+          cost: 8,
+        },
+      ],
+      { returning: true }
+    )
+
     const abilities = await queryInterface.bulkInsert(
       'Abilities',
       [
@@ -44,6 +106,16 @@ module.exports = {
           name: 'Blessing',
           description: 'User has chance to deal double damage.',
           uses: 2,
+        },
+        {
+          name: 'Crushing Blow',
+          description: 'User has chance to crush limbs. If successful, recipient deals half damage for duration of the fight.',
+          uses: 2,
+        },
+        {
+          name: 'Despair',
+          description: 'Enemy becomes overwhelmed with despair. Cannot use a standard attack, (but can still use abilities), for two turns.',
+          uses: 3,
         },
         {
           name: 'Fire Breath',
@@ -71,11 +143,20 @@ module.exports = {
           uses: 6,
         },
         {
+          name: 'Shock',
+          description: 'Chance to stun. They cannot use abilities this turn.',
+          uses: 3,
+        },
+        {
+          name: 'Nightmares',
+          description: 'The user traps the recipient of this ability in a nightmare. Causing hellucinations. Halves their chances to land attacks in half for one turn.',
+          uses: 3,
+        },
+        {
           name: 'Teleport',
           description: 'The user creates a wormhole, passing through and appearing somewhere else. Cancels out any damge dealt by the current attack',
           uses: 3,
         }
-
       ],
       { returning: true }
     )
