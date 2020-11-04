@@ -2,6 +2,7 @@ import React from 'react';
 import Tooltip from '@material-ui/core/Tooltip';
 import logo from '../../images/redlogo.png';
 import { NavLink } from 'react-router-dom'
+import Menu from './Menu';
 
 
 const Nav = () => {
@@ -20,9 +21,7 @@ const Nav = () => {
                     <i className="fas fa-dice-d20 sign-icon"></i>
                 </NavLink>
             </Tooltip>
-            <Tooltip title='More'>
-                <i className="fas fa-ellipsis-v more-icon"></i>
-            </Tooltip>
+            <Menu />
         </div>
     )
 }

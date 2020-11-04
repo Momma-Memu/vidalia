@@ -80,3 +80,7 @@
 .logo-nav-link:hover{
     cursor: pointer;
 }
+
+.menu{
+    align-self: center;
+}

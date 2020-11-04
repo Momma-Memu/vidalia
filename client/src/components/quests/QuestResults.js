@@ -1,4 +1,3 @@
-import { useScrollTrigger } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
 import Nav from '../homeComponents/Nav';
 

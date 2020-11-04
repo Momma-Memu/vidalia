@@ -39,9 +39,9 @@ const Login = () => {
     const updateEmail = e => setEmail(e.target.value);
     const updatePassword = e => setPassword(e.target.value);
 
+
     if (id) {
-        console.log('line 38 entered.')
-        return <Redirect to="/"/>;
+        return <Redirect push to="/"/>;
     }
 
     return (
