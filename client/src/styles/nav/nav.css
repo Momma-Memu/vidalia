@@ -3,7 +3,7 @@
     width: 100%;
     min-height: 120px;
     border-radius: 5px;
-    background: linear-gradient(45deg,#5384d3 30%, #45c091 150%);
+    background: linear-gradient(45deg,#000000 30%, #cc2121 110%);
     box-shadow: 5px 5px 5px #88888848;
     align-content: center;
     justify-content: center;
@@ -14,7 +14,7 @@
     text-align: center;
     min-height: 30px;
     min-width: 30px;
-    color: #8453d3;
+    color: black;
     background-color: white;
     padding: 4px 5px 4px 5px;
     border-radius: 6px;
@@ -31,7 +31,7 @@
     text-align: center;
     min-height: 28px;
     min-width: 28px;
-    color: #ec9b31;
+    color: black;
     background-color: white;
     padding: 4px 5px 4px 5px;
     border-radius: 6px;
@@ -49,7 +49,7 @@
     text-align: center;
     color: #ffffff;
     align-self: center;
-    margin-right: auto;
+    margin-right: 20px;
 }
 
 .more-icon:hover{

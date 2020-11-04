@@ -1,6 +1,6 @@
 import React from 'react';
 import Tooltip from '@material-ui/core/Tooltip';
-import logo from '../../images/logo.png';
+import logo from '../../images/redlogo.png';
 import { NavLink } from 'react-router-dom'
 
 
@@ -17,7 +17,7 @@ const Nav = () => {
             </Tooltip>
             <Tooltip title='Quests'>
                 <NavLink exact to='/quests' className='nav-links'>
-                    <i className="fas fa-map-signs sign-icon"></i>
+                    <i className="fas fa-dice-d20 sign-icon"></i>
                 </NavLink>
             </Tooltip>
             <Tooltip title='More'>
@@ -26,5 +26,6 @@ const Nav = () => {
         </div>
     )
 }
+
 
 export default Nav;
