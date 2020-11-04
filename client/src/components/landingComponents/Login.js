@@ -41,7 +41,8 @@ const Login = () => {
 
 
     if (id) {
-        return <Redirect push to="/"/>;
+        console.log('Yes we are out here')
+        return <Redirect to="/"/>;
     }
 
     return (

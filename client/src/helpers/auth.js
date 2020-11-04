@@ -8,11 +8,7 @@ export const tryLogin = async(email, password) => {
         body: JSON.stringify({email, password}),
     });
     const data = await response.json();
-    if(data.status === 403){
-        return data;
-    } else {
-        return data
-    }
+    return data;
 }
 
 

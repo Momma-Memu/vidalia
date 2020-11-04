@@ -15,9 +15,9 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path='/login' component={Landing}/>
-        <PrivateRoute exact path = '/quests' isLoggedIn={id} component={QuestResults} />
         <PrivateRoute exact path='/' isLoggedIn={id} component={Home} />
+        <PrivateRoute path = '/quests' isLoggedIn={id} component={QuestResults} />
+        <Route path='/login' component={Landing}/>
         <Route component={PageNotFound}/>
       </Switch>
     </BrowserRouter>
