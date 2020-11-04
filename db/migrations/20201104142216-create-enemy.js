@@ -71,6 +71,10 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
+      weakness: {
+        type: Sequelize.STRING(50),
+        allowNull: false,
+      },
     });
   },
   down: (queryInterface, Sequelize) => {
