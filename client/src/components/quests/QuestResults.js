@@ -13,8 +13,6 @@ const QuestResults = () => {
     const getQuests = async() => {
         const res = await fetch('/api/quests/')
         const data = await res.json();
-        console.log(data)
-
         setQuestList(data)
     }
 

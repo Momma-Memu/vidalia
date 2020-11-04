@@ -3,17 +3,17 @@
     width: 100%;
     min-height: 120px;
     border-radius: 5px;
-    background: linear-gradient(45deg,#000000 30%, #cc2121 110%);
+    background: linear-gradient(45deg,#000000 30%, #db2424 110%);
     box-shadow: 5px 5px 5px #88888848;
     align-content: center;
     justify-content: center;
 }
 
 .barracks-icon{
-    font-size: 30px;
+    font-size: 28px;
     text-align: center;
-    min-height: 30px;
-    min-width: 30px;
+    min-height: 28px;
+    min-width: 28px;
     color: black;
     background-color: white;
     padding: 4px 5px 4px 5px;

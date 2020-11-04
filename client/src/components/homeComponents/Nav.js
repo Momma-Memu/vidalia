@@ -12,8 +12,8 @@ const Nav = () => {
             <NavLink to='/' className='logo-nav-link'>
                 <p className='vidalia-nav-title-home'>Vidalia</p>
             </NavLink>
-            <Tooltip title='Barracks'>
-            <i className="fab fa-fort-awesome barracks-icon"></i>
+            <Tooltip title='Characters'>
+            <i className="fas fa-hat-wizard barracks-icon"></i>
             </Tooltip>
             <Tooltip title='Quests'>
                 <NavLink exact to='/quests' className='nav-links'>
