@@ -32,6 +32,54 @@ module.exports = {
       { returning: true }
     );
 
+    const abilities = await queryInterface.bulkInsert(
+      'Abilities',
+      [
+        {
+          name: 'Blazing Vortex',
+          description: 'Deals flame damage, chance to burn.',
+          uses: 4,
+        },
+        {
+          name: 'Blessing',
+          description: 'User has chance to deal double damage.',
+          uses: 2,
+        },
+        {
+          name: 'Fire Breath',
+          description: 'The user hurls a ball of fire from their mouth. Entire group takes fire damge.',
+          uses: 4,
+        },
+        {
+          name: 'Lullaby',
+          description: 'Sings enemy to sleep, lasts two turns.',
+          uses: 3,
+        },
+        {
+          name: 'Poison Bite',
+          description: 'The user deals poison damage, chance to poison.',
+          uses: 5,
+        },
+        {
+          name: 'Prayer',
+          description: 'The user prays to their deity. Chance to heal',
+          uses: 4,
+        },
+        {
+          name: 'Soothing Water',
+          description: 'Heals Burn effect.',
+          uses: 6,
+        },
+        {
+          name: 'Teleport',
+          description: 'The user creates a wormhole, passing through and appearing somewhere else. Cancels out any damge dealt by the current attack',
+          uses: 3,
+        }
+
+      ],
+      { returning: true }
+    )
+
     const enemies = await queryInterface.bulkInsert(
       'Enemies',
       [
@@ -2605,6 +2653,44 @@ module.exports = {
           type: 'aberration',
           subtype: 'none',
           alignment: 'Neutral',
+          armorClass: 9,
+          hitPoints: 67,
+          hitDice: '4d6',
+          strength: 10,
+          dexterity: 8,
+          constitution: 19,
+          intelligence: 1,
+          wisdom: 10,
+          charisma: 4,
+          challenge: 0.25,
+          xpReward: 100,
+          weakness: 'none',
+        },
+        {
+          name: 'Glabrezu',
+          size: 'Large',
+          type: 'aberration',
+          subtype: 'none',
+          alignment: 'Neutral',
+          armorClass: 9,
+          hitPoints: 67,
+          hitDice: '4d6',
+          strength: 10,
+          dexterity: 8,
+          constitution: 19,
+          intelligence: 1,
+          wisdom: 10,
+          charisma: 4,
+          challenge: 0.25,
+          xpReward: 100,
+          weakness: 'none',
+        },
+        {
+          name: 'Gladiator',
+          size: 'Medium',
+          type: 'humanoid',
+          subtype: 'any race',
+          alignment: 'any alignment',
           armorClass: 9,
           hitPoints: 67,
           hitDice: '4d6',
