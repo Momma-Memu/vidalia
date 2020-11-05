@@ -86,7 +86,7 @@ module.exports = {
           cost: 27,
         },
         {
-          title: 'Frail Spoon',
+          title: 'Frail Wand',
           description: 'Well, if you got nothing else.',
           hitDice: '1d4',
           damageType: 'none',
@@ -370,46 +370,229 @@ module.exports = {
       { returning: true }
     )
 
+    const spells = await queryInterface.bulkInsert(
+      'Spells',
+      [
+        {
+          name: 'Comet Calling',
+          description: 'Call upon the heavens to rain hell on the enemy. Damages entire enemy team.',
+          damageType: 'earth',
+          hitDice: '1d20',
+          uses: 3,
+        },
+        {
+          name: 'Earth Scatter',
+          description: 'Shards of earth rise and fly in the direction of a single target.',
+          damageType: 'earth',
+          hitDice: '12d4',
+          uses: 4,
+        },
+        {
+          name: 'Celestial Light',
+          description: 'The heavens smite one target.',
+          damageType: 'holy',
+          hitDice: '2d20',
+          uses: 2,
+        },
+        {
+          name: 'Fire Whip',
+          description: 'A fiery whip burns your target.',
+          damageType: 'fire',
+          hitDice: '3d8',
+          uses: 2,
+        },
+        {
+          name: 'Hail Storm',
+          description: 'Clouds gather over the enemy team, raining hail shards from the sky.',
+          damageType: 'water',
+          hitDice: '12d4',
+          uses: 3,
+        },
+        {
+          name: 'Water Prison',
+          description: 'A orb of water encases one enemy, suffocating them.',
+          damageType: 'water',
+          hitDice: '2d20',
+          uses: 2,
+        },
+        {
+          name: 'Soul Spear',
+          description: 'The user casts a massive spear of energy containing the will of the soul.',
+          damageType: 'none',
+          hitDice: '1d20',
+          uses: 5,
+        },
+        {
+          name: 'Soul Barrage',
+          description: 'The soul cries out in fear, casting a barrage of attacks at a single target.',
+          damageType: 'none',
+          hitDice: '6d4',
+          uses: 6,
+        },
+        {
+          name: 'Shockwave',
+          description: 'Lightning slither across the ground and through the air at an incredible speed. Shocking one target.',
+          damageType: 'lightning',
+          hitDice: '6d10',
+          uses: 4,
+        },
+        {
+          name: 'Toxic Orbs',
+          description: 'Casts 12 orbs of poisonous smoke.',
+          damageType: 'poison',
+          hitDice: '12d4',
+          uses: 4,
+        },
+        {
+          name: 'Torment',
+          description: 'Darkness shrouds the mind of the target.',
+          damageType: 'dark',
+          hitDice: '3d8',
+          uses: 2,
+        },
+      ],
+      { returning: true }
+    )
+
     const starters = await queryInterface.bulkInsert(
       'Starters',
       [
         {
           name: 'Barbaric Starter',
-          description: 'The starter equipment for barbarians',
+          description: 'The starter equipment for barbarians.',
           weaponId: weapons[12].id,
           itemOneId: items[3].id,
           itemTwoId: items[8].id,
         },
         {
           name: 'Cleric Starter',
-          description: 'The starter equipment for barbarians',
-          weaponId: weapons[12].id,
-          itemOneId: items[3].id,
+          description: 'The starter equipment for clerics.',
+          weaponId: weapons[13].id,
+          spellOneId: spells[2].id,
+          itemOneId: items[5].id,
           itemTwoId: items[8].id,
+
+        },
+        {
+          name: 'Fighter Starter',
+          description: 'The starter equipment for fighters.',
+          weaponId: weapons[9].id,
+          itemOneId: items[0].id,
+          itemTwoId: items[8].id,
+
+        },
+        {
+          name: 'Ranger Starter',
+          description: 'The starter equipment for rangers.',
+          weaponId: weapons[1].id,
+          itemOneId: items[1].id,
+          itemTwoId: items[8].id,
+
+        },
+        {
+          name: 'Assassin Starter',
+          description: 'The starter equipment for rangers.',
+          weaponId: weapons[4].id,
+          itemOneId: items[0].id,
+          itemTwoId: items[8].id,
+
+        },
+        {
+          name: 'Sorcerer Starter',
+          description: 'The starter equipment for sorcerers.',
+          weaponId: weapons[8].id,
+          itemOneId: items[5].id,
+          itemTwoId: items[8].id,
+
         },
       ],
       { returning: true }
     )
 
-    // const classes = await queryInterface.bulkInsert(
-    //   'Classes',
-    //   [
-    //     {
-    //       name: 'Barbarian',
-    //       description: 'Barbarians are strong individuals, although they might not be the brightest of the bunch they make up for it with brute force.',
-    //       acMod: 3,
-    //       hpMod: 3,
-    //       strMod: 3,
-    //       dexMod: 0,
-    //       constMod: 2,
-    //       intelMod: -1,
-    //       wisdMod: -1,
-    //       charMod: 0,
-    //       starterId:
-    //     }
-    //   ],
-    //   { returning: true}
-    // )
+    const classes = await queryInterface.bulkInsert(
+      'Classes',
+      [
+        {
+          name: 'Barbarian',
+          description: 'Barbarians are strong individuals, although they might not be the brightest of the bunch they make up for it with brute force.',
+          acMod: 3,
+          hpMod: 3,
+          strMod: 3,
+          dexMod: 0,
+          constMod: 2,
+          intelMod: -1,
+          wisdMod: -1,
+          charMod: 0,
+          starterId: starters[0].id,
+        },
+        {
+          name: 'Cleric',
+          description: 'A fighter for the devine.',
+          acMod: 2,
+          hpMod: 4,
+          strMod: 2,
+          dexMod: 1,
+          constMod: 3,
+          intelMod: 0,
+          wisdMod: 0,
+          charMod: 1,
+          starterId: starters[1].id,
+        },
+        {
+          name: 'Fighter',
+          description: 'A master of hand to hand combat.',
+          acMod: 0,
+          hpMod: 1,
+          strMod: 3,
+          dexMod: 3,
+          constMod: 1,
+          intelMod: 0,
+          wisdMod: 0,
+          charMod: 3,
+          starterId: starters[2].id,
+        },
+        {
+          name: 'Ranger',
+          description: 'A ranger rarely misses their target. Incredibly skilled with the bow.',
+          acMod: 0,
+          hpMod: 2,
+          strMod: 1,
+          dexMod: 5,
+          constMod: 2,
+          intelMod: 1,
+          wisdMod: 2,
+          charMod: 5,
+          starterId: starters[3].id,
+        },
+        {
+          name: 'Assassin',
+          description: 'Assassins are highly adaptive and deal lots of damage very quickly.',
+          acMod: 0,
+          hpMod: 1,
+          strMod: 1,
+          dexMod: 5,
+          constMod: 2,
+          intelMod: 3,
+          wisdMod: 3,
+          charMod: 2,
+          starterId: starters[4].id,
+        },
+        {
+          name: 'Sorcerer',
+          description: 'Sorcerers study arcan magic, long forgotten by the rest of the world.',
+          acMod: -1,
+          hpMod: 0,
+          strMod: 0,
+          dexMod: 0,
+          constMod: 4,
+          intelMod: 5,
+          wisdMod: 5,
+          charMod: 3,
+          starterId: starters[5].id,
+        },
+      ],
+      { returning: true}
+    )
 
     const enemies = await queryInterface.bulkInsert(
       'Enemies',
