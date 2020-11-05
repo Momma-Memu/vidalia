@@ -23,8 +23,7 @@ module.exports = (sequelize, DataTypes) => {
     },
   }, {});
   Spell.associate = function(models) {
-    Spell.hasMany(models.Starter, { foreignKey: 'spellOneId'})
-    Spell.hasMany(models.Starter, { foreignKey: 'spellTwoId'})
+    Spell.hasMany(models.Starter, { foreignKey: 'spellId'})
   };
   return Spell;
 };

@@ -19,22 +19,17 @@ module.exports = {
       weaponId: {
         type: Sequelize.INTEGER,
         allowNull: true,
+        references: { model: 'Weapons' },
       },
-      spellOneId: {
+      spellId: {
         type: Sequelize.INTEGER,
         allowNull: true,
+        references: { model: 'Spells' },
       },
-      spellTwoId: {
-        type: Sequelize.INTEGER,
-        allowNull: true,
-      },
-      itemOneId: {
+      itemId: {
         type: Sequelize.INTEGER,
         allowNull: false,
-      },
-      itemTwoId: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
+        references: { model: 'Items' },
       },
       createdAt: {
         allowNull: false,

@@ -13,19 +13,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: true,
     },
-    spellOneId: {
+    spellId: {
       type: DataTypes.INTEGER,
       allowNull: true,
     },
-    spellTwoId: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-    },
-    itemOneId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    itemTwoId: {
+    itemId: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
@@ -33,10 +25,8 @@ module.exports = (sequelize, DataTypes) => {
   Starter.associate = function(models) {
     Starter.hasMany(models.Class, {foreignKey: 'starterId'})
     Starter.belongsTo(models.Weapon, { foreignKey: 'weaponId' })
-    Starter.belongsTo(models.Spell, { foreignKey: 'spellOneId' })
-    Starter.belongsTo(models.Spell, { foreignKey: 'spellTwoId' })
-    Starter.belongsTo(models.Item, { foreignKey: 'itemOneId' })
-    Starter.belongsTo(models.Item, { foreignKey: 'itemTwoId' })
+    Starter.belongsTo(models.Spell, { foreignKey: 'spellId' })
+    Starter.belongsTo(models.Item, { foreignKey: 'itemId' })
   };
   return Starter;
 };

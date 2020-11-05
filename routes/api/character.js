@@ -11,7 +11,8 @@ router.get('/', asyncHandler(async function (req, res, next) {
     const creatorId = 1
     const characters = await Character.findAll({ where:{ creatorId }, include: [ { model: Class, attributes:['name', 'weakness'],
     include: [ { model: Starter, attributes:['id','name', 'description'],
-    include: [ { model: Weapon, attributes:['id', 'name', 'description', 'hitDice', 'damageType', 'cost'] }, { model: Spell } ] } ] },
+    include: [ { model: Weapon, attributes:['id', 'name', 'description', 'hitDice', 'damageType', 'cost'] },
+    { model: Spell }, { model: Item, attributes:['id', 'name','description', 'cost']} ] } ] },
     { model: Ability, attributes:['id', 'name', 'description', 'uses'] } ]});
 
     res.json(characters)
