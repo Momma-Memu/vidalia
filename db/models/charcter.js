@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const Charcter = sequelize.define('Charcter', {
+  const Character = sequelize.define('Character', {
     name: {
       type: DataTypes.STRING(50),
       allowNull: false,
@@ -54,10 +54,10 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
   }, {});
-  Charcter.associate = function(models) {
-    Charcter.hasOne(models.Ability, { foreignKey: 'abilityId' })
-    Charcter.hasOne(models.Class, { foreignKey: 'classId' })
-    Charcter.hasOne(models.User, { foreignKey: 'creatorId' })
+  Character.associate = function(models) {
+    Character.hasOne(models.Ability, { foreignKey: 'abilityId' })
+    Character.hasOne(models.Class, { foreignKey: 'classId' })
+    Character.belongsTo(models.User, { foreignKey: 'creatorId' })
   };
-  return Charcter;
+  return Character;
 };

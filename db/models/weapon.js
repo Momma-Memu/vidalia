@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
     },
   }, {});
   Weapon.associate = function(models) {
-    // associations can be defined here
+    Weapon.belongsTo(models.Starter, { foreignKey: 'weaponId' })
   };
   return Weapon;
 };

@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Charcters', {
+    return queryInterface.createTable('Characters', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -66,6 +66,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Charcters');
+    return queryInterface.dropTable('Characters');
   }
 };

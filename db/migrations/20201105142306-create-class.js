@@ -50,7 +50,7 @@ module.exports = {
       },
       starterId: {
         type: Sequelize.INTEGER,
-        references: { model: 'Classes' },
+        references: { model: 'Starters' },
         allowNull: false,
       },
       weakness: {

@@ -39,7 +39,7 @@ module.exports = (sequelize, DataTypes) => {
     },
   }, {});
   Class.associate = function(models) {
-    Class.hasMany(models.Starter, { foreignKey: 'starterId' })
+    Class.hasOne(models.Starter, { foreignKey: 'starterId' })
     Class.belongsTo(models.Character, { foreignKey: 'classId'})
   };
   return Class;
