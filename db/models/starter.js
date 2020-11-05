@@ -31,12 +31,12 @@ module.exports = (sequelize, DataTypes) => {
     },
   }, {});
   Starter.associate = function(models) {
-    Starter.belongsTo(models.Class, {foreignKey: 'starterId'})
-    Starter.hasOne(models.Weapon, { foreignKey: 'weaponId' })
-    Starter.hasOne(models.Spell, { foreignKey: 'spellOneId' })
-    Starter.hasOne(models.Spell, { foreignKey: 'SpellTwoId' })
-    Starter.hasOne(models.Item, { foreignKey: 'itemOneId' })
-    Starter.hasOne(models.Item, { foreignKey: 'itemTwoId' })
+    Starter.hasMany(models.Class, {foreignKey: 'starterId'})
+    Starter.belongsTo(models.Weapon, { foreignKey: 'weaponId' })
+    Starter.belongsTo(models.Spell, { foreignKey: 'spellOneId' })
+    Starter.belongsTo(models.Spell, { foreignKey: 'spellTwoId' })
+    Starter.belongsTo(models.Item, { foreignKey: 'itemOneId' })
+    Starter.belongsTo(models.Item, { foreignKey: 'itemTwoId' })
   };
   return Starter;
 };

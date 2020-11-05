@@ -17,14 +17,14 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING(20),
       allowNull: false,
     },
-    users: {
+    uses: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
   }, {});
   Spell.associate = function(models) {
-    Spell.belongsTo(models.Starter, { foreignKey: 'spellOneId'})
-    Spell.belongsTo(models.Starter, { foreignKey: 'spellTwoId'})
+    Spell.hasMany(models.Starter, { foreignKey: 'spellOneId'})
+    Spell.hasMany(models.Starter, { foreignKey: 'spellTwoId'})
   };
   return Spell;
 };

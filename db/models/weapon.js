@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
     },
   }, {});
   Weapon.associate = function(models) {
-    Weapon.belongsTo(models.Starter, { foreignKey: 'weaponId' })
+    Weapon.hasMany(models.Starter, { foreignKey: 'weaponId' })
   };
   return Weapon;
 };

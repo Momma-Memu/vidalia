@@ -12,8 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     },
   }, {});
   Ability.associate = function(models) {
-    Ability.belongsTo(models.Enemy, { foreignKey: 'ability1'})
-    Ability.belongsTo(models.Enemy, { foreignKey: 'ability2'})
+    Ability.hasMany(models.Character, { foreignKey: 'abilityId'})
   };
   return Ability;
 };
