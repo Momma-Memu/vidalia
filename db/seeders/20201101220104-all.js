@@ -1,5 +1,6 @@
 'use strict';
 const bcrypt = require('bcryptjs');
+const { query } = require('express');
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
@@ -368,6 +369,47 @@ module.exports = {
       ],
       { returning: true }
     )
+
+    const starters = await queryInterface.bulkInsert(
+      'Starters',
+      [
+        {
+          name: 'Barbaric Starter',
+          description: 'The starter equipment for barbarians',
+          weaponId: weapons[12].id,
+          itemOneId: items[3].id,
+          itemTwoId: items[8].id,
+        },
+        {
+          name: 'Cleric Starter',
+          description: 'The starter equipment for barbarians',
+          weaponId: weapons[12].id,
+          itemOneId: items[3].id,
+          itemTwoId: items[8].id,
+        },
+      ],
+      { returning: true }
+    )
+
+    // const classes = await queryInterface.bulkInsert(
+    //   'Classes',
+    //   [
+    //     {
+    //       name: 'Barbarian',
+    //       description: 'Barbarians are strong individuals, although they might not be the brightest of the bunch they make up for it with brute force.',
+    //       acMod: 3,
+    //       hpMod: 3,
+    //       strMod: 3,
+    //       dexMod: 0,
+    //       constMod: 2,
+    //       intelMod: -1,
+    //       wisdMod: -1,
+    //       charMod: 0,
+    //       starterId:
+    //     }
+    //   ],
+    //   { returning: true}
+    // )
 
     const enemies = await queryInterface.bulkInsert(
       'Enemies',
