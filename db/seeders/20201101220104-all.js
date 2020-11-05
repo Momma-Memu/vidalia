@@ -41,6 +41,11 @@ module.exports = {
           cost: 5,
         },
         {
+          name: 'Arrow',
+          description: 'A standard, sturdy, all purpose arrow.',
+          cost: 3,
+        },
+        {
           name: 'Bottled Wish',
           description: 'Resurrect a teamate on the brink of death.',
           cost: 60,

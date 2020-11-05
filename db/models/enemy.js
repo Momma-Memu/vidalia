@@ -67,11 +67,11 @@ module.exports = (sequelize, DataTypes) => {
     },
     ability1: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
     ability2: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
     weakness: {
       type: DataTypes.STRING(50),
