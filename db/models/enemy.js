@@ -65,13 +65,22 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false
     },
+    ability1: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    ability2: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
     weakness: {
       type: DataTypes.STRING(50),
       allowNull: false,
     },
   }, {});
   Enemy.associate = function(models) {
-    // associations can be defined here
+    Enemy.hasMany(models.Ability, { foreignKey: 'ability1' })
+    Enemy.hasMany(models.Ability, { foreignKey: 'ability2' })
   };
   return Enemy;
 };

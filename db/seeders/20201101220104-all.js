@@ -41,12 +41,12 @@ module.exports = {
           cost: 5,
         },
         {
-          name: 'Bottled wish',
+          name: 'Bottled Wish',
           description: 'Resurrect a teamate on the brink of death.',
           cost: 60,
         },
         {
-          name: 'Bomb',
+          name: 'Black Powder Bomb',
           description: 'Deals 100 damage...if it hits them.',
           cost: 20,
         },

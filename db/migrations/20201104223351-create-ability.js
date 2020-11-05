@@ -9,13 +9,16 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(50),
+        allowNull: false
       },
       description: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(1000),
+        allowNull: false
       },
       uses: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false
       },
     });
   },

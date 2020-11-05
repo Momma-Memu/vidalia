@@ -9,25 +9,22 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(50),
+        allowNull: false,
       },
       description: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(1000),
+        allowNull: false,
       },
       hitDice: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(20),
+        allowNull: false,
       },
       damageType: {
-        type: Sequelize.STRING
-      },
-      createdAt: {
+        type: Sequelize.STRING(50),
         allowNull: false,
-        type: Sequelize.DATE
       },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      }
+
     });
   },
   down: (queryInterface, Sequelize) => {
