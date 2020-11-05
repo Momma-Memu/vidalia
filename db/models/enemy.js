@@ -3,27 +3,27 @@ module.exports = (sequelize, DataTypes) => {
   const Enemy = sequelize.define('Enemy', {
     name: {
       type: DataTypes.STRING(50),
-      allowNull: false
+      allowNull: false,
     },
     size: {
       type: DataTypes.STRING(50),
-      allowNull: false
+      allowNull: false,
     },
     type: {
       type: DataTypes.STRING(50),
-      allowNull: false
+      allowNull: false,
     },
     subtype: {
       type: DataTypes.STRING(50),
-      allowNull: false
+      allowNull: false,
     },
     alignment: {
       type: DataTypes.STRING(50),
-      allowNull: false
+      allowNull: false,
     },
     armorClass: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
     },
     hitPoints: {
       type: DataTypes.STRING(20),
@@ -39,31 +39,31 @@ module.exports = (sequelize, DataTypes) => {
     },
     strength: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
     },
     dexterity: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
     },
     constitution: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
     },
     intelligence: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
     },
     wisdom: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
     },
     charisma: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
     },
     xpReward: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
     },
     ability1: {
       type: DataTypes.INTEGER,

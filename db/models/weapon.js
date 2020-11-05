@@ -1,10 +1,26 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Weapon = sequelize.define('Weapon', {
-    name: DataTypes.STRING,
-    description: DataTypes.STRING,
-    hitDice: DataTypes.STRING,
-    damageType: DataTypes.STRING
+    name: {
+      type: DataTypes.STRING(50),
+      allowNull: false,
+    },
+    description: {
+      type: DataTypes.STRING(1000),
+      allowNull: false,
+    },
+    hitDice: {
+      type: DataTypes.STRING(20),
+      allowNull: false,
+    },
+    damageType: {
+      type: DataTypes.STRING(50),
+      allowNull: false,
+    },
+    cost: {
+      allowNull: false,
+      type: DataTypes.INTEGER
+    },
   }, {});
   Weapon.associate = function(models) {
     // associations can be defined here

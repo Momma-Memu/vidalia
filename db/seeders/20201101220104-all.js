@@ -32,6 +32,160 @@ module.exports = {
       { returning: true }
     );
 
+    const weapons = await queryInterface.bulkInsert(
+      'Weapons',
+      [
+        {
+          title: 'Axe',
+          description: 'A standard axe, the handle wrapped in leather fits nicely in your hand.',
+          hitDice: '2d4',
+          damageType: 'none',
+          cost: 12,
+        },
+        {
+          title: 'Bow',
+          description: 'A standard bow, cheaply made but with care.',
+          hitDice: '1d10',
+          damageType: 'none',
+          cost: 18,
+        },
+        {
+          title: 'Crossbow',
+          description: 'A mechanical, one handed bow. Iron sights are built onto the top.',
+          hitDice: '1d12',
+          damageType: 'none',
+          cost: 23,
+        },
+        {
+          title: 'Dagger',
+          description: 'The weapon of choice for assassins.',
+          hitDice: '2d4',
+          damageType: 'none',
+          cost: 10,
+        },
+        {
+          title: 'Dark Dagger',
+          description: 'This dagger is imbued with dark magic. Strange symbols are carved into the handle.',
+          hitDice: '2d8',
+          damageType: 'dark',
+          cost: 19,
+        },
+        {
+          title: 'Elephant Tusk',
+          description: 'Beast hunters are proud of their trophies, and an elephant tusk doubles as a crude dagger.',
+          hitDice: '3d6',
+          damageType: 'none',
+          cost: 27,
+        },
+        {
+          title: 'Frail Spoon',
+          description: 'Well, if you got nothing else.',
+          hitDice: '1d4',
+          damageType: 'none',
+          cost: 4,
+        },
+        {
+          title: 'Gauntlet',
+          description: 'Fists of steel are a force to be reckoned with.',
+          hitDice: '4d6',
+          damageType: 'none',
+          cost: 68,
+        },
+        {
+          title: 'Gloves',
+          description: 'Leather gloves to protect your hands. Useful for the hand to hand combat types.',
+          hitDice: '4d4',
+          damageType: 'none',
+          cost: 40,
+        },
+        {
+          title: 'Greatsword of the Moonlight Goddess.',
+          description: 'This weapon reminds you of something, or maybe it was something said to you in passing. It glows with the milky light of the moon.',
+          hitDice: '4d12',
+          damageType: 'none',
+          cost: 223,
+        },
+        {
+          title: 'Greatsword',
+          description: 'A really big sword. The previous owner was a strawberry, or their name was strawberry? Hard to say.',
+          hitDice: '2d8',
+          damageType: 'none',
+          cost: 65,
+        },
+        {
+          title: 'Greataxe',
+          description: 'This axe is big, go hit something with it.',
+          hitDice: '3d6',
+          damageType: 'none',
+          cost: 65,
+        },
+        {
+          title: 'Holy Sword',
+          description: 'This sword was once weilded by a celestial being. It glows when evil is near.',
+          hitDice: '1d8',
+          damageType: 'holy',
+          cost: 50,
+        },
+        {
+          title: 'Holy Axe',
+          description: 'This axe was once weilded by a celestial being. It glows when evil is near.',
+          hitDice: '2d4',
+          damageType: 'none',
+          cost: 50,
+        },
+        {
+          title: "Hell's Bane",
+          description: 'An axe blessed by a primordial being for the purpose of purging evil.',
+          hitDice: '4d10',
+          damageType: 'none',
+          cost: 200,
+        },
+        {
+          title: 'Ilos Bow',
+          description: 'Master craftswoman Ilos creates the best bows. This bow especially was her crowning achievement.',
+          hitDice: '3d20',
+          damageType: 'none',
+          cost: 500,
+        },
+        {
+          title: 'Javelin',
+          description: 'Basically a spear.',
+          hitDice: '1d12',
+          damageType: 'none',
+          cost: 36,
+        },
+        {
+          title: 'King Slayer',
+          description: 'Not to be confused with a strange man. Forged during a revolution, and weilded by a rebel.',
+          hitDice: '5d8',
+          damageType: 'none',
+          cost: 89,
+        },
+        {
+          title: 'Knife',
+          description: 'Make do.',
+          hitDice: '2d4',
+          damageType: 'none',
+          cost: 13,
+        },
+        {
+          title: 'Long Bow',
+          description: 'Make do.',
+          hitDice: '1d20',
+          damageType: 'none',
+          cost: 33,
+        },
+        {
+          title: 'Mighty Greataxe',
+          description: 'Make do.',
+          hitDice: '4d8',
+          damageType: 'none',
+          cost: 72,
+        },
+      ],
+      { returning: true }
+    )
+
     const items = await queryInterface.bulkdInsert(
       'Items',
       [
