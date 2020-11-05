@@ -9,8 +9,7 @@ const router = express.Router();
 
 router.get('/', asyncHandler(async function (req, res, next) {
     const creatorId = 1
-    const characters = await Character.findAll({ where:{ creatorId },
-        include: [ { model: Class }, { model: Weapon }, { model: Starter }, { model: Ability }, { model: Item } ]});
+    const characters = await Character.findAll({ where:{ creatorId }});
 
     res.json(characters)
 }));

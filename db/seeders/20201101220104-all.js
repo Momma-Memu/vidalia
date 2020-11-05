@@ -42,6 +42,8 @@ module.exports = {
           hitDice: '2d4',
           damageType: 'none',
           cost: 12,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Bow',
@@ -49,6 +51,8 @@ module.exports = {
           hitDice: '1d10',
           damageType: 'none',
           cost: 18,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Blue Flame Sword',
@@ -56,6 +60,8 @@ module.exports = {
           hitDice: '2d10',
           damageType: 'fire',
           cost: 101,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Crossbow',
@@ -63,6 +69,8 @@ module.exports = {
           hitDice: '1d12',
           damageType: 'none',
           cost: 23,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Dagger',
@@ -70,6 +78,8 @@ module.exports = {
           hitDice: '2d4',
           damageType: 'none',
           cost: 10,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Dark Dagger',
@@ -77,6 +87,8 @@ module.exports = {
           hitDice: '2d8',
           damageType: 'dark',
           cost: 19,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Elephant Tusk',
@@ -84,6 +96,8 @@ module.exports = {
           hitDice: '3d6',
           damageType: 'Lightning',
           cost: 27,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Frail Wand',
@@ -91,6 +105,8 @@ module.exports = {
           hitDice: '1d4',
           damageType: 'none',
           cost: 4,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Gauntlet',
@@ -98,6 +114,8 @@ module.exports = {
           hitDice: '4d6',
           damageType: 'none',
           cost: 68,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Gloves',
@@ -105,6 +123,8 @@ module.exports = {
           hitDice: '4d4',
           damageType: 'none',
           cost: 40,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Greatsword of the Moonlight Goddess.',
@@ -112,6 +132,8 @@ module.exports = {
           hitDice: '4d12',
           damageType: 'Dark',
           cost: 223,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Greatsword',
@@ -119,6 +141,8 @@ module.exports = {
           hitDice: '2d8',
           damageType: 'none',
           cost: 65,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Greataxe',
@@ -126,6 +150,8 @@ module.exports = {
           hitDice: '3d6',
           damageType: 'none',
           cost: 65,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Holy Sword',
@@ -133,6 +159,8 @@ module.exports = {
           hitDice: '1d8',
           damageType: 'holy',
           cost: 50,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Holy Axe',
@@ -140,6 +168,8 @@ module.exports = {
           hitDice: '2d4',
           damageType: 'holy',
           cost: 50,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: "Hell's Bane",
@@ -147,6 +177,8 @@ module.exports = {
           hitDice: '4d10',
           damageType: 'holy',
           cost: 200,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Ilos Bow',
@@ -154,6 +186,8 @@ module.exports = {
           hitDice: '3d20',
           damageType: 'none',
           cost: 500,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Javelin',
@@ -161,6 +195,8 @@ module.exports = {
           hitDice: '1d12',
           damageType: 'none',
           cost: 36,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'King Slayer',
@@ -168,6 +204,8 @@ module.exports = {
           hitDice: '5d8',
           damageType: 'Holy',
           cost: 89,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Knife',
@@ -175,6 +213,8 @@ module.exports = {
           hitDice: '2d4',
           damageType: 'none',
           cost: 13,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Long Bow',
@@ -182,6 +222,8 @@ module.exports = {
           hitDice: '1d20',
           damageType: 'none',
           cost: 33,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Mighty Greataxe',
@@ -189,6 +231,8 @@ module.exports = {
           hitDice: '2d12',
           damageType: 'none',
           cost: 72,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Nevermore',
@@ -196,6 +240,8 @@ module.exports = {
           hitDice: '9d8',
           damageType: 'poison',
           cost: 234,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Lake Maker',
@@ -203,6 +249,8 @@ module.exports = {
           hitDice: '12d10',
           damageType: 'none',
           cost: 4,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Poison Axe',
@@ -210,6 +258,8 @@ module.exports = {
           hitDice: '3d6',
           damageType: 'poison',
           cost: 234,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Poison Sword',
@@ -217,6 +267,8 @@ module.exports = {
           hitDice: '9d8',
           damageType: 'poison',
           cost: 234,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: "Queen's Revenge",
@@ -224,6 +276,8 @@ module.exports = {
           hitDice: '13d8',
           damageType: 'none',
           cost: 234,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: "Red Scythe",
@@ -231,6 +285,8 @@ module.exports = {
           hitDice: '6d12',
           damageType: 'fire',
           cost: 234,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
       ],
       { returning: true }
@@ -243,41 +299,58 @@ module.exports = {
           name: 'Antidote',
           description: 'Renders poison useless.',
           cost: 5,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Arrow',
           description: 'A standard, sturdy, all purpose arrow.',
           cost: 3,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+
         },
         {
           name: 'Bottled Wish',
           description: 'Resurrect a teamate on the brink of death.',
           cost: 60,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Black Powder Bomb',
           description: 'Deals 100 damage...if it hits them.',
           cost: 20,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Chips',
           description: 'Why are these so overpriced? Heals 5 health if consumed.',
           cost: 100,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Curious Orange Cake',
           description: 'Restore an ability for two additional uses.',
           cost: 20,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Fire Arrow',
           description: 'Deals fire damage.',
           cost: 8,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Healing Potion (Small)',
           description: 'Heals 10 health.',
           cost: 15,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Healing Potion (Medium)',
@@ -288,16 +361,22 @@ module.exports = {
           name: 'Healing Potion (Large)',
           description: 'Heals 60 health.',
           cost: 50,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Poison Arrow',
           description: 'Deals poison damage.',
           cost: 8,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Shock Arrow',
           description: 'Deals lightning damage.',
           cost: 8,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
       ],
       { returning: true }
@@ -310,61 +389,85 @@ module.exports = {
           name: 'Blazing Vortex',
           description: 'Deals flame damage, chance to burn.',
           uses: 4,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Blessing',
           description: 'User has chance to deal double damage.',
           uses: 2,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Crushing Blow',
           description: 'User has chance to crush limbs. If successful, recipient deals half damage for duration of the fight.',
           uses: 2,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Despair',
           description: 'Enemy becomes overwhelmed with despair. Cannot use a standard attack, (but can still use abilities), for two turns.',
           uses: 3,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Fire Breath',
           description: 'The user hurls a ball of fire from their mouth. Entire group takes fire damge.',
           uses: 4,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Lullaby',
           description: 'Sings enemy to sleep, lasts two turns.',
           uses: 3,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Poison Bite',
           description: 'The user deals poison damage, chance to poison.',
           uses: 5,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Prayer',
           description: 'The user prays to their deity. Chance to heal',
           uses: 4,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Soothing Water',
           description: 'Heals Burn effect.',
           uses: 6,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Shock',
           description: 'Chance to stun. They cannot use abilities this turn.',
           uses: 3,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Nightmares',
           description: 'The user traps the recipient of this ability in a nightmare. Causing hellucinations. Halves their chances to land attacks in half for one turn.',
           uses: 3,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Teleport',
           description: 'The user creates a wormhole, passing through and appearing somewhere else. Cancels out any damge dealt by the current attack',
           uses: 3,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         }
       ],
       { returning: true }
@@ -379,6 +482,8 @@ module.exports = {
           damageType: 'earth',
           hitDice: '1d20',
           uses: 3,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Earth Scatter',
@@ -386,6 +491,8 @@ module.exports = {
           damageType: 'earth',
           hitDice: '12d4',
           uses: 4,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Celestial Light',
@@ -393,6 +500,8 @@ module.exports = {
           damageType: 'holy',
           hitDice: '2d20',
           uses: 2,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Fire Whip',
@@ -400,6 +509,8 @@ module.exports = {
           damageType: 'fire',
           hitDice: '3d8',
           uses: 2,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Hail Storm',
@@ -407,6 +518,8 @@ module.exports = {
           damageType: 'water',
           hitDice: '12d4',
           uses: 3,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Water Prison',
@@ -414,6 +527,8 @@ module.exports = {
           damageType: 'water',
           hitDice: '2d20',
           uses: 2,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Soul Spear',
@@ -421,6 +536,8 @@ module.exports = {
           damageType: 'none',
           hitDice: '1d20',
           uses: 5,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Soul Barrage',
@@ -428,6 +545,8 @@ module.exports = {
           damageType: 'none',
           hitDice: '6d4',
           uses: 6,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Shockwave',
@@ -435,6 +554,8 @@ module.exports = {
           damageType: 'lightning',
           hitDice: '6d10',
           uses: 4,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Toxic Orbs',
@@ -442,6 +563,8 @@ module.exports = {
           damageType: 'poison',
           hitDice: '12d4',
           uses: 4,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Torment',
@@ -449,6 +572,8 @@ module.exports = {
           damageType: 'dark',
           hitDice: '3d8',
           uses: 2,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
       ],
       { returning: true }
@@ -463,6 +588,8 @@ module.exports = {
           weaponId: weapons[12].id,
           itemOneId: items[3].id,
           itemTwoId: items[8].id,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Cleric Starter',
@@ -471,6 +598,8 @@ module.exports = {
           spellOneId: spells[2].id,
           itemOneId: items[5].id,
           itemTwoId: items[8].id,
+          createdAt: new Date(),
+          updatedAt: new Date(),
 
         },
         {
@@ -479,6 +608,8 @@ module.exports = {
           weaponId: weapons[9].id,
           itemOneId: items[0].id,
           itemTwoId: items[8].id,
+          createdAt: new Date(),
+          updatedAt: new Date(),
 
         },
         {
@@ -487,6 +618,8 @@ module.exports = {
           weaponId: weapons[1].id,
           itemOneId: items[1].id,
           itemTwoId: items[8].id,
+          createdAt: new Date(),
+          updatedAt: new Date(),
 
         },
         {
@@ -495,6 +628,8 @@ module.exports = {
           weaponId: weapons[4].id,
           itemOneId: items[0].id,
           itemTwoId: items[8].id,
+          createdAt: new Date(),
+          updatedAt: new Date(),
 
         },
         {
@@ -503,7 +638,8 @@ module.exports = {
           weaponId: weapons[8].id,
           itemOneId: items[5].id,
           itemTwoId: items[8].id,
-
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
       ],
       { returning: true }
@@ -525,6 +661,8 @@ module.exports = {
           charMod: 0,
           starterId: starters[0].id,
           weakness: 'fire',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Cleric',
@@ -539,6 +677,8 @@ module.exports = {
           charMod: 1,
           starterId: starters[1].id,
           weakness: 'dark',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Fighter',
@@ -553,6 +693,8 @@ module.exports = {
           charMod: 3,
           starterId: starters[2].id,
           weakness: 'earth',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Ranger',
@@ -567,6 +709,8 @@ module.exports = {
           charMod: 5,
           starterId: starters[3].id,
           weakness: 'poison',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Assassin',
@@ -580,7 +724,9 @@ module.exports = {
           wisdMod: 3,
           charMod: 2,
           starterId: starters[4].id,
-          weakness: 'lightning'
+          weakness: 'lightning',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Sorcerer',
@@ -594,7 +740,9 @@ module.exports = {
           wisdMod: 5,
           charMod: 3,
           starterId: starters[5].id,
-          weakness: 'holy'
+          weakness: 'holy',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
       ],
       { returning: true}
@@ -617,6 +765,8 @@ module.exports = {
           abilityId: abilities[11].id,
           classId: classes[3].id,
           creatorId: users[0].id,
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
       ],
       { returning: true }
@@ -643,6 +793,8 @@ module.exports = {
           challenge: 10,
           xpReward: 5900,
           weakness: 'none',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Acolyte',
@@ -662,6 +814,8 @@ module.exports = {
           challenge: 0.25,
           xpReward: 50,
           weakness: 'fire/poison',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Adult Black Dragon',
@@ -681,6 +835,8 @@ module.exports = {
           challenge: 14,
           xpReward: 11500,
           weakness: 'none',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Adult Blue Dragon',
@@ -700,6 +856,8 @@ module.exports = {
           challenge: 16,
           xpReward: 15000,
           weakness: 'none',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Adult Brass Dragon',
@@ -719,6 +877,8 @@ module.exports = {
           challenge: 13,
           xpReward: 10000,
           weakness: 'none',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Adult Bronze Dragon',
@@ -738,6 +898,8 @@ module.exports = {
           challenge: 15,
           xpReward: 13000,
           weakness: 'none',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Adult Copper Dragon',
@@ -757,6 +919,8 @@ module.exports = {
           challenge: 14,
           xpReward: 11500,
           weakness: 'none',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Adult Gold Dragon',
@@ -775,7 +939,9 @@ module.exports = {
           charisma: 24,
           challenge: 17,
           xpReward: 18000,
-          weakness: 'none'
+          weakness: 'none',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Adult Green Dragon',
@@ -795,6 +961,8 @@ module.exports = {
           challenge: 15,
           xpReward: 13000,
           weakness: 'none',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Adult Red Dragon',
@@ -814,6 +982,8 @@ module.exports = {
           challenge: 17,
           xpReward: 18000,
           weakness: 'none',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Adult Silver Dragon',
@@ -833,6 +1003,8 @@ module.exports = {
           challenge: 16,
           xpReward: 15000,
           weakness: 'none',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Adult White Dragon',
@@ -852,6 +1024,8 @@ module.exports = {
           challenge: 13,
           xpReward: 10000,
           weakness: 'none',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Air Elemental',
@@ -871,6 +1045,8 @@ module.exports = {
           challenge: 5,
           xpReward: 1800,
           weakness: 'earth',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Ancient Black Dragon',
@@ -890,6 +1066,8 @@ module.exports = {
           challenge: 21,
           xpReward: 33000,
           weakness: 'none',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Ancient Blue Dragon',
@@ -909,6 +1087,8 @@ module.exports = {
           challenge: 23,
           xpReward: 50000,
           weakness: 'none',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Ancient Brass Dragon',
@@ -928,6 +1108,8 @@ module.exports = {
           challenge: 20,
           xpReward: 25000,
           weakness: 'none',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Ancient Bronze Dragon',
@@ -947,6 +1129,8 @@ module.exports = {
           challenge: 22,
           xpReward: 41000,
           weakness: 'none',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Ancient Copper Dragon',
@@ -966,6 +1150,8 @@ module.exports = {
           challenge: 21,
           xpReward: 33000,
           weakness: 'none',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Ancient Gold Dragon',
@@ -985,6 +1171,8 @@ module.exports = {
           challenge: 24,
           xpReward: 62000,
           weakness: 'none',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Ancient Green Dragon',
@@ -1004,6 +1192,8 @@ module.exports = {
           challenge: 22,
           xpReward: 41000,
           weakness: 'none',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Ancient Red Dragon',
@@ -1023,6 +1213,8 @@ module.exports = {
           challenge: 24,
           xpReward: 62000,
           weakness: 'none',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Ancient Silver Dragon',
@@ -1042,6 +1234,8 @@ module.exports = {
           challenge: 23,
           xpReward: 50000,
           weakness: 'none',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Ancient White Dragon',
@@ -1061,6 +1255,8 @@ module.exports = {
           challenge: 20,
           xpReward: 25000,
           weakness: 'none',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Androsphinx',
@@ -1080,6 +1276,8 @@ module.exports = {
           challenge: 17,
           xpReward: 18000,
           weakness: 'none',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Animated Armor',
@@ -1099,6 +1297,8 @@ module.exports = {
           challenge: 1,
           xpReward: 200,
           weakness: 'water',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Ankheg',
@@ -1118,6 +1318,8 @@ module.exports = {
           challenge: 2,
           xpReward: 250,
           weakness: 'fire',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Ape',
@@ -1137,6 +1339,8 @@ module.exports = {
           challenge: 0.5,
           xpReward: 100,
           weakness: 'fire/poison',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Archmage',
@@ -1156,6 +1360,8 @@ module.exports = {
           challenge: 12,
           xpReward: 8400,
           weakness: 'fire',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Assassin',
@@ -1175,6 +1381,8 @@ module.exports = {
           challenge: 8,
           xpReward: 3900,
           weakness: 'none',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Awakened Shrub',
@@ -1194,6 +1402,8 @@ module.exports = {
           challenge: 0,
           xpReward: 10,
           weakness: 'fire',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Awakened Tree',
@@ -1213,6 +1423,8 @@ module.exports = {
           challenge: 2,
           xpReward: 450,
           weakness: 'fire',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Axe Beak',
@@ -1232,6 +1444,8 @@ module.exports = {
           challenge: 0.25,
           xpReward: 50,
           weakness: 'lightning',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Azer',
@@ -1251,6 +1465,8 @@ module.exports = {
           challenge: 2,
           xpReward: 450,
           weakness: 'water',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Baboon',
@@ -1270,6 +1486,8 @@ module.exports = {
           challenge: 0,
           xpReward: 10,
           weakness: 'fire/poison',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Badger',
@@ -1289,6 +1507,8 @@ module.exports = {
           challenge: 0,
           xpReward: 10,
           weakness: 'fire/poison',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Balor',
@@ -1308,6 +1528,8 @@ module.exports = {
           challenge: 19,
           xpReward: 22000,
           weakness: 'water',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Bandit',
@@ -1327,6 +1549,8 @@ module.exports = {
           challenge: 0.125,
           xpReward: 25,
           weakness: 'fire/poison',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Bandit Captain',
@@ -1346,6 +1570,8 @@ module.exports = {
           challenge: 2,
           xpReward: 450,
           weakness: 'fire/poison',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Barbed Devil',
@@ -1365,6 +1591,8 @@ module.exports = {
           challenge: 5,
           xpReward: 1800,
           weakness: 'water/holy',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Basilisk',
@@ -1384,6 +1612,8 @@ module.exports = {
           challenge: 3,
           xpReward: 700,
           weakness: 'fire',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Bat',
@@ -1403,6 +1633,8 @@ module.exports = {
           challenge: 0,
           xpReward: 10,
           weakness: 'lightning',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Bearded Devil',
@@ -1422,6 +1654,8 @@ module.exports = {
           challenge: 3,
           xpReward: 700,
           weakness: 'water/holy',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Behir',
@@ -1441,6 +1675,8 @@ module.exports = {
           challenge: 11,
           xpReward: 7200,
           weakness: 'earth',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Berserker',
@@ -1460,6 +1696,8 @@ module.exports = {
           challenge: 2,
           xpReward: 450,
           weakness: 'fire/poison',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Black Bear',
@@ -1479,6 +1717,8 @@ module.exports = {
           challenge: 0.5,
           xpReward: 100,
           weakness: 'fire/poison',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Black Dragon Wyrmling',
@@ -1498,6 +1738,8 @@ module.exports = {
           challenge: 2,
           xpReward: 450,
           weakness: 'none',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Black Pudding',
@@ -1517,6 +1759,8 @@ module.exports = {
           challenge: 4,
           xpReward: 1100,
           weakness: 'none',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Blink Dog',
@@ -1536,6 +1780,8 @@ module.exports = {
           challenge: 0.25,
           xpReward: 50,
           weakness: 'lightning',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Blood Hawk',
@@ -1555,6 +1801,8 @@ module.exports = {
           challenge: 0.125,
           xpReward: 25,
           weakness: 'lightning',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Blue Dragon Wyrmling',
@@ -1574,6 +1822,8 @@ module.exports = {
           challenge: 3,
           xpReward: 700,
           weakness: 'none',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Boar',
@@ -1593,6 +1843,8 @@ module.exports = {
           challenge: 0.25,
           xpReward: 50,
           weakness: 'fire/poison',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Bone Devil',
@@ -1612,6 +1864,8 @@ module.exports = {
           challenge: 12,
           xpReward: 8400,
           weakness: 'holy',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Brass Dragon Wyrmling',
@@ -1631,6 +1885,8 @@ module.exports = {
           challenge: 1,
           xpReward: 100,
           weakness: 'none',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Bronze Dragon Wyrmling',
@@ -1650,6 +1906,8 @@ module.exports = {
           challenge: 2,
           xpReward: 450,
           weakness: 'none',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Brown Bear',
@@ -1669,6 +1927,8 @@ module.exports = {
           challenge: 1,
           xpReward: 200,
           weakness: 'fire/poison',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Bulette',
@@ -1688,6 +1948,8 @@ module.exports = {
           challenge: 1,
           xpReward: 200,
           weakness: 'none',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Camel',
@@ -1707,6 +1969,8 @@ module.exports = {
           challenge: 0.125,
           xpReward: 25,
           weakness: 'poison/fire',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Cat',
@@ -1726,6 +1990,8 @@ module.exports = {
           challenge: 0,
           xpReward: 10,
           weakness: 'none',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Centaur',
@@ -1745,6 +2011,8 @@ module.exports = {
           challenge: 2,
           xpReward: 450,
           weakness: 'fire',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Chain Devil',
@@ -1764,6 +2032,8 @@ module.exports = {
           challenge: 8,
           xpReward: 3900,
           weakness: 'water/holy',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Chimera',
@@ -1783,6 +2053,8 @@ module.exports = {
           challenge: 6,
           xpReward: 2300,
           weakness: 'holy',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Chuul',
@@ -1802,6 +2074,8 @@ module.exports = {
           challenge: 4,
           xpReward: 1100,
           weakness: 'holy',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Clay Golem',
@@ -1821,6 +2095,8 @@ module.exports = {
           challenge: 9,
           xpReward: 5000,
           weakness: 'none',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Cloaker',
@@ -1840,6 +2116,8 @@ module.exports = {
           challenge: 8,
           xpReward: 3900,
           weakness: 'holy',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Cloud Giant',
@@ -1859,6 +2137,8 @@ module.exports = {
           challenge: 9,
           xpReward: 5000,
           weakness: 'earth',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Cockatrice',
@@ -1878,6 +2158,8 @@ module.exports = {
           challenge: 6,
           xpReward: 2300,
           weakness: 'holy',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Commoner',
@@ -1897,6 +2179,8 @@ module.exports = {
           challenge: 0,
           xpReward: 10,
           weakness: 'fire/poison',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Constrictor Snake',
@@ -1916,6 +2200,8 @@ module.exports = {
           challenge: 0.25,
           xpReward: 50,
           weakness: 'fire',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Copper Dragon Wyrmling',
@@ -1935,6 +2221,8 @@ module.exports = {
           challenge: 1,
           xpReward: 200,
           weakness: 'none',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Couatl',
@@ -1954,6 +2242,8 @@ module.exports = {
           challenge: 4,
           xpReward: 1100,
           weakness: 'earth',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Crab',
@@ -1973,6 +2263,8 @@ module.exports = {
           challenge: 0,
           xpReward: 10,
           weakness: 'earth',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Crocodile',
@@ -1992,6 +2284,8 @@ module.exports = {
           challenge: 0.5,
           xpReward: 100,
           weakness: 'none',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Cult Fanatic',
@@ -2011,6 +2305,8 @@ module.exports = {
           challenge: 2,
           xpReward: 450,
           weakness: 'fire/holy',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Cultist',
@@ -2030,6 +2326,8 @@ module.exports = {
           challenge: 2,
           xpReward: 450,
           weakness: 'fire/holy',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Dark Mantle',
@@ -2049,6 +2347,8 @@ module.exports = {
           challenge: 0.5,
           xpReward: 100,
           weakness: 'holy',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Death Dog',
@@ -2068,6 +2368,8 @@ module.exports = {
           challenge: 1,
           xpReward: 200,
           weakness: 'holy',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Deep Gnome Svirfneblin',
@@ -2087,6 +2389,8 @@ module.exports = {
           challenge: 0.5,
           xpReward: 50,
           weakness: 'fire',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Deer',
@@ -2106,6 +2410,8 @@ module.exports = {
           challenge: 0,
           xpReward: 10,
           weakness: 'fire/poison/earth',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Deva',
@@ -2125,6 +2431,8 @@ module.exports = {
           challenge: 10,
           xpReward: 5900,
           weakness: 'dark',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Dire Wolf',
@@ -2144,6 +2452,8 @@ module.exports = {
           challenge: 1,
           xpReward: 200,
           weakness: 'fire',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Djinni',
@@ -2163,6 +2473,8 @@ module.exports = {
           challenge: 11,
           xpReward: 7200,
           weakness: 'dark',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Doppleganger',
@@ -2182,6 +2494,8 @@ module.exports = {
           challenge: 5,
           xpReward: 1800,
           weakness: 'none',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Draft Horse',
@@ -2201,6 +2515,8 @@ module.exports = {
           challenge: 0.25,
           xpReward: 50,
           weakness: 'fire/poison',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Dragon Turtle',
@@ -2220,6 +2536,8 @@ module.exports = {
           challenge: 17,
           xpReward: 18000,
           weakness: 'none',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Dretch',
@@ -2239,6 +2557,8 @@ module.exports = {
           challenge: 0.25,
           xpReward: 25,
           weakness: 'fire/holy',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Drider',
@@ -2258,6 +2578,8 @@ module.exports = {
           challenge: 6,
           xpReward: 2300,
           weakness: 'holy',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Drow',
@@ -2277,6 +2599,8 @@ module.exports = {
           challenge: 0.25,
           xpReward: 50,
           weakness: 'fire/holy',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Druid',
@@ -2296,6 +2620,8 @@ module.exports = {
           challenge: 2,
           xpReward: 450,
           weakness: 'fire/holy',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Dryad',
@@ -2315,6 +2641,8 @@ module.exports = {
           challenge: 6,
           xpReward: 2300,
           weakness: 'holy',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Dryad',
@@ -2334,6 +2662,8 @@ module.exports = {
           challenge: 1,
           xpReward: 200,
           weakness: 'dark/lightning',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Eagle',
@@ -2353,6 +2683,8 @@ module.exports = {
           challenge: 0,
           xpReward: 10,
           weakness: 'lighting',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Earth Elemental',
@@ -2372,6 +2704,8 @@ module.exports = {
           challenge: 5,
           xpReward: 1800,
           weakness: 'water',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Efreeti',
@@ -2391,6 +2725,8 @@ module.exports = {
           challenge: 11,
           xpReward: 7200,
           weakness: 'water/holy',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Elephant',
@@ -2410,6 +2746,8 @@ module.exports = {
           challenge: 4,
           xpReward: 1100,
           weakness: 'fire/water',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Elk',
@@ -2429,6 +2767,8 @@ module.exports = {
           challenge: 0.25,
           xpReward: 50,
           weakness: 'fire/poison',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Erinyes',
@@ -2448,6 +2788,8 @@ module.exports = {
           challenge: 12,
           xpReward: 8400,
           weakness: 'holy',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Ettercap',
@@ -2467,6 +2809,8 @@ module.exports = {
           challenge: 2,
           xpReward: 450,
           weakness: 'none',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Ettin',
@@ -2486,6 +2830,8 @@ module.exports = {
           challenge: 4,
           xpReward: 1100,
           weakness: 'holy',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Fire Elemental',
@@ -2505,6 +2851,8 @@ module.exports = {
           challenge: 5,
           xpReward: 1800,
           weakness: 'water',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Fire Giant',
@@ -2524,6 +2872,8 @@ module.exports = {
           challenge: 9,
           xpReward: 5000,
           weakness: 'water',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Flesh Golem',
@@ -2543,6 +2893,8 @@ module.exports = {
           challenge: 5,
           xpReward: 1800,
           weakness: 'fire',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Flying Snake',
@@ -2562,6 +2914,8 @@ module.exports = {
           challenge: 0.125,
           xpReward: 25,
           weakness: 'fire/lightning',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Flying Sword',
@@ -2581,6 +2935,8 @@ module.exports = {
           challenge: 0.25,
           xpReward: 50,
           weakness: 'none',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Frog',
@@ -2600,6 +2956,8 @@ module.exports = {
           challenge: 0,
           xpReward: 0,
           weakness: 'earth',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Frost Giant',
@@ -2619,6 +2977,8 @@ module.exports = {
           challenge: 8,
           xpReward: 3900,
           weakness: 'fire',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Gargoyle',
@@ -2638,6 +2998,8 @@ module.exports = {
           challenge: 2,
           xpReward: 450,
           weakness: 'none',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Gelatinous Cube',
@@ -2657,6 +3019,8 @@ module.exports = {
           challenge: 2,
           xpReward: 450,
           weakness: 'none',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Ghast',
@@ -2676,6 +3040,8 @@ module.exports = {
           challenge: 2,
           xpReward: 450,
           weakness: 'holy',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Ghost',
@@ -2695,6 +3061,8 @@ module.exports = {
           challenge: 4,
           xpReward: 1100,
           weakness: 'holy',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Ghoul',
@@ -2714,6 +3082,8 @@ module.exports = {
           challenge: 1,
           xpReward: 200,
           weakness: 'holy',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Giant Ape',
@@ -2733,6 +3103,8 @@ module.exports = {
           challenge: 7,
           xpReward: 2900,
           weakness: 'fire/poison',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Giant Badger',
@@ -2752,6 +3124,8 @@ module.exports = {
           challenge: 0.25,
           xpReward: 50,
           weakness: 'fire',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Giant Bat',
@@ -2771,6 +3145,8 @@ module.exports = {
           challenge: 0.25,
           xpReward: 50,
           weakness: 'lightning',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Giant Boar',
@@ -2790,6 +3166,8 @@ module.exports = {
           challenge: 2,
           xpReward: 450,
           weakness: 'fire/poison',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Giant Centipede',
@@ -2809,6 +3187,8 @@ module.exports = {
           challenge: 0.25,
           xpReward: 100,
           weakness: 'fire',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Giant Constrictor Snake',
@@ -2828,6 +3208,8 @@ module.exports = {
           challenge: 2,
           xpReward: 450,
           weakness: 'fire',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Giant Crab',
@@ -2847,6 +3229,8 @@ module.exports = {
           challenge: 0.125,
           xpReward: 25,
           weakness: 'earth',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Giant Crocodile',
@@ -2866,6 +3250,8 @@ module.exports = {
           challenge: 5,
           xpReward: 1800,
           weakness: 'earth',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Giant Eagle',
@@ -2885,6 +3271,8 @@ module.exports = {
           challenge: 1,
           xpReward: 200,
           weakness: 'lightning',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Giant Elk',
@@ -2904,6 +3292,8 @@ module.exports = {
           challenge: 2,
           xpReward: 450,
           weakness: 'fire/poison',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Giant Fire Beetle',
@@ -2922,7 +3312,9 @@ module.exports = {
           charisma: 3,
           challenge: 0,
           xpReward: 10,
-          weakness: 'water'
+          weakness: 'water',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Giant Frog',
@@ -2941,7 +3333,9 @@ module.exports = {
           charisma: 3,
           challenge: 0.25,
           xpReward: 50,
-          weakness: 'earth'
+          weakness: 'earth',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Giant Goat',
@@ -2960,7 +3354,9 @@ module.exports = {
           charisma: 6,
           challenge: 0.5,
           xpReward: 100,
-          weakness: 'fire'
+          weakness: 'fire',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Giant Hyena',
@@ -2979,7 +3375,9 @@ module.exports = {
           charisma: 7,
           challenge: 1,
           xpReward: 200,
-          weakness: 'fire'
+          weakness: 'fire',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Giant Lizard',
@@ -2998,7 +3396,9 @@ module.exports = {
           charisma: 13,
           challenge: 0.25,
           xpReward: 100,
-          weakness: 'lightning'
+          weakness: 'lightning',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Giant Octopus',
@@ -3017,7 +3417,9 @@ module.exports = {
           charisma: 13,
           challenge: 1,
           xpReward: 200,
-          weakness: 'lightning/earth'
+          weakness: 'lightning/earth',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Giant Owl',
@@ -3036,7 +3438,9 @@ module.exports = {
           charisma: 13,
           challenge: 0.25,
           xpReward: 50,
-          weakness: 'lightning'
+          weakness: 'lightning',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Giant Poisonous Snake',
@@ -3055,7 +3459,9 @@ module.exports = {
           charisma: 3,
           challenge: 0.25,
           xpReward: 50,
-          weakness: 'fire'
+          weakness: 'fire',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Giant Rat',
@@ -3074,7 +3480,9 @@ module.exports = {
           charisma: 4,
           challenge: 0.125,
           xpReward: 25,
-          weakness: 'fire'
+          weakness: 'fire',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Giant Scorpian',
@@ -3093,7 +3501,9 @@ module.exports = {
           charisma: 5,
           challenge: 0.25,
           xpReward: 50,
-          weakness: 'earth'
+          weakness: 'earth',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Giant Seahorse',
@@ -3112,7 +3522,9 @@ module.exports = {
           charisma: 5,
           challenge: 0.5,
           xpReward: 100,
-          weakness: 'earth'
+          weakness: 'earth',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Giant Shark',
@@ -3131,7 +3543,9 @@ module.exports = {
           charisma: 5,
           challenge: 5,
           xpReward: 1800,
-          weakness: 'earth/lightning'
+          weakness: 'earth/lightning',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Giant Spider',
@@ -3150,7 +3564,9 @@ module.exports = {
           charisma: 4,
           challenge: 1,
           xpReward: 200,
-          weakness: 'fire'
+          weakness: 'fire',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Giant Vulture',
@@ -3169,7 +3585,9 @@ module.exports = {
           charisma: 7,
           challenge: 1,
           xpReward: 200,
-          weakness: 'lightning'
+          weakness: 'lightning',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Giant Wasp',
@@ -3188,7 +3606,9 @@ module.exports = {
           charisma: 3,
           challenge: 0.5,
           xpReward: 100,
-          weakness: 'fire'
+          weakness: 'fire',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Gibbering Mouther',
@@ -3208,6 +3628,8 @@ module.exports = {
           challenge: 0.25,
           xpReward: 100,
           weakness: 'none',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Glabrezu',
@@ -3227,6 +3649,8 @@ module.exports = {
           challenge: 0.25,
           xpReward: 100,
           weakness: 'none',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Gladiator',
@@ -3246,6 +3670,8 @@ module.exports = {
           challenge: 0.25,
           xpReward: 100,
           weakness: 'none',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: 'Guard',
@@ -3265,6 +3691,8 @@ module.exports = {
           challenge: 0.125,
           xpReward: 25,
           weakness: 'fire/poison',
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
 
       ],
