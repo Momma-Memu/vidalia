@@ -32,6 +32,11 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Starter.associate = function(models) {
     Starter.belongsTo(models.Class, {foreignKey: 'starterId'})
+    Starter.hasOne(models.Weapon, { foreignKey: 'weaponId' })
+    Starter.hasOne(models.Spell, { foreignKey: 'spellOneId' })
+    Starter.hasOne(models.Spell, { foreignKey: 'SpellTwoId' })
+    Starter.hasOne(models.Item, { foreignKey: 'itemOneId' })
+    Starter.hasOne(models.Item, { foreignKey: 'itemTwoId' })
   };
   return Starter;
 };

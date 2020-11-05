@@ -524,6 +524,7 @@ module.exports = {
           wisdMod: -1,
           charMod: 0,
           starterId: starters[0].id,
+          weakness: 'fire',
         },
         {
           name: 'Cleric',
@@ -537,6 +538,7 @@ module.exports = {
           wisdMod: 0,
           charMod: 1,
           starterId: starters[1].id,
+          weakness: 'dark',
         },
         {
           name: 'Fighter',
@@ -550,6 +552,7 @@ module.exports = {
           wisdMod: 0,
           charMod: 3,
           starterId: starters[2].id,
+          weakness: 'earth',
         },
         {
           name: 'Ranger',
@@ -563,6 +566,7 @@ module.exports = {
           wisdMod: 2,
           charMod: 5,
           starterId: starters[3].id,
+          weakness: 'poison',
         },
         {
           name: 'Assassin',
@@ -576,6 +580,7 @@ module.exports = {
           wisdMod: 3,
           charMod: 2,
           starterId: starters[4].id,
+          weakness: 'lightning'
         },
         {
           name: 'Sorcerer',
@@ -589,6 +594,7 @@ module.exports = {
           wisdMod: 5,
           charMod: 3,
           starterId: starters[5].id,
+          weakness: 'holy'
         },
       ],
       { returning: true}

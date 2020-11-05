@@ -22,6 +22,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   User.associate = function(models) {
     User.hasMany(models.Quest, { foreignKey: 'creatorId' });
+    User.hasMany(models.Character, { foreignKey: 'creatorId' });
   };
   User.prototype.toSafeObject = function() {
     const {
