@@ -24,7 +24,7 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
-      stength: {
+      strength: {
         type: Sequelize.INTEGER,
         allowNull: false,
       },

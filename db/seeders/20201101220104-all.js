@@ -600,6 +600,28 @@ module.exports = {
       { returning: true}
     )
 
+    const characters = await queryInterface.bulkInsert(
+      'Characters',
+      [
+        {
+          name: 'Onion Queen Memu',
+          story: 'Once a ruler of vidalia, she vanished 200 years ago during the Sky Leek.',
+          armorClass: 8,
+          hitPoints: 8,
+          strength: 8,
+          dexterity: 8,
+          constitution: 8,
+          intelligence: 8,
+          wisdom: 8,
+          charisma: 8,
+          abilityId: abilities[11].id,
+          classId: classes[3].id,
+          creatorId: users[0].id,
+        },
+      ],
+      { returning: true }
+    )
+
     const enemies = await queryInterface.bulkInsert(
       'Enemies',
       [
