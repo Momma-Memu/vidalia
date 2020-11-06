@@ -14,7 +14,9 @@ const Nav = () => {
                 <p className='vidalia-nav-title-home'>Vidalia</p>
             </NavLink>
             <Tooltip title='Characters'>
-            <i className="fas fa-hat-wizard barracks-icon"></i>
+                <NavLink exact to='/characters' className='nav-links'>
+                    <i className="fas fa-hat-wizard barracks-icon"></i>
+                </NavLink>
             </Tooltip>
             <Tooltip title='Quests'>
                 <NavLink exact to='/quests' className='nav-links'>

@@ -7,8 +7,8 @@ const { generateToken } = require('./security-utils');
 
 const router = express.Router();
 
-router.get('/', asyncHandler(async function (req, res, next) {
-    const creatorId = 1
+router.get('/:id', asyncHandler(async function (req, res, next) {
+    const creatorId = Number(req.params.id)
     const characters = await Character.findAll({ where:{ creatorId }, include: [ { model: Class, attributes:['name', 'weakness'],
     include: [ { model: Starter, attributes:['id','name', 'description'],
     include: [ { model: Weapon, attributes:['id', 'name', 'description', 'hitDice', 'damageType', 'cost'] },

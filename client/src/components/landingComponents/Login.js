@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
@@ -8,14 +8,15 @@ import TextField from '@material-ui/core/TextField';
 import { loginStyles } from '../../styles/landing/landing'
 import { tryLogin } from '../../helpers/auth';
 import { Redirect } from 'react-router-dom';
-
+import { authContext } from '../../Context';
 
 const Login = () => {
     const [header, setHeader] = useState('');
     const [open, setOpen] = React.useState(false);
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
-    const [id, setId] = useState();
+
+    const { id, setId } = useContext(authContext);
 
     const classes = loginStyles();
 

@@ -3,7 +3,6 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import Tooltip from '@material-ui/core/Tooltip';
 import Cookies from "js-cookie";
-import { Redirect } from 'react-router-dom';
 
 
 export default function SimpleMenu() {
@@ -19,7 +18,7 @@ export default function SimpleMenu() {
 
   const handleLogout = () => {
     Cookies.remove("token");
-    return <Redirect to='/login'/>
+    return document.location.reload()
   }
 
   return (
