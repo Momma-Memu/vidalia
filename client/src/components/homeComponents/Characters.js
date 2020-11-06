@@ -22,12 +22,13 @@ const Characters = () => {
         return (
             <div className='char-container'>
                 <div className='char-header'>
-                    <div>{char.name}</div>
+                    <div className='char-name'>{char.name}</div>
                     <div>{`Class: ${char.Class.name}`}</div>
                     <div>{`Background: ${char.story}`}</div>
                     <div>{`Weakness: ${char.Class.weakness}`}</div>
                 </div>
                 <div className='char-stats'>
+                    <div className='char-stats-header'>Stats</div>
                     <div>{`Armor Class: ${char.armorClass}`}</div>
                     <div>{`Charisma: ${char.charisma}`}</div>
                     <div>{`Constitution: ${char.constitution}`}</div>
@@ -38,11 +39,13 @@ const Characters = () => {
                     <div>{`Wisdom: ${char.wisdom}`}</div>
                 </div>
                 <div className='char-ability'>
+                    <div className='char-ability-header'>Ability</div>
                     <div>{`Ability: ${char.Ability.name}`}</div>
                     <div>{`Uses: ${char.Ability.uses}`}</div>
                     <div>{`Description: ${char.Ability.description}`}</div>
                 </div>
                 <div className='starting-equipment'>
+                    <div className='start-equip-header'>Starting Equipment</div>
                     <div className='item-section'>
                         <div>{`Item: ${char.Class.Starter.Item.name}`}</div>
                         <div>{`Item: ${char.Class.Starter.Item.description}`}</div>

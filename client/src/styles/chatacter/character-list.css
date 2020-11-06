@@ -1,0 +1,47 @@
+.char-container{
+    margin-top: 20px;
+    border: solid 2px black;
+    border-radius: 4px;
+    padding: 5px 5px 5px 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.char-container:hover{
+    cursor: default;
+}
+
+.char-header{
+    border-bottom: solid 2px black;
+    margin: 5px 0px 5px 0px;
+}
+
+.char-name{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.char-stats{
+    border-bottom: solid 2px black;
+}
+
+.char-stats-header{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 5px 0px 5px 0px;
+}
+
+.char-ability{
+    border-bottom: solid 2px black;
+}
+
+.char-ability-header{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 5px 0px 5px 0px;
+}
+
+.start-equip-header{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 5px 0px 5px 0px;
+}
