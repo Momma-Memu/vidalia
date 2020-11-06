@@ -168,17 +168,31 @@
     text-align: center;
 }
 
+.char-maker-header{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.char-maker-button{
+    margin-top: 20px;
+    font-size: 14px;
+    border: solid 1px rgb(20, 20, 20);
+    background-color: rgb(20, 20, 20);
+    border-radius: 4px;
+    padding: 5px 5px 5px 5px;
+    align-self: center;
+    color: white;
+}
+.char-maker-button:hover{
+    cursor: pointer;
+}
+
+/* select box styles */
+
 .select-box-wrapper{
     display: flex;
     justify-content: center;
     margin-top: 10px;
 }
-
-.char-maker-header{
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-/* select box styles */
 
 .selector-box{
     padding: 5px 5px 5px 5px;

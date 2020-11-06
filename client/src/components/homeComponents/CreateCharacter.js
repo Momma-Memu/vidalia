@@ -7,8 +7,8 @@ import TextField from '@material-ui/core/TextField';
 const CreateCharacter = () => {
     const [name, setName] = useState('');
     const [story, setStory] = useState('');
-    const [abilityId, setAbilityId] = useState(null);
-    const [classId, setClassId] = useState(null);
+    const [abilityId, setAbilityId] = useState(1);
+    const [classId, setClassId] = useState(1);
     const [classChoices, setClassChoices] = useState([]);
     const [abilityChoices, setAbilityChoices] = useState([]);
 
@@ -26,17 +26,29 @@ const CreateCharacter = () => {
         setClassChoices(data.classes)
     }
 
-    const handleCreateCharacter = () => {
-
+    const handleCreateCharacter = async() => {
+        const data = { creatorId: id, name: name, story: story,
+             abilityId: abilityId, classId: classId }
+        const res = await fetch('/api/create-character/make', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        const resData = res.json();
     }
 
     const chooseAbility = (e) => {
-        console.log(e.target)
+        setAbilityId(Number(e.target.value))
     }
 
     const chooseClass = (e) => {
-        console.log(e.target)
+        setClassId(Number(e.target.value))
     }
+
+    const updateName = e => setName(e.target.value);
+    const updateStory = e => setStory(e.target.value);
 
 
     const abilityElements = abilityChoices.map((ability) => {
@@ -59,13 +71,13 @@ const CreateCharacter = () => {
 
     const abilitySelectElements = abilityChoices.map((ability) => {
         return (
-            <option value={ability.id} onClick={chooseAbility} className='select-element'>{ability.name}</option>
+            <option value={ability.id} className='select-element'>{ability.name}</option>
         )
     })
 
     const classSelectElements = classChoices.map((classChoice) => {
         return (
-            <option value={classChoice.id} onClick={chooseClass} className='select-element'>{classChoice.name}</option>
+            <option value={classChoice.id} className='select-element'>{classChoice.name}</option>
         )
     })
 
@@ -77,22 +89,23 @@ const CreateCharacter = () => {
                 <div className='character-maker-form'>
                     <h2 className='char-maker-header'>Character Creator</h2>
                     <form className='form-area'>
-                        <TextField label="Name" variant='outlined' className='text-field'/>
-                        <textarea placeholder='Write your character backstory...' className='story-field'></textarea>
+                        <TextField onChange={updateName} label="Name" variant='outlined' className='text-field'/>
+                        <textarea onChange={updateStory} placeholder='Write your character backstory...' className='story-field'></textarea>
                         <div className='ability-intro'>Choose from a variety of unique abilities that fits with your playstyle.</div>
                         <div className='select-box-wrapper'>
-                            <select className='selector-box'>
+                            <select className='selector-box' onChange={chooseAbility}>
                                 {abilitySelectElements}
                             </select>
                         </div>
                         {abilityElements}
                         <div className='class-intro'>Choose a unique class for your character.</div>
                         <div className='select-box-wrapper'>
-                            <select className='selector-box'>
+                            <select className='selector-box' onChange={chooseClass}>
                                 {classSelectElements}
                             </select>
                         </div>
                         {classElements}
+                        <div className='char-maker-button' onClick={handleCreateCharacter}>Create Character</div>
                     </form>
                 </div>
             </div>
