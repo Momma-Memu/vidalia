@@ -764,6 +764,23 @@ module.exports = {
           createdAt: new Date(),
           updatedAt: new Date(),
         },
+        {
+          name: 'Sir Shallot Allium',
+          story: 'Trusted right hand man of Memu.',
+          armorClass: 8,
+          hitPoints: 10,
+          strength: 9,
+          dexterity: 13,
+          constitution: 10,
+          intelligence: 9,
+          wisdom: 10,
+          charisma: 13,
+          abilityId: abilities[2].id,
+          classId: classes[0].id,
+          creatorId: users[0].id,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
       ],
       { returning: true }
     )

@@ -29,14 +29,16 @@ const Characters = () => {
                 </div>
                 <div className='char-stats'>
                     <div className='char-stats-header'>Stats</div>
-                    <div className='char-stat-one'>{`Armor Class: ${char.armorClass}`}</div>
-                    <div className='char-stat-two'>{`Charisma: ${char.charisma}`}</div>
-                    <div className='char-stat-one'>{`Constitution: ${char.constitution}`}</div>
-                    <div className='char-stat-two'>{`Dexterity: ${char.dexterity}`}</div>
-                    <div className='char-stat-one'>{`Hit Points: ${char.hitPoints}`}</div>
-                    <div className='char-stat-two'>{`Intelligence: ${char.intelligence}`}</div>
-                    <div className='char-stat-one'>{`Strength: ${char.strength}`}</div>
-                    <div className='char-stat-two'>{`Wisdom: ${char.wisdom}`}</div>
+                    <div className='char-stat-list'>
+                        <div className='char-stat-one'>{`Armor Class: ${char.armorClass}`}</div>
+                        <div className='char-stat-two'>{`Charisma: ${char.charisma}`}</div>
+                        <div className='char-stat-one'>{`Constitution: ${char.constitution}`}</div>
+                        <div className='char-stat-two'>{`Dexterity: ${char.dexterity}`}</div>
+                        <div className='char-stat-one'>{`Hit Points: ${char.hitPoints}`}</div>
+                        <div className='char-stat-two'>{`Intelligence: ${char.intelligence}`}</div>
+                        <div className='char-stat-one'>{`Strength: ${char.strength}`}</div>
+                        <div className='char-stat-two'>{`Wisdom: ${char.wisdom}`}</div>
+                    </div>
                 </div>
                 <div className='char-ability'>
                     <div className='char-ability-header'>Ability</div>

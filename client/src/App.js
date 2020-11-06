@@ -8,6 +8,8 @@ import PageNotFound from './components/PageNotFound';
 import QuestResults from './components/quests/QuestResults';
 import Characters from './components/homeComponents/Characters';
 import { authContext } from './Context';
+import QuestSetup from './components/quests/QuestSetup';
+
 
 function App() {
   const [id, setId] = useState(null);
