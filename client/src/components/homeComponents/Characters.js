@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import Nav from './Nav';
+import { NavLink } from 'react-router-dom'
 import { authContext } from '../../Context'
 
 const Characters = () => {
@@ -66,6 +67,9 @@ const Characters = () => {
     return(
         <>
             <Nav />
+            <NavLink className='nav-button' to='/character-creator'>
+                <div className='new-character'>New Character</div>
+            </NavLink>
             {charElements}
         </>
     )
