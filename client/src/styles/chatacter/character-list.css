@@ -4,6 +4,7 @@
     border-radius: 4px;
     padding: 5px 5px 5px 5px;
     font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
 }
 
 .char-container:hover{
@@ -12,7 +13,7 @@
 
 .char-header{
     border-bottom: solid 2px black;
-    margin: 5px 0px 5px 0px;
+    padding-bottom: 5px;
 }
 
 .char-name{
@@ -20,18 +21,44 @@
     font-weight: bold;
 }
 
+.char-class-name{
+    font-size: small;
+}
+
+.char-background{
+    font-size: small;
+}
+
+.char-weakness{
+    font-size: small;
+}
+
 .char-stats{
     border-bottom: solid 2px black;
+    padding-bottom: 10px;
+}
+
+.char-stat-one{
+    background-color: rgb(190, 189, 189);
+    font-size: 14px;
+    padding: 10px 5px 5px 5px;
+}
+
+.char-stat-two{
+    font-size: 14px;
+    padding: 10px 5px 5px 5px;
 }
 
 .char-stats-header{
     font-size: 20px;
     font-weight: bold;
     margin: 5px 0px 5px 0px;
+    padding-bottom: 10;
 }
 
 .char-ability{
     border-bottom: solid 2px black;
+    padding-bottom: 10px;
 }
 
 .char-ability-header{

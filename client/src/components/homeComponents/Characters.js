@@ -23,20 +23,20 @@ const Characters = () => {
             <div className='char-container'>
                 <div className='char-header'>
                     <div className='char-name'>{char.name}</div>
-                    <div>{`Class: ${char.Class.name}`}</div>
-                    <div>{`Background: ${char.story}`}</div>
-                    <div>{`Weakness: ${char.Class.weakness}`}</div>
+                    <div className='char-class-name'>{`Class: ${char.Class.name}`}</div>
+                    <div className='char-weakness'>{`Weakness: ${char.Class.weakness}`}</div>
+                    <div className='char-background'>{`Background: ${char.story}`}</div>
                 </div>
                 <div className='char-stats'>
                     <div className='char-stats-header'>Stats</div>
-                    <div>{`Armor Class: ${char.armorClass}`}</div>
-                    <div>{`Charisma: ${char.charisma}`}</div>
-                    <div>{`Constitution: ${char.constitution}`}</div>
-                    <div>{`Dexterity: ${char.dexterity}`}</div>
-                    <div>{`Hit Points: ${char.hitPoints}`}</div>
-                    <div>{`Intelligence: ${char.intelligence}`}</div>
-                    <div>{`Strength: ${char.strength}`}</div>
-                    <div>{`Wisdom: ${char.wisdom}`}</div>
+                    <div className='char-stat-one'>{`Armor Class: ${char.armorClass}`}</div>
+                    <div className='char-stat-two'>{`Charisma: ${char.charisma}`}</div>
+                    <div className='char-stat-one'>{`Constitution: ${char.constitution}`}</div>
+                    <div className='char-stat-two'>{`Dexterity: ${char.dexterity}`}</div>
+                    <div className='char-stat-one'>{`Hit Points: ${char.hitPoints}`}</div>
+                    <div className='char-stat-two'>{`Intelligence: ${char.intelligence}`}</div>
+                    <div className='char-stat-one'>{`Strength: ${char.strength}`}</div>
+                    <div className='char-stat-two'>{`Wisdom: ${char.wisdom}`}</div>
                 </div>
                 <div className='char-ability'>
                     <div className='char-ability-header'>Ability</div>
