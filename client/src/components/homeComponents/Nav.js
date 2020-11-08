@@ -1,7 +1,7 @@
 import React from 'react';
 import Tooltip from '@material-ui/core/Tooltip';
 import logo from '../../images/redlogo.png';
-import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
 import Menu from './Menu';
 
 

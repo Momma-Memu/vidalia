@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext, useRef } from 'react';
+import { NavLink } from 'react-router-dom';
 import { authContext } from '../../Context'
 
 
@@ -42,9 +43,11 @@ const SurvivalSetup = () => {
                     <div>{`Ability: ${char.Ability.name}`}</div>
                     <div>{`Weakness: ${char.Class.weakness}`}</div>
                 </div>
-                <div className='button-area-wrapper'>
-                    <div className='select-button' onClick={characterSelect}>Select</div>
-                </div>
+                <NavLink to={`/survival/${char.id}`} className='button-links'>
+                    <div className='button-area-wrapper'>
+                        <div className='select-button' onClick={characterSelect}>Select</div>
+                    </div>
+                </NavLink>
             </div>
         )
     })
@@ -52,6 +55,12 @@ const SurvivalSetup = () => {
     return (
         <div className='body'>
             <div className='setup-header'>Choose your warrior</div>
+            <div className='back-button'>
+                <NavLink to='/' className='button-links2'>
+                    <i class="fas fa-arrow-circle-left back-icon"></i>
+                    <div>Head Back</div>
+                </NavLink>
+            </div>
             <div className='char-scroller'>
                 {charCards}
             </div>
