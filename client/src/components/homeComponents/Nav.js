@@ -18,6 +18,11 @@ const Nav = () => {
                     <i className="fas fa-hat-wizard barracks-icon"></i>
                 </NavLink>
             </Tooltip>
+            <Tooltip title='Survival'>
+                <NavLink exact to='/survival-start' className='nav-links'>
+                    <i class="fas fa-dungeon sign-icon"></i>
+                </NavLink>
+            </Tooltip>
             <Tooltip title='Quests'>
                 <NavLink exact to='/quests' className='nav-links'>
                     <i className="fas fa-dice-d20 sign-icon"></i>
