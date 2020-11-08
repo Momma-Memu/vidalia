@@ -10,6 +10,7 @@ import Characters from './components/homeComponents/Characters';
 import { authContext } from './Context';
 import QuestSetup from './components/quests/QuestSetup';
 import CreateCharacter from './components/homeComponents/CreateCharacter';
+import SurvivalSetup from './components/survival/SurvivalSetup';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           <PrivateRoute path ='/quests' isLoggedIn={id} component={QuestResults} />
           <PrivateRoute path ='/characters' isLoggedIn={id} component={Characters} />
           <PrivateRoute path ='/character-creator' isLoggedIn={id} component={CreateCharacter} />
+          <PrivateRoute path='/survival-start' isLoggedIn={id} component={SurvivalSetup} />
           <Route path='/login' component={Landing}/>
           <Route component={PageNotFound}/>
         </Switch>
