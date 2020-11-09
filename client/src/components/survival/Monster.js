@@ -12,7 +12,9 @@ const Monster = ({data}) => {
 
     return (
         <div className='monster-card'>
-            <div>{data.name}</div>
+            <div className='monster-card-name'>{data.name}</div>
+            <div>{data.hitPoints}</div>
+            <div>{data.type}</div>
         </div>
     )
 }

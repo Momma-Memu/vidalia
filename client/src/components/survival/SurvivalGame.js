@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Monster from './Monster';
+import { NavLink } from 'react-router-dom';
 
 const SurvivalGame = (props) => {
     const charId = Number(props.match.url[props.match.url.length - 1])
@@ -56,6 +57,14 @@ const SurvivalGame = (props) => {
 
     return (
         <>
+            <div className='survival-nav-bar'>
+                <div className='back-button2'>
+                    <NavLink to='/' className='button-links2'>
+                        <i class="fas fa-arrow-circle-left back-icon"></i>
+                        <div>Quit</div>
+                    </NavLink>
+                </div>
+            </div>
             <div className='monster-cards'>
                 {monsters}
             </div>

@@ -1,11 +1,23 @@
+.survival-nav-bar{
+    display: flex;
+    margin-bottom: 20px;
+    align-content: center;
+    border-radius: 4px;
+    background: linear-gradient(45deg,#000000 30%, #db2424 110%);
+    box-shadow: 5px 5px 5px #88888848;
+    height: 80px;
+    padding: 5px 5px 5px 5px;
+}
+
 .player-bar{
     border: solid 1px black;
 }
 
 .HP-bar{
-    background-color: green;
+    background-color: rgb(65, 163, 65);
     max-width: 100px;
     text-align: center;
+    color: white;
 }
 
 .monster-cards{
@@ -14,7 +26,19 @@
 }
 
 .monster-card{
+    font-family: Arial, Helvetica, sans-serif;
     border: solid 1px black;
     margin-bottom: 20px;
-    padding: 5px 5px 5px 5px;
+    height: 180px;
+    width: 130px;
+}
+
+.monster-card-name{
+    text-align: center;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin-bottom: 5px;
+    border-bottom: solid 2px black;
+    background-color: rgb(143, 53, 53);
+    color: white;
 }
