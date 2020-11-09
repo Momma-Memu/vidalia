@@ -9,8 +9,43 @@
     padding: 5px 5px 5px 5px;
 }
 
-.player-bar{
+.depth-rank{
+    font-family: Arial, Helvetica, sans-serif;
     border: solid 1px black;
+    padding: 8px 10px 8px 10px;
+    margin-right: 5px;
+    background-color: black;
+    border-radius: 4px;
+    align-self: center;
+    margin-left: auto;
+    text-align: center;
+    color: white;
+}
+
+.roll-container{
+    display: flex;
+    justify-content: center;
+}
+
+.roll-container:hover{
+    cursor: pointer;
+}
+
+.roll-button{
+    font-family: Arial, Helvetica, sans-serif;
+    border: solid 1px black;
+    border-radius: 3px;
+    background-color: black;
+    padding: 8px 10px 8px 10px;
+    color: white;
+}
+
+.player-bar{
+    margin-top: 20px;
+    border: solid 1px black;
+    border-radius: 4px;
+    box-shadow: 5px 5px 5px #88888848;
+    padding: 10px 10px 10px 10px;
 }
 
 .HP-bar{
@@ -28,9 +63,11 @@
 .monster-card{
     font-family: Arial, Helvetica, sans-serif;
     border: solid 1px black;
+    box-shadow: 5px 5px 5px #88888848;
     margin-bottom: 20px;
     height: 180px;
     width: 130px;
+    border-radius: 3px;
 }
 
 .monster-card-name{
@@ -40,5 +77,11 @@
     margin-bottom: 5px;
     border-bottom: solid 2px black;
     background-color: rgb(143, 53, 53);
+    color: white;
+}
+
+.monster-health{
+    background-color: green;
+    text-align: center;
     color: white;
 }

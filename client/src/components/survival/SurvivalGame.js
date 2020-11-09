@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Monster from './Monster';
+import Player from './Player';
+import turns from '../../helpers/turns';
 import { NavLink } from 'react-router-dom';
 
 const SurvivalGame = (props) => {
@@ -26,6 +28,7 @@ const SurvivalGame = (props) => {
         })
         const data = await res.json();
         setPlayerData([data])
+        console.log(data)
     }
 
     const getEnemies = async() => {
@@ -40,20 +43,18 @@ const SurvivalGame = (props) => {
         setEnemies(data);
     }
 
-    const monsters = enemies.map((enemy) => {
-        return (
-            <Monster data={enemy}/>
-        )
-    })
+    const monsters = enemies.map((enemy) => <Monster data={enemy}/>)
 
-    const playerBar = playerData.map((data) => {
-        return (
-            <div>
-                <div>{data.name}</div>
-                <div className='HP-bar'>{data.hitPoints}</div>
-            </div>
-        )
-    })
+    const playerBar = playerData.map((data) => <Player data={data} />)
+
+    const handleTurns = (e) => {
+        const cards = enemies.concat(playerData)
+        const objects = turns(cards)
+        console.log(objects)
+        const updatedPlayerData = objects.pop();
+        setPlayerData([updatedPlayerData]);
+        setEnemies(objects)
+    }
 
     return (
         <>
@@ -64,9 +65,13 @@ const SurvivalGame = (props) => {
                         <div>Quit</div>
                     </NavLink>
                 </div>
+                <div className='depth-rank'>{`Current Depth: ${depth}`}</div>
             </div>
             <div className='monster-cards'>
                 {monsters}
+            </div>
+            <div className='roll-container'>
+                <div className='roll-button' onClick={handleTurns}>Roll for initiative</div>
             </div>
             <div className='player-bar'>
                 {playerBar}
