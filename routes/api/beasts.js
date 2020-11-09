@@ -18,5 +18,22 @@ router.get('/:letter', asyncHandler(async function (req, res, next) {
     return
 }));
 
+router.post('/get-enemies', asyncHandler(async function (req, res, next) {
+    const { lower, upper } = req.body;
+
+    const data = await Enemy.findAll({ where: { challenge: { [Op.between]: [lower, upper] } } })
+    const numOfMonsters = Math.floor(Math.random() * 5)
+
+    if (numOfMonsters === 0){
+        numOfMonsters += 1;
+    }
+
+    let monsters = [];
+    for(let i = 0; i < numOfMonsters; i++){
+        monsters.push(data[Math.floor(Math.random() * (data.length - 1))])
+    }
+    res.json(monsters)
+}))
+
 
 module.exports = router;

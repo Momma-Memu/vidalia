@@ -22,4 +22,16 @@ router.get('/:id', asyncHandler(async function (req, res, next) {
 }));
 
 
+router.post('/', asyncHandler(async function (req, res, next) {
+    const { id } = req.body
+    const characters = await Character.findOne({ where:{ id }, include: [ { model: Class, attributes:['name', 'weakness'],
+    include: [ { model: Starter, attributes:['id','name', 'description'],
+    include: [ { model: Weapon, attributes:['id', 'name', 'description', 'hitDice', 'damageType', 'cost'] },
+    { model: Spell }, { model: Item, attributes:['id', 'name','description', 'cost']} ] } ] },
+    { model: Ability, attributes:['id', 'name', 'description', 'uses'] } ]});
+
+    res.json(characters)
+    return
+}));
+
 module.exports = router;

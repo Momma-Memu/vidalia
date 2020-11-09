@@ -1,0 +1,9 @@
+.player-bar{
+    border: solid 1px black;
+}
+
+.HP-bar{
+    background-color: green;
+    max-width: 100px;
+    text-align: center;
+}
