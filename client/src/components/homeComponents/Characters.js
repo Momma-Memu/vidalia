@@ -15,15 +15,14 @@ const Characters = () => {
     const getChars = async() => {
         const res = await fetch(`/api/character/${id}`)
         const data = await res.json();
-        console.log(data)
         setCharList(data)
     }
 
     const charElements = charList.map((char) => {
         return (
-            <div className='char-container'>
-                <div className='char-header'>
-                    <div className='char-name'>{char.name}</div>
+            <div className='char-container' key={char.id}>
+                <div className='char-header' key={char.createdAt}>
+                    <div className='char-name' key={char.name}>{char.name}</div>
                     <div className='char-class-name'>{`Class: ${char.Class.name}`}</div>
                     <div className='char-weakness'>{`Weakness: ${char.Class.weakness}`}</div>
                     <div className='char-background'>{`Background: ${char.story}`}</div>

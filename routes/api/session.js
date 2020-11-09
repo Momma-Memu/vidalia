@@ -10,7 +10,6 @@ const router = express.Router();
 
 router.post('/', asyncHandler(async function (req, res, next) {
     const { email, password } = req.body
-    console.log(email, '======================')
     const user = await User.findOne({ where: { email } });
     if(!user){
         res.json({success: false, message: 'Password or email was incorrect.', status: 403});

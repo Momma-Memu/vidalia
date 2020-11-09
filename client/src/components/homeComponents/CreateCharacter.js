@@ -21,7 +21,6 @@ const CreateCharacter = () => {
     const getFormDataInfo = async() => {
         const res = await fetch('/api/create-character/form-data-info')
         const data = await res.json();
-        console.log(data)
         setAbilityChoices(data.abilities);
         setClassChoices(data.classes)
     }

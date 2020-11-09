@@ -7,3 +7,14 @@
     max-width: 100px;
     text-align: center;
 }
+
+.monster-cards{
+    display: flex;
+    justify-content: space-around;
+}
+
+.monster-card{
+    border: solid 1px black;
+    margin-bottom: 20px;
+    padding: 5px 5px 5px 5px;
+}

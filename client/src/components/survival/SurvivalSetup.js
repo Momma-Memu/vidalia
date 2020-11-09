@@ -14,13 +14,9 @@ const SurvivalSetup = () => {
     const getChars = async() => {
         const res = await fetch(`/api/character/${id}`)
         const data = await res.json();
-        console.log(data)
         setCharList(data)
     }
 
-    const characterSelect = (e) => {
-        console.log(e.target)
-    }
 
     const charCards = charList.map((char) => {
         return (
@@ -45,7 +41,7 @@ const SurvivalSetup = () => {
                 </div>
                 <NavLink to={`/survival/${char.id}`} className='button-links'>
                     <div className='button-area-wrapper'>
-                        <div className='select-button' onClick={characterSelect}>Select</div>
+                        <div className='select-button'>Select</div>
                     </div>
                 </NavLink>
             </div>

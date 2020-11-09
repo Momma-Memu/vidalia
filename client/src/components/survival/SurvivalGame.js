@@ -1,12 +1,18 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
+import Monster from './Monster';
 
 const SurvivalGame = (props) => {
     const charId = Number(props.match.url[props.match.url.length - 1])
 
     const [playerData, setPlayerData] = useState([]);
+    const [enemies, setEnemies] = useState([]);
+    const [lower, setLower] = useState(0);
+    const [upper, setUpper] = useState(1);
+    const [depth, setDepth] = useState(0);
 
     useEffect(() => {
         getPlayerData();
+        getEnemies();
     }, [])
 
     const getPlayerData = async() => {
@@ -21,6 +27,24 @@ const SurvivalGame = (props) => {
         setPlayerData([data])
     }
 
+    const getEnemies = async() => {
+        const res = await fetch('/api/beasts/get-enemies', {
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json' ,
+            },
+            body: JSON.stringify({ lower, upper })
+        })
+        const data = await res.json();
+        setEnemies(data);
+    }
+
+    const monsters = enemies.map((enemy) => {
+        return (
+            <Monster data={enemy}/>
+        )
+    })
+
     const playerBar = playerData.map((data) => {
         return (
             <div>
@@ -31,9 +55,14 @@ const SurvivalGame = (props) => {
     })
 
     return (
-        <div className='player-bar'>
-            {playerBar}
-        </div>
+        <>
+            <div className='monster-cards'>
+                {monsters}
+            </div>
+            <div className='player-bar'>
+                {playerBar}
+            </div>
+        </>
 
     )
 }

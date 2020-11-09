@@ -42,7 +42,6 @@ const Login = () => {
 
 
     if (id) {
-        console.log('Yes we are out here')
         return <Redirect to="/"/>;
     }
 

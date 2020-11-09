@@ -18,7 +18,6 @@ const Beastiary = () => {
         const res = await fetch(`/api/beasts/${letter}`)
         const data = await res.json();
         setBeastList(data)
-        console.log(data)
     }
 
     const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
