@@ -12,6 +12,8 @@ const SurvivalGame = (props) => {
     const [lower, setLower] = useState(0);
     const [upper, setUpper] = useState(1);
     const [depth, setDepth] = useState(0);
+    const [turnList, setTurnList] = useState([]);
+    const [turn, setTurn] = useState(null)
 
     useEffect(() => {
         getPlayerData();
@@ -42,21 +44,23 @@ const SurvivalGame = (props) => {
         setEnemies(data);
     }
 
-    const monsters = enemies.map((enemy) => <Monster data={enemy}/>)
+    const monsters = enemies.map((enemy) =>
+    <Monster turnList={turnList} setTurnList={setTurnList} setTurn={setTurn} turn={turn} data={enemy}/>)
 
-    const playerBar = playerData.map((data) => <Player data={data} />)
+    const playerBar = playerData.map((data) => <Player setTurnList={setTurnList} setTurn={setTurn} turn={turn} data={data} />)
 
     const handleTurns = (e) => {
         const cards = [...enemies, ...playerData]
         const objects = turns(cards)
-        // const arr = []
-        // objects.forEach(el => {
-        //     arr.push(el['turn'])
-        // });
-        // arr.sort()
-        // console.log(arr)
+        let arr = []
+        objects.forEach(el => {
+            arr.push(el.turn)
+        });
+        arr.sort((a, b) => b - a)
+        console.log(arr)
+        setTurnList(arr);
+        setTurn(arr[0])
         const updatedPlayerData = objects.pop();
-        console.log(updatedPlayerData)
         setPlayerData([updatedPlayerData]);
         setEnemies(objects)
     }

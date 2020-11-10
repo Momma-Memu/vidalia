@@ -1,11 +1,18 @@
 import { d20 } from './dice';
 
 const turns = (cards) => {
-    for(let i = 0; i < cards.length; i++){
-        cards[i]['turn'] = d20.roll(1)
-    }
+    const catchDuplicates = [];
+    let i = 0;
 
-    console.log(cards)
+    while(i < cards.length){
+        const value = d20.roll(1);
+        console.log(value)
+        if(!catchDuplicates.includes(value)){
+            catchDuplicates.push(value)
+            cards[i]['turn'] = value;
+            i += 1;
+        }
+    }
     return cards
 }
 

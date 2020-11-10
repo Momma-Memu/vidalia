@@ -1484,7 +1484,7 @@ module.exports = {
         {
           name: 'Baboon',
           size: 'Small',
-          type: 'best',
+          type: 'beast',
           subtype: 'none',
           alignment: 'unaligned',
           armorClass: 12,
@@ -1505,7 +1505,7 @@ module.exports = {
         {
           name: 'Badger',
           size: 'Tiny',
-          type: 'best',
+          type: 'beast',
           subtype: 'none',
           alignment: 'unaligned',
           armorClass: 10,
@@ -2408,7 +2408,7 @@ module.exports = {
         {
           name: 'Deer',
           size: 'Medium',
-          type: 'best',
+          type: 'beast',
           subtype: 'none',
           alignment: 'unaligned',
           armorClass: 13,
