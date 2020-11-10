@@ -28,7 +28,6 @@ const SurvivalGame = (props) => {
         })
         const data = await res.json();
         setPlayerData([data])
-        console.log(data)
     }
 
     const getEnemies = async() => {
@@ -48,10 +47,16 @@ const SurvivalGame = (props) => {
     const playerBar = playerData.map((data) => <Player data={data} />)
 
     const handleTurns = (e) => {
-        const cards = enemies.concat(playerData)
+        const cards = [...enemies, ...playerData]
         const objects = turns(cards)
-        console.log(objects)
+        // const arr = []
+        // objects.forEach(el => {
+        //     arr.push(el['turn'])
+        // });
+        // arr.sort()
+        // console.log(arr)
         const updatedPlayerData = objects.pop();
+        console.log(updatedPlayerData)
         setPlayerData([updatedPlayerData]);
         setEnemies(objects)
     }

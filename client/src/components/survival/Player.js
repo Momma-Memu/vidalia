@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 
 const Player = ({data}) => {
-    console.log(data)
+
+    const [currentHealth, setCurrentHealth] = useState(data.hitPoints);
 
     return (
+        <>
         <div className='char-card-container'>
             <div className='survival-char-card-header'>
                 <div>{data.name}</div>
@@ -20,10 +22,18 @@ const Player = ({data}) => {
                 <div className='survival-char-card-stat2'>{`Wisdom: ${data.wisdom}`}</div>
             </div>
             <div className='survival-char-card-footer'>
+                <div className='HP-bar'>{currentHealth}</div>
+                <div>{!data.turn ? '' : `Initiative: ${data.turn}`}</div>
                 <div>{`Ability: ${data.Ability.name}`}</div>
                 <div>{`Weakness: ${data.Class.weakness}`}</div>
             </div>
         </div>
+        <div className='use-ability-container'>
+            <div>{data.Ability.name}</div>
+            <div>{data.Ability.description}</div>
+            <div className='use-ability-button'>Use Ability</div>
+        </div>
+        </>
     )
 }
 

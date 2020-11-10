@@ -9,7 +9,6 @@ const router = express.Router();
 
 
 router.get('/:id', asyncHandler(async function (req, res, next) {
-    console.log('========================================================================================================')
     const creatorId = Number(req.params.id)
     const characters = await Character.findAll({ where:{ creatorId }, include: [ { model: Class, attributes:['name', 'weakness'],
     include: [ { model: Starter, attributes:['id','name', 'description'],

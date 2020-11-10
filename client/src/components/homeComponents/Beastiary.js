@@ -27,8 +27,8 @@ const Beastiary = () => {
 
     const monsters = beastList.map((beast) => {
         return (
-            <div key={beast.name} className='beast-card'>
-                <div className='beast-name'>{beast.name}</div>
+            <div key={beast.id} className='beast-card'>
+                <div key={beast.name} className='beast-name'>{beast.name}</div>
                 <div className='beast-card-header'>
                     <div>{`Type: ${beast.type}`}</div>
                     <div>{`Alignment: ${beast.alignment}`}</div>

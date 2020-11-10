@@ -2,7 +2,7 @@ import React from 'react';
 
 
 const Monster = ({data}) => {
-    console.log(data)
+    // console.log(data)
     const initiative = data.turn;
 
     const rolls = Number(data.hitDice.split('d')[0])
@@ -16,7 +16,7 @@ const Monster = ({data}) => {
             <div className='monster-card-name'>{data.name}</div>
             <div className='monster-health'>{data.hitPoints}</div>
             <div>{data.type}</div>
-            <div>{`Initiative: ${data.turn}`}</div>
+            <div>{!data.turn ? '' : `Initiative: ${data.turn}`}</div>
         </div>
     )
 }

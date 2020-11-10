@@ -41,6 +41,7 @@
 }
 
 .player-bar{
+    display: flex;
     margin-top: 20px;
     border: solid 1px black;
     border-radius: 4px;
@@ -48,11 +49,36 @@
     padding: 10px 10px 10px 10px;
 }
 
+.use-ability-container{
+    display: flex;
+    flex-direction: column;
+    border: solid 1px black;
+    max-width: 180px;
+    box-shadow: 5px 5px 5px #88888848;
+}
+
+.use-ability-button{
+    align-self: center;
+    border: solid 1px black;
+    border-radius: 4px;
+    background-color: black;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+    padding: 5px 5px 5px 5px;
+    text-align: center;
+}
+
+.use-ability-button:hover{
+    cursor: pointer;
+}
+
 .HP-bar{
     background-color: rgb(65, 163, 65);
-    max-width: 100px;
+    max-width: 220px;
     text-align: center;
     color: white;
+    margin-bottom: 10px;
 }
 
 .monster-cards{
