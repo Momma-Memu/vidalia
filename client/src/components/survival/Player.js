@@ -13,6 +13,7 @@ const Player = ({currentHealth, setCurrentHealth, data}) => {
                 <div>{data.name}</div>
                 <div className='char-card-class-name'>{data.Class.name}</div>
             </div>
+            <div className='HP-bar'>{currentHealth}</div>
             <div className='survival-char-card-stats'>
                 <div className='survival-char-card-stat1'>{`Armor Class: ${data.armorClass}`}</div>
                 <div className='survival-char-card-stat2'>{`Charisma: ${data.charisma}`}</div>
@@ -24,7 +25,6 @@ const Player = ({currentHealth, setCurrentHealth, data}) => {
                 <div className='survival-char-card-stat2'>{`Wisdom: ${data.wisdom}`}</div>
             </div>
             <div className='survival-char-card-footer'>
-                <div className='HP-bar'>{currentHealth}</div>
                 <div>{!data.turn ? '' : `Initiative: ${data.turn}`}</div>
                 <div>{`Ability: ${data.Ability.name}`}</div>
                 <div>{`Weakness: ${data.Class.weakness}`}</div>

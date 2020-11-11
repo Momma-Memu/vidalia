@@ -15,6 +15,7 @@ const SurvivalGame = (props) => {
     const [lower, setLower] = useState(0);
     const [upper, setUpper] = useState(0.5);
     const [depth, setDepth] = useState(0);
+    const [cleardRoom, setClearedRoom] = useState(0);
     const [turnList, setTurnList] = useState([]);
     const [turn, setTurn] = useState(null)
 
