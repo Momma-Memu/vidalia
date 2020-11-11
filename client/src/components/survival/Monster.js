@@ -37,7 +37,7 @@ const Monster = ({currentHealth, setCurrentHealth, playerData, turnList, setTurn
         }
 
         const monsterAccuracy = d20.roll(1) + (data.dexterity - 8)
-        const playerDodge = d20.roll(1) + (playerData[0].constitution - 8)
+        const playerDodge = d20.roll(1) + (playerData[0].armorClass - 8)
 
         if(monsterAccuracy > playerDodge){
             const newHealth = currentHealth - damage;
@@ -61,8 +61,8 @@ const Monster = ({currentHealth, setCurrentHealth, playerData, turnList, setTurn
         console.log(damage)
         console.log(data.armorClass)
         if(damage < 0) damage = 0;
-        const monsterDodge = d20.roll(1) + (data.dexterity - 8)
-        const playerAccuracy = d20.roll(1) + (playerData[0].constitution - 8)
+        const monsterDodge = d20.roll(1) + (data.armorClass - 8)
+        const playerAccuracy = d20.roll(1) + (playerData[0].dexterity - 8)
         if(playerAccuracy > monsterDodge){
             const newHealth = monstHealth - damage;
             console.log(newHealth)
@@ -101,7 +101,7 @@ const Monster = ({currentHealth, setCurrentHealth, playerData, turnList, setTurn
             <div className='monster-health'>{monstHealth}</div>
             <div>{data.type}</div>
             <div>{!data.turn ? '' : `Initiative: ${data.turn}`}</div>
-            {!data.turn ? null : <div className='attack-buttn' onClick={handleAttack}>Attack</div>}
+            {!playerData[0].turn === turnList[0] ? null : <div className='attack-buttn' onClick={handleAttack}>Attack</div>}
         </div>
     )
 }
