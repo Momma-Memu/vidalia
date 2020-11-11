@@ -3638,7 +3638,7 @@ module.exports = {
           intelligence: 1,
           wisdom: 10,
           charisma: 4,
-          challenge: 0.25,
+          challenge: 1,
           xpReward: 100,
           weakness: 'none',
           createdAt: new Date(),

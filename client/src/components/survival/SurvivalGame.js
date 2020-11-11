@@ -13,7 +13,7 @@ const SurvivalGame = (props) => {
     const [currentHealth, setCurrentHealth] = useState(null);
     const [enemies, setEnemies] = useState([]);
     const [lower, setLower] = useState(0);
-    const [upper, setUpper] = useState(1);
+    const [upper, setUpper] = useState(0);
     const [depth, setDepth] = useState(0);
     const [turnList, setTurnList] = useState([]);
     const [turn, setTurn] = useState(null)

@@ -1,8 +1,7 @@
 import React, { useEffect, useRef } from 'react';
-import { Dice } from '../../helpers/dice'
+import { Dice, d20 } from '../../helpers/dice'
 
 const Monster = ({currentHealth, setCurrentHealth, playerData, turnList, setTurnList, turn, setTurn, data}) => {
-    // const oldClass = 'monster-card'
     const initiative = data.turn;
     const newTurnList = [...turnList]
 
@@ -31,9 +30,23 @@ const Monster = ({currentHealth, setCurrentHealth, playerData, turnList, setTurn
 
     const attackPlayer = () => {
         const attackDice = new Dice(diceName, sides)
-        const damage = attackDice.roll(rolls);
-        const newHealth = currentHealth - (damage - (Math.floor(playerData[0].armorClass / 2)));
-        setCurrentHealth(newHealth);
+        const initialDamage = attackDice.roll(rolls);
+        let damage = initialDamage - playerData[0].armorClass
+        if(damage < 0){
+            damage = 0
+        }
+
+        const monsterAccuracy = d20.roll(1) + (data.dexterity - 8)
+        const playerDodge = d20.roll(1) + (data.constitution - 8)
+        console.log(monsterAccuracy)
+        console.log(playerDodge)
+        console.log(damage)
+
+        if(monsterAccuracy > playerDodge){
+            const newHealth = currentHealth - damage;
+
+            setCurrentHealth(newHealth);
+        }
     }
 
     return (
@@ -42,6 +55,7 @@ const Monster = ({currentHealth, setCurrentHealth, playerData, turnList, setTurn
             <div className='monster-health'>{data.hitPoints}</div>
             <div>{data.type}</div>
             <div>{!data.turn ? '' : `Initiative: ${data.turn}`}</div>
+            <div className='attack-buttn'>Attack</div>
         </div>
     )
 }
