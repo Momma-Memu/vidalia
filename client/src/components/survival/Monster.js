@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Dice, d20 } from '../../helpers/dice'
 
-const Monster = ({currentHealth, setCurrentHealth, playerData, turnList, setTurnList, turn, setTurn, data}) => {
+const Monster = ({currentHealth, setCurrentHealth, playerData, turnList, setTurnList, turn, setTurn, data, enemies, setEnemies}) => {
     const initiative = data.turn;
     const newTurnList = [...turnList]
     const [monstHealth, setMonstHealth] = useState(data.hitPoints);
@@ -38,13 +38,9 @@ const Monster = ({currentHealth, setCurrentHealth, playerData, turnList, setTurn
 
         const monsterAccuracy = d20.roll(1) + (data.dexterity - 8)
         const playerDodge = d20.roll(1) + (playerData[0].constitution - 8)
-        // console.log(monsterAccuracy)
-        // console.log(playerDodge)
-        // console.log(damage)
 
         if(monsterAccuracy > playerDodge){
             const newHealth = currentHealth - damage;
-
             setCurrentHealth(newHealth);
         }
     }
@@ -56,6 +52,8 @@ const Monster = ({currentHealth, setCurrentHealth, playerData, turnList, setTurn
         let pDiceName = [base.split('d')[1]]
         pDiceName.unshift('d')
         pDiceName = pDiceName.join('')
+        console.log(pDiceName)
+        console.log(turnList);
 
         const attackDice = new Dice(diceName, pSides)
         const initialDamage = attackDice.roll(pRolls);
@@ -63,18 +61,38 @@ const Monster = ({currentHealth, setCurrentHealth, playerData, turnList, setTurn
         console.log(damage)
         console.log(data.armorClass)
         if(damage < 0) damage = 0;
-        const monsterAccuracy = d20.roll(1) + (data.dexterity - 8)
-        const playerDodge = d20.roll(1) + (playerData[0].constitution - 8)
-        if(monsterAccuracy < playerDodge){
+        const monsterDodge = d20.roll(1) + (data.dexterity - 8)
+        const playerAccuracy = d20.roll(1) + (playerData[0].constitution - 8)
+        if(playerAccuracy > monsterDodge){
             const newHealth = monstHealth - damage;
             console.log(newHealth)
             console.log(damage)
-            setMonstHealth(newHealth);
+            if(newHealth <= 0){
+                killMonster();
+            } else {
+                setMonstHealth(newHealth);
+            }
         }
         const turnSpent = newTurnList.shift()
         newTurnList.push(turnSpent)
         setTurnList(newTurnList)
         setTurn(newTurnList[0])
+    }
+
+    const killMonster = () => {
+        let newEnemies = []
+        for(let i = 0; i < enemies.length; i++){
+            const enemy = enemies[i]
+            if(enemy.name !== data.name) newEnemies.push(enemy)
+        }
+        let newTurns = []
+        for(let i = 0; i < turnList.length; i++){
+            let x = turnList[i]
+            if(x !== initiative) newTurns.push(x)
+        }
+        console.log(`new turn list:`, newTurns)
+        setTurnList(newTurns)
+        setEnemies(newEnemies)
     }
 
     return (
@@ -83,7 +101,7 @@ const Monster = ({currentHealth, setCurrentHealth, playerData, turnList, setTurn
             <div className='monster-health'>{monstHealth}</div>
             <div>{data.type}</div>
             <div>{!data.turn ? '' : `Initiative: ${data.turn}`}</div>
-            <div className='attack-buttn' onClick={handleAttack}>Attack</div>
+            {!data.turn ? null : <div className='attack-buttn' onClick={handleAttack}>Attack</div>}
         </div>
     )
 }
