@@ -48,7 +48,7 @@ module.exports = {
         {
           name: 'Bow',
           description: 'A standard bow, cheaply made but with care.',
-          hitDice: '1d10',
+          hitDice: '1d12',
           damageType: 'none',
           cost: 18,
           createdAt: new Date(),
@@ -66,7 +66,7 @@ module.exports = {
         {
           name: 'Crossbow',
           description: 'A mechanical, one handed bow. Iron sights are built onto the top.',
-          hitDice: '1d12',
+          hitDice: '2d8',
           damageType: 'none',
           cost: 23,
           createdAt: new Date(),
