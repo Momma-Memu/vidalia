@@ -6,6 +6,7 @@ const Monster = ({currentHealth, setCurrentHealth, playerData, turnList, setTurn
     const newTurnList = [...turnList]
     const [monstHealth, setMonstHealth] = useState(data.hitPoints);
 
+    const attackBoolean = turnList.length > 0 && turnList[0] === playerData[0].turn;
     const highlighter = useRef();
 
     useEffect(() => {
@@ -101,7 +102,7 @@ const Monster = ({currentHealth, setCurrentHealth, playerData, turnList, setTurn
             <div className='monster-health'>{monstHealth}</div>
             <div>{data.type}</div>
             <div>{!data.turn ? '' : `Initiative: ${data.turn}`}</div>
-            {!playerData[0].turn === turnList[0] ? null : <div className='attack-buttn' onClick={handleAttack}>Attack</div>}
+            {!attackBoolean ? null : <div className='attack-buttn' onClick={handleAttack}>Attack</div>}
         </div>
     )
 }
