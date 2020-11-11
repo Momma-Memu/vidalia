@@ -55,7 +55,7 @@ const SurvivalGame = (props) => {
     setCurrentHealth={setCurrentHealth} setTurnList={setTurnList} setTurn={setTurn} turn={turn} data={data} />)
 
     const handleTurns = (e) => {
-        // initiativeRollButn.current.classList.add('hide');
+        initiativeRollButn.current.classList.add('hide');
         const cards = [...enemies, ...playerData]
         const objects = turns(cards)
         let arr = []
