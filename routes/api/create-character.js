@@ -17,14 +17,14 @@ router.get('/form-data-info', asyncHandler(async function (req, res, next) {
 
 router.post('/make', asyncHandler(async function (req, res, next) {
     const { name, story, abilityId, classId, creatorId  } = req.body;
-    let armorClass = 8;
-    let hitPoints = 8;
-    let strength = 8;
-    let dexterity = 8;
-    let constitution = 8;
-    let intelligence = 8;
-    let wisdom = 8;
-    let charisma = 8;
+    let armorClass = 10;
+    let hitPoints = 10;
+    let strength = 10;
+    let dexterity = 10;
+    let constitution = 10;
+    let intelligence = 10;
+    let wisdom = 10;
+    let charisma = 10;
 
     if(classId === 1){
         armorClass += 3;
