@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 
-const Player = ({data}) => {
+const Player = ({currentHealth, setCurrentHealth, data}) => {
 
-    const [currentHealth, setCurrentHealth] = useState(data.hitPoints);
+    useEffect(() => {
+        setCurrentHealth(data.hitPoints)
+    }, [])
 
     return (
         <>

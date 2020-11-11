@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
+import { Dice } from '../../helpers/dice'
 
-
-const Monster = ({turnList, setTurnList, turn, setTurn, data}) => {
+const Monster = ({currentHealth, setCurrentHealth, playerData, turnList, setTurnList, turn, setTurn, data}) => {
     // const oldClass = 'monster-card'
     const initiative = data.turn;
     const newTurnList = [...turnList]
@@ -16,6 +16,7 @@ const Monster = ({turnList, setTurnList, turn, setTurn, data}) => {
                 highlighter.current.classList.remove('highlight-card')
                 const turnSpent = newTurnList.shift()
                 newTurnList.push(turnSpent)
+                attackPlayer();
                 setTurnList(newTurnList)
                 setTurn(newTurnList[0])
             }, 2000);
@@ -27,6 +28,13 @@ const Monster = ({turnList, setTurnList, turn, setTurn, data}) => {
     let diceName = [data.hitDice.split('d')[1]]
     diceName.unshift('d')
     diceName = diceName.join('')
+
+    const attackPlayer = () => {
+        const attackDice = new Dice(diceName, sides)
+        const damage = attackDice.roll(rolls);
+        const newHealth = currentHealth - (damage - (Math.floor(playerData[0].armorClass / 2)));
+        setCurrentHealth(newHealth);
+    }
 
     return (
         <div className='monster-card' ref={highlighter}>

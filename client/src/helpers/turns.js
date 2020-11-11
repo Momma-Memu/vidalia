@@ -6,7 +6,6 @@ const turns = (cards) => {
 
     while(i < cards.length){
         const value = d20.roll(1);
-        console.log(value)
         if(!catchDuplicates.includes(value)){
             catchDuplicates.push(value)
             cards[i]['turn'] = value;

@@ -98,6 +98,7 @@
 
 .monster-card-name{
     text-align: center;
+    font-size: 15px;
     padding-bottom: 5px;
     padding-top: 5px;
     margin-bottom: 5px;
@@ -107,7 +108,7 @@
 }
 
 .monster-health{
-    background-color: green;
+    background-color: rgb(65, 163, 65);
     text-align: center;
     color: white;
 }

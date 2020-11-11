@@ -1,4 +1,4 @@
-class Dice {
+export class Dice {
     constructor(name, sides) {
         this.name = name;
         this.sides = sides;

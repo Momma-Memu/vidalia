@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Monster from './Monster';
 import Player from './Player';
 import turns from '../../helpers/turns';
@@ -7,7 +7,10 @@ import { NavLink } from 'react-router-dom';
 const SurvivalGame = (props) => {
     const charId = Number(props.match.url[props.match.url.length - 1])
 
+    const initiativeRollButn = useRef();
+
     const [playerData, setPlayerData] = useState([]);
+    const [currentHealth, setCurrentHealth] = useState(null);
     const [enemies, setEnemies] = useState([]);
     const [lower, setLower] = useState(0);
     const [upper, setUpper] = useState(1);
@@ -45,11 +48,14 @@ const SurvivalGame = (props) => {
     }
 
     const monsters = enemies.map((enemy) =>
-    <Monster turnList={turnList} setTurnList={setTurnList} setTurn={setTurn} turn={turn} data={enemy}/>)
+    <Monster currentHealth={currentHealth} setCurrentHealth={setCurrentHealth}
+    playerData={playerData} turnList={turnList} setTurnList={setTurnList} setTurn={setTurn} turn={turn} data={enemy}/>)
 
-    const playerBar = playerData.map((data) => <Player setTurnList={setTurnList} setTurn={setTurn} turn={turn} data={data} />)
+    const playerBar = playerData.map((data) => <Player currentHealth={currentHealth}
+    setCurrentHealth={setCurrentHealth} setTurnList={setTurnList} setTurn={setTurn} turn={turn} data={data} />)
 
     const handleTurns = (e) => {
+        // initiativeRollButn.current.classList.add('hide');
         const cards = [...enemies, ...playerData]
         const objects = turns(cards)
         let arr = []
@@ -57,7 +63,6 @@ const SurvivalGame = (props) => {
             arr.push(el.turn)
         });
         arr.sort((a, b) => b - a)
-        console.log(arr)
         setTurnList(arr);
         setTurn(arr[0])
         const updatedPlayerData = objects.pop();
@@ -79,7 +84,7 @@ const SurvivalGame = (props) => {
             <div className='monster-cards'>
                 {monsters}
             </div>
-            <div className='roll-container'>
+            <div className='roll-container' ref={initiativeRollButn}>
                 <div className='roll-button' onClick={handleTurns}>Roll for initiative</div>
             </div>
             <div className='player-bar'>
