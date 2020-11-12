@@ -3,6 +3,8 @@ import Monster from './Monster';
 import Player from './Player';
 import turns from '../../helpers/turns';
 import { NavLink } from 'react-router-dom';
+import ItemDrop from './ItemDrop';
+import { survivalPlayer } from '../../Context';
 
 
 const SurvivalGame = (props) => {
@@ -16,12 +18,15 @@ const SurvivalGame = (props) => {
     const [lower, setLower] = useState(0);
     const [upper, setUpper] = useState(0.5);
     const [depth, setDepth] = useState(0);
-    const [cleardRoom, setClearedRoom] = useState(0);
+    const [clearedRoom, setClearedRoom] = useState(false);
     const [status, setStatus] = useState('');
     const [turnList, setTurnList] = useState([]);
     const [turn, setTurn] = useState(null)
 
+    const playerContext = { playerData, setPlayerData };
+
     const deadBoolean = currentHealth <= 0;
+
 
     useEffect(() => {
         getPlayerData();
@@ -56,7 +61,7 @@ const SurvivalGame = (props) => {
     <Monster currentHealth={currentHealth} setCurrentHealth={setCurrentHealth}
     playerData={playerData} turnList={turnList} setTurnList={setTurnList}
      setTurn={setTurn} turn={turn} data={enemy} enemies={enemies} setEnemies={setEnemies}
-     status={status} setStatus={setStatus}/>)
+     status={status} setStatus={setStatus} clearedRoom={clearedRoom} setClearedRoom={setClearedRoom}/>)
 
     const playerBar = playerData.map((data) => <Player currentHealth={currentHealth}
     setCurrentHealth={setCurrentHealth} status={status} setStatus={setStatus}
@@ -107,26 +112,29 @@ const SurvivalGame = (props) => {
     }
 
     return (
-        <>
-            <div className='survival-nav-bar'>
-                <div className='back-button2'>
-                    <NavLink to='/' className='button-links2'>
-                        <i class="fas fa-arrow-circle-left back-icon"></i>
-                        <div>Quit</div>
-                    </NavLink>
+        <survivalPlayer.Provider value={playerContext}>
+                <div className='survival-nav-bar'>
+                    <div className='back-button2'>
+                        <NavLink to='/' className='button-links2'>
+                            <i class="fas fa-arrow-circle-left back-icon"></i>
+                            <div>Quit</div>
+                        </NavLink>
+                    </div>
+                    <div className='depth-rank'>{`Current Depth: ${depth}`}</div>
                 </div>
-                <div className='depth-rank'>{`Current Depth: ${depth}`}</div>
-            </div>
-            <div className='monster-cards'>
-                {monsters}
-            </div>
-            <div className='roll-container' ref={initiativeRollButn}>
-                <div className='roll-button' onClick={handleTurns}>Roll for initiative</div>
-            </div>
-            <div className='player-bar'>
-                {playerBar}
-            </div>
-        </>
+                <div className='loot-button-container'>
+                    {!clearedRoom ? null: <ItemDrop name={playerData[0].Class.name} depth={depth} />}
+                </div>
+                <div className='monster-cards'>
+                    {monsters}
+                </div>
+                <div className='roll-container' ref={initiativeRollButn}>
+                    <div className='roll-button' onClick={handleTurns}>Roll for initiative</div>
+                </div>
+                <div className='player-bar'>
+                    {playerBar}
+                </div>
+            </survivalPlayer.Provider>
     )
 }
 

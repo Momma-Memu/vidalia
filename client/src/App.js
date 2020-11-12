@@ -8,7 +8,7 @@ import PageNotFound from './components/PageNotFound';
 import QuestResults from './components/quests/QuestResults';
 import Characters from './components/homeComponents/Characters';
 import { authContext } from './Context';
-import QuestSetup from './components/quests/QuestSetup';
+// import QuestSetup from './components/quests/QuestSetup';
 import CreateCharacter from './components/homeComponents/CreateCharacter';
 import SurvivalSetup from './components/survival/SurvivalSetup';
 import SurvivalGame from './components/survival/SurvivalGame';

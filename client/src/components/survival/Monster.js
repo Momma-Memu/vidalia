@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Dice, d20 } from '../../helpers/dice'
 
 const Monster = ({currentHealth, setCurrentHealth, playerData, turnList,
-    setTurnList, turn, setTurn, data, enemies, setEnemies, setStatus, status}) => {
+    setTurnList, turn, setTurn, data, enemies, setEnemies, setStatus, status, setClearedRoom, clearedRoom}) => {
 
     const initiative = data.turn;
     const newTurnList = [...turnList]
@@ -99,6 +99,9 @@ const Monster = ({currentHealth, setCurrentHealth, playerData, turnList,
             if(x !== initiative) newTurns.push(x)
         }
         console.log(`new turn list:`, newTurns)
+        if(newEnemies.length <= 0){
+            setClearedRoom(true)
+        }
         setTurnList(newTurns)
         setEnemies(newEnemies)
     }

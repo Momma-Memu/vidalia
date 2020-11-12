@@ -1,0 +1,56 @@
+.drop-container{
+    display: flex;
+    overflow-x: scroll;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 215px;
+    min-width: 350px;
+}
+
+.drop-container::-webkit-scrollbar{
+    display: none;
+}
+
+.drop-item-container{
+    border: solid 1px black;
+    margin-right: 10px;
+    min-width: 150px;
+    border-radius: 3px;
+    box-shadow: 5px 5px 5px #88888848;
+}
+
+.drop-name{
+    background-color: rgb(138, 27, 27);
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    padding: 5px 0px 5px 0px;
+}
+
+.drop-description{
+    font-size: 14px;
+    color: black;
+    height: 100px;
+}
+
+.drop-body{
+    border-top: solid 2px black;
+    padding: 5px 5px 5px 5px;
+    font-size: 12px;
+}
+
+.item-button-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.item-button{
+    border-radius: 4px;
+    background-color: black;
+    padding: 2px 5px 2px 5px;
+    color: white;
+    font-size: 10px;
+}
+
+.item-button:hover{
+    cursor: pointer;
+}

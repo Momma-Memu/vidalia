@@ -13,21 +13,27 @@ router.post('/', asyncHandler(async function (req, res, next) {
     const cost = req.body.cost;
     const charClass = req.body.name;
     const weapons = await Weapon.findAll({ where: { cost: { [Op.between]: [0, cost] } }})
-    const items = await Item.findAll({ where: { cost: { [Op.between]: [0, cost] } }})
+    const firstItems = await Item.findAll({ where: { cost: { [Op.between]: [0, cost] } }})
     const spells = await Spell.findAll();
 
     // console.log(`===================== ${weapons.length}`)
-
+    let items = []
+    if(charClass !== 'Ranger'){
+        for(let i = 0; i < firstItems.length; i++){
+            let item = firstItems[i]
+            if(!item.name.includes('Arrow')) items.push(item);
+        }
+    }
 
     let drops = [];
     let data = [];
     if(charClass !== 'Sorcerer'){
         data = [...weapons, ...items]
     } else {
-        data = [...weapons, ...items, ...spells]
+        data = [...items, ...spells]
     }
 
-    let numOfDrops = Math.floor(Math.random() * 5)
+    let numOfDrops = Math.floor(Math.random() * 10)
 
     if (numOfDrops === 0){
         numOfDrops += 1;
