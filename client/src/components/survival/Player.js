@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { subtractUse } from '../../helpers/useAbility';
+import { statusSetter } from '../../helpers/statusSetter';
 
 const Player = ({ playerData, setPlayerData, status, setStatus, setTurn, turnList, setTurnList, currentHealth, setCurrentHealth, data}) => {
 
@@ -21,10 +22,8 @@ const Player = ({ playerData, setPlayerData, status, setStatus, setTurn, turnLis
         if(data.Ability.uses <= 0) return;
 
         subtractUse(playerData[0], setPlayerData);
+        statusSetter(data.Ability.name, setStatus)
 
-        if(data.Ability.name === 'Teleport'){
-            setStatus('immune')
-        }
         const turnSpent = newTurnList.shift()
         newTurnList.push(turnSpent)
         setTurnList(newTurnList)

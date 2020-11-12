@@ -37,10 +37,12 @@ const Monster = ({currentHealth, setCurrentHealth, playerData, turnList,
     diceName = diceName.join('')
 
     const attackPlayer = () => {
-        if(status === 'immune') return;
+        if(status === 'Teleport') return;
+        if(status === 'Dispair') return;
         const attackDice = new Dice(diceName, sides)
         const initialDamage = attackDice.roll(rolls);
         let damage = initialDamage - (Math.floor(playerData[0].armorClass / 2))
+        if(status === 'Crushing Blow') damage = (damage / 2);
 
         if(damage < 0){
             damage = 0
