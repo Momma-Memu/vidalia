@@ -11,7 +11,7 @@ const Monster = ({currentHealth, setCurrentHealth, playerData, turnList,
     let attackBoolean = turnList.length > 0 && turnList[0] === playerData[0].turn;
     const highlighter = useRef();
 
-    if(currentHealth === 0){
+    if(currentHealth <= 0){
         attackBoolean = false;
     }
 

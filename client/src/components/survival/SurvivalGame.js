@@ -4,13 +4,14 @@ import Player from './Player';
 import turns from '../../helpers/turns';
 import { NavLink } from 'react-router-dom';
 
+
 const SurvivalGame = (props) => {
     const charId = Number(props.match.url[props.match.url.length - 1])
 
     const initiativeRollButn = useRef();
 
     const [playerData, setPlayerData] = useState([]);
-    const [currentHealth, setCurrentHealth] = useState(null);
+    const [currentHealth, setCurrentHealth] = useState(10);
     const [enemies, setEnemies] = useState([]);
     const [lower, setLower] = useState(0);
     const [upper, setUpper] = useState(0.5);
@@ -19,6 +20,8 @@ const SurvivalGame = (props) => {
     const [status, setStatus] = useState('');
     const [turnList, setTurnList] = useState([]);
     const [turn, setTurn] = useState(null)
+
+    const deadBoolean = currentHealth <= 0;
 
     useEffect(() => {
         getPlayerData();
@@ -74,6 +77,33 @@ const SurvivalGame = (props) => {
         setEnemies(objects)
     }
 
+    if(deadBoolean){
+        return (
+            <div>
+                <div className='survival-nav-bar'>
+                    <div className='back-button2'>
+                        <NavLink to='/' className='button-links2'>
+                            <i class="fas fa-arrow-circle-left back-icon"></i>
+                            <div>Quit</div>
+                        </NavLink>
+                    </div>
+                    <div className='depth-rank'>{`Current Depth: ${depth}`}</div>
+                </div>
+                <div className='monster-cards'>
+                    {monsters}
+                </div>
+                <div className='death-container'>
+                    <div className='you-died'>You Died...</div>
+                    <div className='back-button3'>
+                        <NavLink to='/survival-start' className='button-links2'>
+                            <div>Try Again?</div>
+                        </NavLink>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+
     return (
         <>
             <div className='survival-nav-bar'>
@@ -95,7 +125,6 @@ const SurvivalGame = (props) => {
                 {playerBar}
             </div>
         </>
-
     )
 }
 

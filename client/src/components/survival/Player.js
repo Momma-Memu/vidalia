@@ -10,7 +10,7 @@ const Player = ({ status, setStatus, setTurn, turnList, setTurnList, currentHeal
 
     let abilityBoolean = turnList.length > 0 && turnList[0] === data.turn;
 
-    if(currentHealth === 0){
+    if(currentHealth <= 0){
         abilityBoolean = false;
     }
 
