@@ -1,0 +1,97 @@
+.player-bar{
+    display: flex;
+    margin-top: 20px;
+    border: solid 1px #000000;
+    background-color: #7e5858;
+    border-radius: 4px;
+    box-shadow: 5px 5px 5px #88888848;
+    padding: 10px 10px 10px 10px;
+    justify-content: space-around;
+}
+
+.inventory-container{
+    border: solid 1px black;
+    border-radius: 3px;
+    background-color: white;
+    min-width: 200px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 5px 5px 5px #88888848;
+}
+
+.equipment-header{
+    text-align: center;
+    background-color: rgb(143, 53, 53);
+    color: white;
+    font-size: 18px;
+    padding: 10px 5px 10px 5px;
+}
+
+.use-ability-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-top: solid 1px black;
+    border-bottom: solid 1px black;
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    padding: 5px 0px 5px 0px;
+}
+
+.ability-name{
+    text-align: center;
+}
+
+.ability-description{
+    font-size: 12px;
+    text-align: center;
+}
+
+.ability-uses{
+    text-align: center;
+}
+
+.use-ability-button{
+    align-self: center;
+    border: solid 1px black;
+    border-radius: 4px;
+    background-color: black;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px 5px 5px 5px;
+    margin-right: 10px;
+    text-align: center;
+    font-size: 11px;
+}
+
+.use-ability-button:hover{
+    cursor: pointer;
+}
+
+.HP-bar{
+    background-color: rgb(65, 163, 65);
+    max-width: 220px;
+    text-align: center;
+    color: white;
+}
+
+.info-button{
+    border-radius: 3px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 3px 5px 3px 5px;
+}
+
+.player-item-container{
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: solid 1px black;
+    padding: 5px 5px 5px 5px;
+}
+
+.info-button:hover{
+    cursor: pointer;
+}

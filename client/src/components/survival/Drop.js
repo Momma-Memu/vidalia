@@ -1,17 +1,20 @@
-import React, { useContext } from 'react';
+import React, { useContext, useRef } from 'react';
 import { survivalPlayer } from '../../Context';
 
 
 const Drop = ({data}) => {
     const { items, setItems } = useContext(survivalPlayer);
+    const itemRef = useRef();
+
 
 
     const pickUpItem = () => {
+        itemRef.current.classList.add('hide');
         setItems([...items, data])
     }
 
     return(
-        <div className='drop-item-container'>
+        <div className='drop-item-container' ref={itemRef}>
             <div className='drop-name'>{data.name}</div>
             <div className='drop-description'>{data.description}</div>
             <div className='drop-body'>

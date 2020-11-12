@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { subtractUse } from '../../helpers/useAbility';
 import { statusSetter } from '../../helpers/statusSetter';
+import InfoButton from '../../helpers/InfoButton';
 
 const Player = ({ playerData, items, setPlayerData, status, setStatus, setTurn, turnList, setTurnList, currentHealth, setCurrentHealth, data}) => {
 
@@ -32,8 +33,9 @@ const Player = ({ playerData, items, setPlayerData, status, setStatus, setTurn, 
 
     const itemElements = items.map((item) => {
         return (
-            <div>
-                <div>{item.name}</div>
+            <div className='player-item-container'>
+                <div className='item-name'>{item.name}</div>
+                <InfoButton data={item} />
             </div>
         )
     })
@@ -64,11 +66,11 @@ const Player = ({ playerData, items, setPlayerData, status, setStatus, setTurn, 
                 </div>
             </div>
             <div className='inventory-container'>
+                <div className='equipment-header'>Equipment</div>
                 <div className='use-ability-container'>
                     <div className='ability-name'>{data.Ability.name}</div>
-                    <div className='ability-description'>{data.Ability.description}</div>
-                    <div className='ability-uses'>{`Uses: ${data.Ability.uses}`}</div>
-                    {!abilityBoolean ? null : <div className='use-ability-button' onClick={useAbility}>{`Use ${data.Ability.name}`}</div>}
+                    <InfoButton data={data.Ability} />
+                    {!abilityBoolean ? null : <div className='use-ability-button' onClick={useAbility}>{`Use: ${data.Ability.uses}x`}</div>}
                 </div>
                 <div>
                     {itemElements}
