@@ -16,6 +16,7 @@ const SurvivalGame = (props) => {
     const [upper, setUpper] = useState(0.5);
     const [depth, setDepth] = useState(0);
     const [cleardRoom, setClearedRoom] = useState(0);
+    const [status, setStatus] = useState('');
     const [turnList, setTurnList] = useState([]);
     const [turn, setTurn] = useState(null)
 
@@ -51,10 +52,11 @@ const SurvivalGame = (props) => {
     const monsters = enemies.map((enemy) =>
     <Monster currentHealth={currentHealth} setCurrentHealth={setCurrentHealth}
     playerData={playerData} turnList={turnList} setTurnList={setTurnList}
-     setTurn={setTurn} turn={turn} data={enemy} enemies={enemies} setEnemies={setEnemies}/>)
+     setTurn={setTurn} turn={turn} data={enemy} enemies={enemies} setEnemies={setEnemies}
+     status={status} setStatus={setStatus}/>)
 
     const playerBar = playerData.map((data) => <Player currentHealth={currentHealth}
-    setCurrentHealth={setCurrentHealth} setTurnList={setTurnList} setTurn={setTurn} turn={turn} data={data} />)
+    setCurrentHealth={setCurrentHealth} status={status} setStatus={setStatus} setTurn={setTurn} turn={turn} turnList={turnList} setTurnList={setTurnList} turn={turn} data={data} />)
 
     const handleTurns = (e) => {
         initiativeRollButn.current.classList.add('hide');

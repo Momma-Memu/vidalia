@@ -1,10 +1,24 @@
 import React, { useEffect } from 'react';
 
-const Player = ({currentHealth, setCurrentHealth, data}) => {
+const Player = ({ status, setStatus, setTurn, turnList, setTurnList, currentHealth, setCurrentHealth, data}) => {
 
     useEffect(() => {
         setCurrentHealth(data.hitPoints)
-    }, [])
+    }, [status])
+
+    const newTurnList = [...turnList]
+
+    const abilityBoolean = turnList.length > 0 && turnList[0] === data.turn;
+
+    const useAbility = () => {
+        if(data.Ability.name === 'Teleport'){
+            setStatus('immune')
+        }
+        const turnSpent = newTurnList.shift()
+        newTurnList.push(turnSpent)
+        setTurnList(newTurnList)
+        setTurn(newTurnList[0])
+    }
 
     return (
         <>
@@ -28,12 +42,14 @@ const Player = ({currentHealth, setCurrentHealth, data}) => {
                 <div>{!data.turn ? '' : `Initiative: ${data.turn}`}</div>
                 <div>{`Ability: ${data.Ability.name}`}</div>
                 <div>{`Weakness: ${data.Class.weakness}`}</div>
+                <div>{!status ? '' : status}</div>
             </div>
         </div>
         <div className='use-ability-container'>
-            <div>{data.Ability.name}</div>
-            <div>{data.Ability.description}</div>
-            <div className='use-ability-button'>Use Ability</div>
+            <div className='ability-name'>{data.Ability.name}</div>
+            <div className='ability-description'>{data.Ability.description}</div>
+            <div className='ability-uses'>{`Uses: ${data.Ability.uses}`}</div>
+            {!abilityBoolean ? null : <div className='use-ability-button' onClick={useAbility}>{`Use ${data.Ability.name}`}</div>}
         </div>
         </>
     )

@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Dice, d20 } from '../../helpers/dice'
 
-const Monster = ({currentHealth, setCurrentHealth, playerData, turnList, setTurnList, turn, setTurn, data, enemies, setEnemies}) => {
+const Monster = ({currentHealth, setCurrentHealth, playerData, turnList,
+    setTurnList, turn, setTurn, data, enemies, setEnemies, setStatus, status}) => {
+
     const initiative = data.turn;
     const newTurnList = [...turnList]
     const [monstHealth, setMonstHealth] = useState(data.hitPoints);
@@ -19,6 +21,7 @@ const Monster = ({currentHealth, setCurrentHealth, playerData, turnList, setTurn
                 attackPlayer();
                 setTurnList(newTurnList)
                 setTurn(newTurnList[0])
+                if(turnList[0] === playerData[0].turn) setStatus('');
             }, 2000);
         }
     }, [turn, initiative, monstHealth])
@@ -30,15 +33,17 @@ const Monster = ({currentHealth, setCurrentHealth, playerData, turnList, setTurn
     diceName = diceName.join('')
 
     const attackPlayer = () => {
+        if(status === 'immune') return;
         const attackDice = new Dice(diceName, sides)
         const initialDamage = attackDice.roll(rolls);
         let damage = initialDamage - (Math.floor(playerData[0].armorClass / 2))
+
         if(damage < 0){
             damage = 0
         }
 
-        const monsterAccuracy = d20.roll(1) + (data.dexterity - 8)
-        const playerDodge = d20.roll(1) + (playerData[0].armorClass - 8)
+        const monsterAccuracy = d20.roll(1) + (data.dexterity - 10)
+        const playerDodge = d20.roll(1) + (playerData[0].armorClass - 10)
 
         if(monsterAccuracy > playerDodge){
             const newHealth = currentHealth - damage;
@@ -53,21 +58,17 @@ const Monster = ({currentHealth, setCurrentHealth, playerData, turnList, setTurn
         let pDiceName = [base.split('d')[1]]
         pDiceName.unshift('d')
         pDiceName = pDiceName.join('')
-        console.log(pDiceName)
-        console.log(turnList);
 
         const attackDice = new Dice(diceName, pSides)
         const initialDamage = attackDice.roll(pRolls);
         let damage = initialDamage - (Math.floor(data.armorClass / 2));
-        console.log(damage)
-        console.log(data.armorClass)
+
         if(damage < 0) damage = 0;
-        const monsterDodge = d20.roll(1) + (data.armorClass - 8)
-        const playerAccuracy = d20.roll(1) + (playerData[0].dexterity - 8)
+        const monsterDodge = d20.roll(1) + (data.armorClass - 10)
+        const playerAccuracy = d20.roll(1) + (playerData[0].dexterity - 10)
         if(playerAccuracy > monsterDodge){
             const newHealth = monstHealth - damage;
-            console.log(newHealth)
-            console.log(damage)
+
             if(newHealth <= 0){
                 killMonster();
             } else {
