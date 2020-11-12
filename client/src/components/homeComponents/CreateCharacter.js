@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import Nav from './Nav';
 import { authContext } from '../../Context';
 import TextField from '@material-ui/core/TextField';
+import { NavLink, Redirect } from 'react-router-dom';
 
 
 const CreateCharacter = () => {
@@ -35,7 +36,9 @@ const CreateCharacter = () => {
             },
             body: JSON.stringify(data)
         })
-        const resData = res.json();
+        // return (
+        //     <Redirect to="/characters"/>
+        // )
     }
 
     const chooseAbility = (e) => {
@@ -104,7 +107,11 @@ const CreateCharacter = () => {
                             </select>
                         </div>
                         {classElements}
-                        <div className='char-maker-button' onClick={handleCreateCharacter}>Create Character</div>
+                        <div className='link-butn-wrapper'>
+                            <NavLink to='/characters' className='butn-link-char-maker'>
+                                <div className='char-maker-button' onClick={handleCreateCharacter}>Create Character</div>
+                            </NavLink>
+                        </div>
                     </form>
                 </div>
             </div>

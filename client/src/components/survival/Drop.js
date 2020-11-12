@@ -1,6 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { survivalPlayer } from '../../Context';
+
 
 const Drop = ({data}) => {
+    const { items, setItems } = useContext(survivalPlayer);
+
+
+    const pickUpItem = () => {
+        setItems([...items, data])
+    }
 
     return(
         <div className='drop-item-container'>
@@ -11,7 +19,7 @@ const Drop = ({data}) => {
                 {!data.hitDice ? null : <div className='drop-info2'>{`Hit Dice: ${data.hitDice}`}</div>}
             </div>
             <div className='item-button-wrapper'>
-                {!data.damageType ? <div className='item-button'>{`Pick up ${data.name}`}</div> : <div className='item-button'>{`Equip ${data.name}`}</div>}
+                {!data.damageType ? <div className='item-button' onClick={pickUpItem}>{`Pick up ${data.name}`}</div> : <div className='item-button'>{`Equip ${data.name}`}</div>}
             </div>
         </div>
     )

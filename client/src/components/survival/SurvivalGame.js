@@ -18,12 +18,13 @@ const SurvivalGame = (props) => {
     const [lower, setLower] = useState(0);
     const [upper, setUpper] = useState(0.5);
     const [depth, setDepth] = useState(0);
+    const [items, setItems] = useState([]);
     const [clearedRoom, setClearedRoom] = useState(false);
     const [status, setStatus] = useState('');
     const [turnList, setTurnList] = useState([]);
     const [turn, setTurn] = useState(null)
 
-    const playerContext = { playerData, setPlayerData };
+    const playerContext = { playerData, setPlayerData, items, setItems };
 
     const deadBoolean = currentHealth <= 0;
 
@@ -42,7 +43,8 @@ const SurvivalGame = (props) => {
             body: JSON.stringify({ id: charId })
         })
         const data = await res.json();
-        setPlayerData([data])
+        setItems([data.Class.Starter.Item]);
+        setPlayerData([data]);
     }
 
     const getEnemies = async() => {
