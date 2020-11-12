@@ -68,7 +68,7 @@ const SurvivalGame = (props) => {
     const playerBar = playerData.map((data) => <Player currentHealth={currentHealth}
     setCurrentHealth={setCurrentHealth} status={status} setStatus={setStatus}
     setTurn={setTurn} turn={turn} turnList={turnList} setTurnList={setTurnList}
-    playerData={playerData} setPlayerData={setPlayerData} turn={turn} data={data} />)
+    playerData={playerData} setPlayerData={setPlayerData} turn={turn} data={data} items={items}/>)
 
     const handleTurns = (e) => {
         initiativeRollButn.current.classList.add('hide');
