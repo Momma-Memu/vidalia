@@ -8,8 +8,12 @@ const Monster = ({currentHealth, setCurrentHealth, playerData, turnList,
     const newTurnList = [...turnList]
     const [monstHealth, setMonstHealth] = useState(data.hitPoints);
 
-    const attackBoolean = turnList.length > 0 && turnList[0] === playerData[0].turn;
+    let attackBoolean = turnList.length > 0 && turnList[0] === playerData[0].turn;
     const highlighter = useRef();
+
+    if(currentHealth === 0){
+        attackBoolean = false;
+    }
 
     useEffect(() => {
         if(turn === initiative){

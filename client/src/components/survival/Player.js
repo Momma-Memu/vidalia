@@ -8,7 +8,11 @@ const Player = ({ status, setStatus, setTurn, turnList, setTurnList, currentHeal
 
     const newTurnList = [...turnList]
 
-    const abilityBoolean = turnList.length > 0 && turnList[0] === data.turn;
+    let abilityBoolean = turnList.length > 0 && turnList[0] === data.turn;
+
+    if(currentHealth === 0){
+        abilityBoolean = false;
+    }
 
     const useAbility = () => {
         if(data.Ability.name === 'Teleport'){
