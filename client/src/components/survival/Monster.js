@@ -25,8 +25,8 @@ const Monster = ({currentHealth, setCurrentHealth, playerData, turnList,
                 attackPlayer();
                 setTurnList(newTurnList)
                 setTurn(newTurnList[0])
-                if(turnList[0] === playerData[0].turn) setStatus('');
-            }, 2000);
+                if(turnList[1] === playerData[0].turn) setStatus('');
+            }, 1000);
         }
     }, [turn, initiative, monstHealth])
 

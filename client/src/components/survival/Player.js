@@ -1,9 +1,12 @@
 import React, { useEffect } from 'react';
+import { subtractUse } from '../../helpers/useAbility';
 
-const Player = ({ status, setStatus, setTurn, turnList, setTurnList, currentHealth, setCurrentHealth, data}) => {
+const Player = ({ playerData, setPlayerData, status, setStatus, setTurn, turnList, setTurnList, currentHealth, setCurrentHealth, data}) => {
 
     useEffect(() => {
-        setCurrentHealth(data.hitPoints)
+        if(turnList.length <= 0){
+            setCurrentHealth(data.hitPoints)
+        }
     }, [status])
 
     const newTurnList = [...turnList]
@@ -15,6 +18,10 @@ const Player = ({ status, setStatus, setTurn, turnList, setTurnList, currentHeal
     }
 
     const useAbility = () => {
+        if(data.Ability.uses <= 0) return;
+
+        subtractUse(playerData[0], setPlayerData);
+
         if(data.Ability.name === 'Teleport'){
             setStatus('immune')
         }

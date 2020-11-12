@@ -12,15 +12,19 @@ const router = express.Router();
 router.post('/', asyncHandler(async function (req, res, next) {
     const cost = req.body.cost;
     const charClass = req.body.name;
-    const weapons = Weapon.findAll({ where: { cost: { [Op.between]: [0, cost] } }})
-    const items = Item.findAll({ where: { cost: { [Op.between]: [0, cost] } }})
-    const spells = Spell.findAll();
+    const weapons = await Weapon.findAll({ where: { cost: { [Op.between]: [0, cost] } }})
+    const items = await Item.findAll({ where: { cost: { [Op.between]: [0, cost] } }})
+    const spells = await Spell.findAll();
+
+    // console.log(`===================== ${weapons.length}`)
+
 
     let drops = [];
+    let data = [];
     if(charClass !== 'Sorcerer'){
-        drops = [...weapons, ...items]
+        data = [...weapons, ...items]
     } else {
-        drops = [...weapons, ...items, ...spells]
+        data = [...weapons, ...items, ...spells]
     }
 
     let numOfDrops = Math.floor(Math.random() * 5)
@@ -30,11 +34,11 @@ router.post('/', asyncHandler(async function (req, res, next) {
     }
 
     for(let i = 0; i < numOfDrops; i++){
-        monsters.push(data[Math.floor(Math.random() * (data.length - 1))])
+        drops.push(data[Math.floor(Math.random() * (data.length - 1))])
     }
 
 
-    // res.json(chara)
+    res.json(drops)
 }));
 
 module.exports = router;
