@@ -15,7 +15,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 });
 
 
-export default function AlertDialogSlide({name, depth}) {
+export default function AlertDialogSlide({name, depth, setWeapon}) {
   const [open, setOpen] = React.useState(false);
   const [loot, setLoot] = useState([])
 
@@ -55,7 +55,7 @@ export default function AlertDialogSlide({name, depth}) {
     setLoot(data)
   }
 
-  const drops = loot.map((data) => <Drop data={data} />)
+  const drops = loot.map((data) => <Drop setWeapon={setWeapon} data={data} />)
 
   return (
     <div>

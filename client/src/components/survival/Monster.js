@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import { Dice, d20 } from '../../helpers/dice'
+import { survivalPlayer } from '../../Context';
 
 const Monster = ({currentHealth, setCurrentHealth, playerData, turnList,
     setTurnList, turn, setTurn, data, enemies, setEnemies, setStatus, status, setClearedRoom, clearedRoom}) => {
@@ -7,6 +8,7 @@ const Monster = ({currentHealth, setCurrentHealth, playerData, turnList,
     const initiative = data.turn;
     const newTurnList = [...turnList]
     const [monstHealth, setMonstHealth] = useState(data.hitPoints);
+      const { weapon } = useContext(survivalPlayer);
 
     let attackBoolean = turnList.length > 0 && turnList[0] === playerData[0].turn;
     const highlighter = useRef();
@@ -58,7 +60,7 @@ const Monster = ({currentHealth, setCurrentHealth, playerData, turnList,
     }
 
     const handleAttack = () => {
-        const base = playerData[0].Class.Starter.Weapon.hitDice
+        const base = weapon.hitDice;
         const pRolls = Number(base.split('d')[0])
         const pSides = Number(base.split('d')[1])
         let pDiceName = [base.split('d')[1]]

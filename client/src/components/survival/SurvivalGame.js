@@ -19,13 +19,14 @@ const SurvivalGame = (props) => {
     const [upper, setUpper] = useState(0.5);
     const [depth, setDepth] = useState(0);
     const [items, setItems] = useState([]);
+    const [weapon, setWeapon] = useState({})
     const [clearedRoom, setClearedRoom] = useState(false);
     const [status, setStatus] = useState('');
     const [damageType, setDamageType] = useState('');
     const [turnList, setTurnList] = useState([]);
     const [turn, setTurn] = useState(null)
 
-    const playerContext = { playerData, setPlayerData, items, setItems };
+    const playerContext = { playerData, currentHealth, setCurrentHealth, setPlayerData, items, setItems, weapon, setWeapon };
 
     const deadBoolean = currentHealth <= 0;
 
@@ -45,6 +46,7 @@ const SurvivalGame = (props) => {
         })
         const data = await res.json();
         setItems([data.Class.Starter.Item]);
+        setWeapon(data.Class.Starter.Weapon);
         setPlayerData([data]);
     }
 
@@ -64,13 +66,13 @@ const SurvivalGame = (props) => {
     <Monster currentHealth={currentHealth} setCurrentHealth={setCurrentHealth}
     playerData={playerData} turnList={turnList} setTurnList={setTurnList}
      setTurn={setTurn} turn={turn} data={enemy} enemies={enemies} setEnemies={setEnemies}
-     status={status} setStatus={setStatus} clearedRoom={clearedRoom} setClearedRoom={setClearedRoom}/>)
+     status={status} setStatus={setStatus} clearedRoom={clearedRoom} weapon={weapon} setClearedRoom={setClearedRoom}/>)
 
     const playerBar = playerData.map((data) => <Player currentHealth={currentHealth}
     setCurrentHealth={setCurrentHealth} status={status} setStatus={setStatus}
     setTurn={setTurn} turn={turn} turnList={turnList} setTurnList={setTurnList}
     playerData={playerData} setPlayerData={setPlayerData} turn={turn} data={data} items={items}
-    damageType={damageType} setDamageType={setDamageType} setItems={setItems} />)
+    damageType={damageType} setDamageType={setDamageType} setItems={setItems}/>)
 
     const handleTurns = (e) => {
         initiativeRollButn.current.classList.add('hide');
@@ -127,7 +129,7 @@ const SurvivalGame = (props) => {
                     <div className='depth-rank'>{`Current Depth: ${depth}`}</div>
                 </div>
                 <div className='loot-button-container'>
-                    {!clearedRoom ? null: <ItemDrop name={playerData[0].Class.name} depth={depth} />}
+                    {!clearedRoom ? null: <ItemDrop setWeapon={setWeapon} name={playerData[0].Class.name} depth={depth} />}
                 </div>
                 <div className='monster-cards'>
                     {monsters}

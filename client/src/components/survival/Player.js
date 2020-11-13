@@ -1,12 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { subtractUse } from '../../helpers/useAbility';
 import { statusSetter } from '../../helpers/statusSetter';
 import InfoButton from '../../helpers/InfoButton';
-import inventoryItem from './InventoryItem';
 import InventoryItem from './InventoryItem';
+import { survivalPlayer } from '../../Context';
 
-const Player = ({ playerData, setItems, items, setPlayerData, status, setStatus, setTurn,
-    turnList, setTurnList, currentHealth, setCurrentHealth, data, damageType, setDamageType}) => {
+const Player = ({ playerData, setPlayerData, status, setStatus, setTurn,
+    turnList, setTurnList, data, damageType, setDamageType}) => {
+
+    const { items, setItems, currentHealth, setCurrentHealth, weapon, setWeapon } = useContext(survivalPlayer);
 
     useEffect(() => {
         if(turnList.length <= 0){
@@ -79,6 +81,10 @@ const Player = ({ playerData, setItems, items, setPlayerData, status, setStatus,
                 <div></div>
                 <div>
                     {itemElements}
+                    <div className='weapon-container'>
+                        <div>{`Weapon: ${weapon.name}`}</div>
+                        <InfoButton data={weapon} />
+                    </div>
                 </div>
             </div>
         </>

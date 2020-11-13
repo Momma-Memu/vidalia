@@ -108,3 +108,14 @@
 .use-item-button:hover{
     cursor: pointer;
 }
+
+.weapon-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: solid 1px black;
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    padding: 5px 0px 5px 0px;
+}

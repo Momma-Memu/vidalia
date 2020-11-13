@@ -3,7 +3,7 @@ import { survivalPlayer } from '../../Context';
 
 
 const Drop = ({data}) => {
-    const { items, setItems } = useContext(survivalPlayer);
+    const { items, setItems, setWeapon } = useContext(survivalPlayer);
     const itemRef = useRef();
 
 
@@ -11,6 +11,11 @@ const Drop = ({data}) => {
     const pickUpItem = () => {
         itemRef.current.classList.add('hide');
         setItems([...items, data])
+    }
+
+    const equipWeapon = () => {
+        itemRef.current.classList.add('hide');
+        setWeapon(data)
     }
 
     return(
@@ -22,7 +27,7 @@ const Drop = ({data}) => {
                 {!data.hitDice ? null : <div className='drop-info2'>{`Hit Dice: ${data.hitDice}`}</div>}
             </div>
             <div className='item-button-wrapper'>
-                {!data.damageType ? <div className='item-button' onClick={pickUpItem}>{`Pick up ${data.name}`}</div> : <div className='item-button'>{`Equip ${data.name}`}</div>}
+                {!data.damageType ? <div className='item-button' onClick={pickUpItem}>{`Pick up ${data.name}`}</div> : <div className='item-button' onClick={equipWeapon}>{`Equip ${data.name}`}</div>}
             </div>
         </div>
     )
