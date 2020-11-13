@@ -8,7 +8,7 @@ import { survivalPlayer } from '../../Context';
 const Player = ({ playerData, setPlayerData, status, setStatus, setTurn,
     turnList, setTurnList, data, damageType, setDamageType}) => {
 
-    const { items, setItems, currentHealth, setCurrentHealth, weapon, setWeapon } = useContext(survivalPlayer);
+    const { items, setItems, currentHealth, setCurrentHealth, weapon, setWeapon, clearedRoom } = useContext(survivalPlayer);
 
     useEffect(() => {
         if(turnList.length <= 0){
@@ -25,10 +25,12 @@ const Player = ({ playerData, setPlayerData, status, setStatus, setTurn,
     }
 
     const useAbility = () => {
+        if(data.Ability.name === status) return;
         if(data.Ability.uses <= 0) return;
 
         subtractUse(playerData[0], setPlayerData);
         statusSetter(data.Ability.name, setStatus)
+        if(data.Ability.name === 'Poison Bite') return;
 
         const turnSpent = newTurnList.shift()
         newTurnList.push(turnSpent)

@@ -2,12 +2,14 @@ import React, { useState, useEffect, useRef, useContext } from 'react';
 import { Dice, d20 } from '../../helpers/dice'
 import { survivalPlayer } from '../../Context';
 
-const Monster = ({ playerData, turnList, setTurnList, turn, setTurn, data, enemies, setEnemies, setStatus, status, setClearedRoom, clearedRoom}) => {
+const Monster = ({ playerData, currentHealth, setCurrentHealth, turnList, setTurnList, turn, setTurn, data, enemies, setEnemies, setStatus, status, setClearedRoom, clearedRoom}) => {
 
     const initiative = data.turn;
     const newTurnList = [...turnList]
     const [monstHealth, setMonstHealth] = useState(data.hitPoints);
-      const { weapon, currentHealth, setCurrentHealth } = useContext(survivalPlayer);
+    const [monstStatus, setMonstStatus] = useState('');
+    const { weapon } = useContext(survivalPlayer);
+    console.log(data)
 
     let attackBoolean = turnList.length > 0 && turnList[0] === playerData[0].turn;
     const highlighter = useRef();
@@ -40,6 +42,12 @@ const Monster = ({ playerData, turnList, setTurnList, turn, setTurn, data, enemi
     const attackPlayer = () => {
         if(status === 'Teleport') return;
         if(status === 'Dispair') return;
+        if(monstStatus === 'poisoned') setMonstHealth(monstHealth - 5);
+        setMonstStatus('')
+        if(monstHealth <= 0) {
+            killMonster();
+            return;
+        }
         const attackDice = new Dice(diceName, sides)
         const initialDamage = attackDice.roll(rolls);
         let damage = initialDamage - (Math.floor(playerData[0].armorClass / 2))
@@ -73,6 +81,11 @@ const Monster = ({ playerData, turnList, setTurnList, turn, setTurn, data, enemi
 
         if(damage < 0) damage = 0;
         if(status === 'explosion') damage += 100;
+        if(status === 'Poison bite'){
+            const monsterDodge = d20.roll(1)
+            const playerAccuracy = d20.roll(1)
+            if(monsterDodge < playerAccuracy) setMonstStatus('poisoned')
+        }
         const monsterDodge = d20.roll(1) + (data.armorClass - 10)
         const playerAccuracy = d20.roll(1) + (playerData[0].dexterity - 10)
         if(playerAccuracy > monsterDodge){
@@ -115,6 +128,7 @@ const Monster = ({ playerData, turnList, setTurnList, turn, setTurn, data, enemi
             <div className='monster-health'>{monstHealth}</div>
             <div>{data.type}</div>
             <div>{!data.turn ? '' : `Initiative: ${data.turn}`}</div>
+            <div>{monstStatus}</div>
             {!attackBoolean ? null : <div className='attack-buttn' onClick={handleAttack}>Attack</div>}
         </div>
     )

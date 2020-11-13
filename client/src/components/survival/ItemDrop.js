@@ -19,8 +19,7 @@ export default function AlertDialogSlide({name, depth, setWeapon}) {
   const [open, setOpen] = React.useState(false);
   const [loot, setLoot] = useState([])
 
-  const { playerData } = useContext(survivalPlayer);
-  console.log(playerData);
+  const { playerData, getEnemies, killSets, setKillSets, initiativeRollButn, setTurn, turn, setTurnList, turnList } = useContext(survivalPlayer);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -40,6 +39,9 @@ export default function AlertDialogSlide({name, depth, setWeapon}) {
 
   useEffect(() => {
     getLoot()
+    setKillSets(killSets + 1);
+    setTurnList([])
+    setTurn(null);
   }, [])
 
   const getLoot = async() => {
@@ -51,11 +53,16 @@ export default function AlertDialogSlide({name, depth, setWeapon}) {
         body: JSON.stringify({ name, cost })
     })
     const data = await res.json();
-    console.log(data)
     setLoot(data)
   }
 
   const drops = loot.map((data) => <Drop setWeapon={setWeapon} data={data} />)
+
+  const handleContinue = () => {
+    initiativeRollButn.current.classList.remove('hide')
+    getEnemies();
+    handleClose();
+  }
 
   return (
     <div>
@@ -80,10 +87,10 @@ export default function AlertDialogSlide({name, depth, setWeapon}) {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">
-            Disagree
+            Close
           </Button>
-          <Button onClick={handleClose} color="primary">
-            Agree
+          <Button onClick={handleContinue} color="primary">
+            Continue
           </Button>
         </DialogActions>
       </Dialog>

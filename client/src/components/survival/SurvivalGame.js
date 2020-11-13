@@ -20,16 +20,14 @@ const SurvivalGame = (props) => {
     const [depth, setDepth] = useState(0);
     const [items, setItems] = useState([]);
     const [weapon, setWeapon] = useState({})
+    const [killSets, setKillSets] = useState(0);
     const [clearedRoom, setClearedRoom] = useState(false);
     const [status, setStatus] = useState('');
     const [damageType, setDamageType] = useState('');
     const [turnList, setTurnList] = useState([]);
     const [turn, setTurn] = useState(null)
 
-    const playerContext = { playerData, currentHealth, setCurrentHealth, setPlayerData, items, setItems, weapon, setWeapon };
-
     const deadBoolean = currentHealth <= 0;
-
 
     useEffect(() => {
         getPlayerData();
@@ -116,6 +114,10 @@ const SurvivalGame = (props) => {
             </div>
         )
     }
+
+    const playerContext = { setTurnList, turn, setTurn, getEnemies,
+        initiativeRollButn, playerData, currentHealth, setLower, setUpper, upper, lower, depth, setDepth,
+        setCurrentHealth, setPlayerData, items, setItems, weapon, setWeapon, killSets, setKillSets, clearedRoom};
 
     return (
         <survivalPlayer.Provider value={playerContext}>
