@@ -24,7 +24,6 @@ export default function AlertDialogSlide({name, depth, setWeapon}) {
 
   const handleClickOpen = () => {
     setOpen(true);
-    getLoot();
   };
 
   const handleClose = () => {
@@ -60,7 +59,7 @@ export default function AlertDialogSlide({name, depth, setWeapon}) {
     setLoot(data)
   }
 
-  const drops = loot.map((data) => <Drop setWeapon={setWeapon} data={data} />)
+  const drops = loot.map((data) => <Drop loot={loot} setLoot={setLoot} setWeapon={setWeapon} data={data} />)
 
   const handleContinue = () => {
     initiativeRollButn.current.classList.remove('hide')

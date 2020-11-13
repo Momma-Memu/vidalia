@@ -1,20 +1,23 @@
-import React, { useContext, useRef } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { survivalPlayer } from '../../Context';
 
 
 const Drop = ({data}) => {
     const { items, setItems, setWeapon } = useContext(survivalPlayer);
     const itemRef = useRef();
+    const [pickedUp, setPickedUp] = useState(false);
 
-
+    useEffect(() => {
+        setPickedUp(false)
+    }, [data])
 
     const pickUpItem = () => {
-        itemRef.current.classList.add('hide');
+        setPickedUp(true)
         setItems([...items, data])
     }
 
     const equipWeapon = () => {
-        itemRef.current.classList.add('hide');
+        setPickedUp(true)
         setWeapon(data)
     }
 
@@ -27,7 +30,7 @@ const Drop = ({data}) => {
                 {!data.hitDice ? null : <div className='drop-info2'>{`Hit Dice: ${data.hitDice}`}</div>}
             </div>
             <div className='item-button-wrapper'>
-                {!data.damageType ? <div className='item-button' onClick={pickUpItem}>{`Pick up ${data.name}`}</div> : <div className='item-button' onClick={equipWeapon}>{`Equip ${data.name}`}</div>}
+                {pickedUp ? null : !data.damageType ? <div className='item-button' onClick={pickUpItem}>{`Pick up ${data.name}`}</div> : <div className='item-button' onClick={equipWeapon}>{`Equip ${data.name}`}</div>}
             </div>
         </div>
     )

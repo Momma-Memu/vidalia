@@ -30,19 +30,19 @@ const Beastiary = () => {
             <div key={beast.id} className='beast-card'>
                 <div key={beast.name} className='beast-name'>{beast.name}</div>
                 <div className='beast-card-header'>
-                    <div>{`Type: ${beast.type}`}</div>
-                    <div>{`Alignment: ${beast.alignment}`}</div>
+                    <div key={beast.type}>{`Type: ${beast.type}`}</div>
+                    <div key={beast.alignment}>{`Alignment: ${beast.alignment}`}</div>
                 </div>
                 <div>
-                    <div className='beast-card-stat1'>{`Armor Class: ${beast.armorClass}`}</div>
-                    <div className='beast-card-stat2'>{`Charisma: ${beast.charisma}`}</div>
-                    <div className='beast-card-stat1'>{`Constitution: ${beast.constitution}`}</div>
-                    <div className='beast-card-stat2'>{`Dexterity: ${beast.dexterity}`}</div>
-                    <div className='beast-card-stat1'>{`Dice: ${beast.hitDice}`}</div>
-                    <div className='beast-card-stat2'>{`Hit Points: ${beast.hitPoints}`}</div>
-                    <div className='beast-card-stat1'>{`Intelligence: ${beast.intelligence}`}</div>
-                    <div className='beast-card-stat2'>{`Strength: ${beast.strength}`}</div>
-                    <div className='beast-card-stat1'>{`Wisdom: ${beast.wisdom}`}</div>
+                    <div key={beast.armorClass} className='beast-card-stat1'>{`Armor Class: ${beast.armorClass}`}</div>
+                    <div key={beast.charisma} className='beast-card-stat2'>{`Charisma: ${beast.charisma}`}</div>
+                    <div key={beast.constitution} className='beast-card-stat1'>{`Constitution: ${beast.constitution}`}</div>
+                    <div key={beast.dexterity} className='beast-card-stat2'>{`Dexterity: ${beast.dexterity}`}</div>
+                    <div key={beast.hitDice} className='beast-card-stat1'>{`Dice: ${beast.hitDice}`}</div>
+                    <div key={beast.hitPoints} className='beast-card-stat2'>{`Hit Points: ${beast.hitPoints}`}</div>
+                    <div key={beast.intelligence} className='beast-card-stat1'>{`Intelligence: ${beast.intelligence}`}</div>
+                    <div key={beast.strength} className='beast-card-stat2'>{`Strength: ${beast.strength}`}</div>
+                    <div key={beast.wisdom} className='beast-card-stat1'>{`Wisdom: ${beast.wisdom}`}</div>
                 </div>
                 <div className='beast-card-footer'>
                     <div>{`Weakness: ${beast.weakness}`}</div>

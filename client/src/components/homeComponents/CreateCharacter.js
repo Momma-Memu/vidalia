@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import Nav from './Nav';
 import { authContext } from '../../Context';
 import TextField from '@material-ui/core/TextField';
-import { NavLink, Redirect } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 
 const CreateCharacter = () => {
