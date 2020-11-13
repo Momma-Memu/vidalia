@@ -6,8 +6,9 @@ const itemButton = (item, statusMethod, currentUses, usesMethod, itemSetter, ite
             console.log(itemList)
             for(let i = 0; i < itemList.length; i++){
                 let itemObj = itemList[i];
-                if(!itemObj.name === item.name) temp.push(itemObj);
+                if(itemObj.name !== item.name) temp.push(itemObj);
             }
+            console.log(temp)
             itemSetter(temp);
         }
         usesMethod(currentUses - 1);
