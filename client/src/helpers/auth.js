@@ -27,3 +27,13 @@ export function loadUser() {
     }
     return { authentication: { message: '' }, token: authToken };
 }
+
+export const trySignUp = async(username, email, password, confirmPassword, dob) => {
+    const response = await fetch(`/api/session/make`, {
+        method: 'post',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({username, email, password, confirmPassword, dob}),
+    });
+    const data = await response.json();
+    return data;
+}
