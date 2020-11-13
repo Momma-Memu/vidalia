@@ -5,7 +5,8 @@ import InfoButton from '../../helpers/InfoButton';
 import inventoryItem from './InventoryItem';
 import InventoryItem from './InventoryItem';
 
-const Player = ({ playerData, items, setPlayerData, status, setStatus, setTurn, turnList, setTurnList, currentHealth, setCurrentHealth, data}) => {
+const Player = ({ playerData, setItems, items, setPlayerData, status, setStatus, setTurn,
+    turnList, setTurnList, currentHealth, setCurrentHealth, data, damageType, setDamageType}) => {
 
     useEffect(() => {
         if(turnList.length <= 0){
@@ -35,7 +36,10 @@ const Player = ({ playerData, items, setPlayerData, status, setStatus, setTurn, 
 
     const itemElements = items.map((item) => {
         return (
-            <InventoryItem item={item} />
+            <InventoryItem bool={abilityBoolean} item={item}
+            setDamageType={setDamageType} setStatus={setStatus}
+            items={items} setItems={setItems} ogHealth={playerData.hitPoints}
+            currentHealth={currentHealth} setCurrentHealth={setCurrentHealth}/>
         )
     })
 
@@ -62,6 +66,7 @@ const Player = ({ playerData, items, setPlayerData, status, setStatus, setTurn, 
                     <div>{`Ability: ${data.Ability.name}`}</div>
                     <div>{`Weakness: ${data.Class.weakness}`}</div>
                     <div>{!status ? '' : status}</div>
+                    <div>{!damageType ? '' : damageType}</div>
                 </div>
             </div>
             <div className='inventory-container'>

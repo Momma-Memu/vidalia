@@ -70,6 +70,7 @@ const Monster = ({currentHealth, setCurrentHealth, playerData, turnList,
         let damage = initialDamage - (Math.floor(data.armorClass / 2));
 
         if(damage < 0) damage = 0;
+        if(status === 'explosion') damage += 100;
         const monsterDodge = d20.roll(1) + (data.armorClass - 10)
         const playerAccuracy = d20.roll(1) + (playerData[0].dexterity - 10)
         if(playerAccuracy > monsterDodge){

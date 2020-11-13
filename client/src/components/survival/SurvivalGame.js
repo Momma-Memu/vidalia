@@ -21,6 +21,7 @@ const SurvivalGame = (props) => {
     const [items, setItems] = useState([]);
     const [clearedRoom, setClearedRoom] = useState(false);
     const [status, setStatus] = useState('');
+    const [damageType, setDamageType] = useState('');
     const [turnList, setTurnList] = useState([]);
     const [turn, setTurn] = useState(null)
 
@@ -68,7 +69,8 @@ const SurvivalGame = (props) => {
     const playerBar = playerData.map((data) => <Player currentHealth={currentHealth}
     setCurrentHealth={setCurrentHealth} status={status} setStatus={setStatus}
     setTurn={setTurn} turn={turn} turnList={turnList} setTurnList={setTurnList}
-    playerData={playerData} setPlayerData={setPlayerData} turn={turn} data={data} items={items}/>)
+    playerData={playerData} setPlayerData={setPlayerData} turn={turn} data={data} items={items}
+    damageType={damageType} setDamageType={setDamageType} setItems={setItems} />)
 
     const handleTurns = (e) => {
         initiativeRollButn.current.classList.add('hide');
