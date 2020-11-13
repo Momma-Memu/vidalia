@@ -32,4 +32,37 @@ router.post('/', asyncHandler(async function (req, res, next) {
     })
 }));
 
+
+router.post('/make', asyncHandler(async function (req, res, next) {
+    let { username, email, password, confirmPassword, dob } = req.body;
+    console.log(`================ ${username}`)
+    if(password !== confirmPassword){
+        res.status(403).json({success: false, message: 'Passwords do not match.' });
+        return;
+    }
+    const usedEmail = await User.findOne( { where: { email } } );
+    if(usedEmail){
+        res.status(403).json({success: false, message: 'An account with this email already exists.' });
+        return;
+    }
+
+    const usedUserName = await User.findOne( { where: { username } } )
+    if(usedUserName){
+        res.status(403).json({success: false, message: 'An account with this user name already exists.' });
+        return;
+    } else {
+        password = bcrypt.hashSync(password)
+        const data = { email, password, username, dob }
+            const user = await User.create(data);
+            const {jti, token} = generateToken(user)
+            user.tokenId = jti;
+            res.cookie('token', token);
+            res.status(201).json({ id: user.id, username: user.username });
+    }
+    return;
+}))
+
+
+
+
 module.exports = router;

@@ -10,6 +10,7 @@
 }
 
 .sign-up-button{
+    justify-self: flex-end;
     text-align: center;
     align-self: center;
     border: solid 1px black;
