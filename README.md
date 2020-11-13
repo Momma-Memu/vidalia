@@ -1,5 +1,8 @@
 # vidalia
-Vidalia is a random Dungeons and Dragons campaign and event generator. It's friendly to new players and gives people an opportunity to enjoy the game without the need of writing their own campaign. 
+Vidalia is a random Dungeons and Dragons inspired tabletop simulator. It's friendly to new players and gives people an opportunity to enjoy the game without the need of writing their own campaign or learning the ends and outs of Dungeons and Dragons.
+
+## The Database:
+The database currently supports spells, consumables, monsters, classes, weapons, and abilities. 
 
 
 ## How does this work?
@@ -10,10 +13,11 @@ Vidalia is a random Dungeons and Dragons campaign and event generator. It's frie
 
 * Players health and inventory are tracked, eliminating the need for manual tracking of your own. 
 
-* Each base campaign will take place in the magical world of Vidalia, a Matriarchy ruled society by various queens and various islands. The beginnning island, Vidalia, is the place all base campaigns start from. 
-
-* Each base campaign has a beginning year, meaning depending on the year you choose to play the campaign in, different rulers and different circumstances may take place. 
+* Player rolls, modifiers, and damage types are all factored in. 
 
 * Players can interract with NPC's (Non Playable Characters) through a selection of conversation topics which can alter the path of the campaign. 
 
 * Players can attack with their choice of abilities and weapons, all of which will be determined FOR YOU, without the need for dice.
+
+
+
