@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { subtractUse } from '../../helpers/useAbility';
 import { statusSetter } from '../../helpers/statusSetter';
 import InfoButton from '../../helpers/InfoButton';
+import inventoryItem from './InventoryItem';
+import InventoryItem from './InventoryItem';
 
 const Player = ({ playerData, items, setPlayerData, status, setStatus, setTurn, turnList, setTurnList, currentHealth, setCurrentHealth, data}) => {
 
@@ -33,10 +35,7 @@ const Player = ({ playerData, items, setPlayerData, status, setStatus, setTurn, 
 
     const itemElements = items.map((item) => {
         return (
-            <div className='player-item-container'>
-                <div className='item-name'>{item.name}</div>
-                <InfoButton data={item} />
-            </div>
+            <InventoryItem item={item} />
         )
     })
 
@@ -72,6 +71,7 @@ const Player = ({ playerData, items, setPlayerData, status, setStatus, setTurn, 
                     <InfoButton data={data.Ability} />
                     {!abilityBoolean ? null : <div className='use-ability-button' onClick={useAbility}>{`Use: ${data.Ability.uses}x`}</div>}
                 </div>
+                <div></div>
                 <div>
                     {itemElements}
                 </div>
