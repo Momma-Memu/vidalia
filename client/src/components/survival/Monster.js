@@ -2,13 +2,12 @@ import React, { useState, useEffect, useRef, useContext } from 'react';
 import { Dice, d20 } from '../../helpers/dice'
 import { survivalPlayer } from '../../Context';
 
-const Monster = ({currentHealth, setCurrentHealth, playerData, turnList,
-    setTurnList, turn, setTurn, data, enemies, setEnemies, setStatus, status, setClearedRoom, clearedRoom}) => {
+const Monster = ({ playerData, turnList, setTurnList, turn, setTurn, data, enemies, setEnemies, setStatus, status, setClearedRoom, clearedRoom}) => {
 
     const initiative = data.turn;
     const newTurnList = [...turnList]
     const [monstHealth, setMonstHealth] = useState(data.hitPoints);
-      const { weapon } = useContext(survivalPlayer);
+      const { weapon, currentHealth, setCurrentHealth } = useContext(survivalPlayer);
 
     let attackBoolean = turnList.length > 0 && turnList[0] === playerData[0].turn;
     const highlighter = useRef();
@@ -54,6 +53,7 @@ const Monster = ({currentHealth, setCurrentHealth, playerData, turnList,
         const playerDodge = d20.roll(1) + (playerData[0].armorClass - 10)
 
         if(monsterAccuracy > playerDodge){
+            if(currentHealth <= 0) return;
             const newHealth = currentHealth - damage;
             setCurrentHealth(newHealth);
         }
