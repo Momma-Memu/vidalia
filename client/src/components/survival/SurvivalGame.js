@@ -11,6 +11,7 @@ const SurvivalGame = (props) => {
     const charId = Number(props.match.url[props.match.url.length - 1])
 
     const initiativeRollButn = useRef();
+    const lootRef = useRef();
 
     const [playerData, setPlayerData] = useState([]);
     const [currentHealth, setCurrentHealth] = useState(10);
@@ -117,7 +118,7 @@ const SurvivalGame = (props) => {
 
     const playerContext = { setTurnList, turn, setTurn, getEnemies,
         initiativeRollButn, playerData, currentHealth, setLower, setUpper, upper, lower, depth, setDepth,
-        setCurrentHealth, setPlayerData, items, setItems, weapon, setWeapon, killSets, setKillSets, clearedRoom};
+        setCurrentHealth, setPlayerData, items, setItems, weapon, setWeapon, killSets, setKillSets, clearedRoom, lootRef};
 
     return (
         <survivalPlayer.Provider value={playerContext}>

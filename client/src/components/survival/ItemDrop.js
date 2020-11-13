@@ -19,10 +19,12 @@ export default function AlertDialogSlide({name, depth, setWeapon}) {
   const [open, setOpen] = React.useState(false);
   const [loot, setLoot] = useState([])
 
-  const { playerData, getEnemies, killSets, setKillSets, initiativeRollButn, setTurn, turn, setTurnList, turnList } = useContext(survivalPlayer);
+  const { getEnemies, killSets, setKillSets, lootRef,
+     initiativeRollButn, setTurn, setTurnList } = useContext(survivalPlayer);
 
   const handleClickOpen = () => {
     setOpen(true);
+    getLoot();
   };
 
   const handleClose = () => {
@@ -38,13 +40,14 @@ export default function AlertDialogSlide({name, depth, setWeapon}) {
   }
 
   useEffect(() => {
-    getLoot()
-    setKillSets(killSets + 1);
-    setTurnList([])
-    setTurn(null);
-  }, [])
+    if(!loot.length > 0){
+      getLoot()
+    }
+  }, [loot])
+
 
   const getLoot = async() => {
+    console.log('new call')
     const res = await fetch('/api/item-drop', {
         method: 'post',
         headers: {
@@ -53,6 +56,7 @@ export default function AlertDialogSlide({name, depth, setWeapon}) {
         body: JSON.stringify({ name, cost })
     })
     const data = await res.json();
+    console.log(data)
     setLoot(data)
   }
 
@@ -60,15 +64,20 @@ export default function AlertDialogSlide({name, depth, setWeapon}) {
 
   const handleContinue = () => {
     initiativeRollButn.current.classList.remove('hide')
+    lootRef.current.classList.add('hide');
     getEnemies();
+    setKillSets(killSets + 1);
+    setTurnList([])
+    setTurn(null);
+    getLoot();
     handleClose();
   }
 
   return (
     <div>
-      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
+      <div className='loot-button' ref={lootRef} onClick={handleClickOpen}>
         Loot the carnage
-      </Button>
+      </div>
       <Dialog
         open={open}
         TransitionComponent={Transition}

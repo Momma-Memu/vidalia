@@ -3,11 +3,12 @@ const itemButton = (item, statusMethod, currentUses, usesMethod, itemSetter, ite
         statusMethod('explosion')
         if(currentUses === 1){
             const temp = [];
+            console.log(itemList)
             for(let i = 0; i < itemList.length; i++){
                 let itemObj = itemList[i];
                 if(!itemObj.name === item.name) temp.push(itemObj);
-                itemSetter(temp);
             }
+            itemSetter(temp);
         }
         usesMethod(currentUses - 1);
         return;

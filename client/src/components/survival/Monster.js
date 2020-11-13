@@ -8,8 +8,7 @@ const Monster = ({ playerData, currentHealth, setCurrentHealth, turnList, setTur
     const newTurnList = [...turnList]
     const [monstHealth, setMonstHealth] = useState(data.hitPoints);
     const [monstStatus, setMonstStatus] = useState('');
-    const { weapon } = useContext(survivalPlayer);
-    console.log(data)
+    const { weapon, lootRef } = useContext(survivalPlayer);
 
     let attackBoolean = turnList.length > 0 && turnList[0] === playerData[0].turn;
     const highlighter = useRef();
@@ -114,8 +113,11 @@ const Monster = ({ playerData, currentHealth, setCurrentHealth, turnList, setTur
             let x = turnList[i]
             if(x !== initiative) newTurns.push(x)
         }
-        console.log(`new turn list:`, newTurns)
+
         if(newEnemies.length <= 0){
+            if(lootRef.current){
+                lootRef.current.classList.remove('hide')
+            }
             setClearedRoom(true)
         }
         setTurnList(newTurns)
