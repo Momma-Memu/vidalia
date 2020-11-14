@@ -22,9 +22,12 @@ export default function AlertDialogSlide({data}) {
     setOpen(false);
   };
 
+  let weaponStyle;
+  if(data.hitDice) weaponStyle = 'info-button-weapon';
+
   return (
     <div>
-      <div className='info-button' onClick={handleClickOpen}>
+      <div className={!weaponStyle ? 'info-button' : weaponStyle} onClick={handleClickOpen}>
         {data.name}
       </div>
       <Dialog
@@ -39,6 +42,8 @@ export default function AlertDialogSlide({data}) {
         <DialogContent>
           <DialogContentText id="alert-dialog-slide-description">
             {data.description}
+            {!weaponStyle ? '' : <div>{`Hit Dice: ${data.hitDice}`}</div>}
+            {!weaponStyle ? '' : <div>{`Damage Type: ${data.damageType}`}</div>}
           </DialogContentText>
         </DialogContent>
         <DialogActions>

@@ -1,22 +1,24 @@
 const itemButton = (item, statusMethod, currentUses, usesMethod, itemSetter, itemList, ogHealth, health, setHealth) => {
+    if(currentUses === 1){
+        const temp = [];
+        console.log(itemList)
+        for(let i = 0; i < itemList.length; i++){
+            let itemObj = itemList[i];
+            if(itemObj.name !== item.name) temp.push(itemObj);
+        }
+        itemSetter(temp);
+    }
+
     if(item.name === 'Black Powder Bomb'){
         statusMethod('explosion')
-        if(currentUses === 1){
-            const temp = [];
-            console.log(itemList)
-            for(let i = 0; i < itemList.length; i++){
-                let itemObj = itemList[i];
-                if(itemObj.name !== item.name) temp.push(itemObj);
-            }
-            itemSetter(temp);
-        }
         usesMethod(currentUses - 1);
         return;
     }
 
     if(item.name.includes('(Small)')){
         let newHealth = health + 10;
-        if(newHealth > ogHealth){
+        console.log(ogHealth)
+        if(newHealth >= ogHealth){
             setHealth(ogHealth)
         } else {
             setHealth(newHealth)

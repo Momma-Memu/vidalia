@@ -22,7 +22,8 @@ const InventoryItem = ({item, setDamageType, setStatus, items, ogHealth,
     }
 
     const itemUser = () => {
-        itemButton(item, setStatus, uses, setUses, setItems, items, ogHealth, currentHealth, setCurrentHealth)
+        itemButton(item, setStatus, uses, setUses, setItems, items, ogHealth, currentHealth, setCurrentHealth);
+
     }
 
     return(

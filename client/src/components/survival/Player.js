@@ -43,7 +43,7 @@ const Player = ({ playerData, setPlayerData, status, setStatus, setTurn,
         return (
             <InventoryItem bool={abilityBoolean} item={item}
             setDamageType={setDamageType} setStatus={setStatus}
-            items={items} setItems={setItems} ogHealth={playerData.hitPoints}
+            items={items} setItems={setItems} ogHealth={playerData[0].hitPoints}
             currentHealth={currentHealth} setCurrentHealth={setCurrentHealth}/>
         )
     })
@@ -86,6 +86,7 @@ const Player = ({ playerData, setPlayerData, status, setStatus, setTurn,
                 <div>
                     {itemElements}
                     <div className='weapon-container'>
+                        <div className='weapon-header'>Weapon: </div>
                         <InfoButton data={weapon} />
                     </div>
                 </div>
