@@ -86,7 +86,7 @@ const Player = ({ playerData, setPlayerData, status, setStatus, setTurn,
                 <div>
                     {itemElements}
                     <div className='weapon-container'>
-                        <div className='weapon-header'>Weapon: </div>
+                        {/*<div className='weapon-header'>Weapon: </div> */}
                         <InfoButton data={weapon} />
                     </div>
                 </div>
