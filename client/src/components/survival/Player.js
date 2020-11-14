@@ -4,6 +4,7 @@ import { statusSetter } from '../../helpers/statusSetter';
 import InfoButton from '../../helpers/InfoButton';
 import InventoryItem from './InventoryItem';
 import { survivalPlayer } from '../../Context';
+import customSort from '../../helpers/customSort';
 
 const Player = ({ playerData, setPlayerData, status, setStatus, setTurn,
     turnList, setTurnList, data, damageType, setDamageType}) => {
@@ -47,6 +48,8 @@ const Player = ({ playerData, setPlayerData, status, setStatus, setTurn,
         )
     })
 
+    itemElements.sort(customSort);
+
     return (
         <>
             <div className='char-card-container'>
@@ -76,7 +79,6 @@ const Player = ({ playerData, setPlayerData, status, setStatus, setTurn,
             <div className='inventory-container'>
                 <div className='equipment-header'>Equipment</div>
                 <div className='use-ability-container'>
-                    <div className='ability-name'>{data.Ability.name}</div>
                     <InfoButton data={data.Ability} />
                     {!abilityBoolean ? null : <div className='use-ability-button' onClick={useAbility}>{`Use: ${data.Ability.uses}x`}</div>}
                 </div>
@@ -84,7 +86,6 @@ const Player = ({ playerData, setPlayerData, status, setStatus, setTurn,
                 <div>
                     {itemElements}
                     <div className='weapon-container'>
-                        <div>{`Weapon: ${weapon.name}`}</div>
                         <InfoButton data={weapon} />
                     </div>
                 </div>

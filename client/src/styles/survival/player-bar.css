@@ -1,8 +1,12 @@
 .player-bar{
     display: flex;
     margin-top: 20px;
-    border: solid 1px #000000;
-    background-color: #7e5858;
+    /* border: solid 1px #000000; */
+    background: linear-gradient(45deg,#111111 30%, #43257c 120%);
+    /* background-image: url("../../images/player-banner.jpg");
+    background-size: 700px;
+    background-position: center;
+    background-repeat: no-repeat; */
     border-radius: 4px;
     box-shadow: 5px 5px 5px #88888848;
     padding: 10px 10px 10px 10px;
@@ -14,16 +18,24 @@
     border-radius: 3px;
     background-color: white;
     min-width: 200px;
+    max-height: 280px;
+    overflow-y: scroll;
     font-family: Arial, Helvetica, sans-serif;
     box-shadow: 5px 5px 5px #88888848;
 }
 
+.inventory-container::-webkit-scrollbar{
+    display: none;
+}
+
 .equipment-header{
     text-align: center;
-    background-color: rgb(143, 53, 53);
+    background-color: rgb(53, 77, 143);
     color: white;
     font-size: 18px;
     padding: 10px 5px 10px 5px;
+    position: sticky;
+    top: 0;
 }
 
 .use-ability-container{
@@ -74,25 +86,30 @@
     color: white;
 }
 
-.info-button{
-    border-radius: 3px;
-    background-color: black;
-    color: white;
-    text-align: center;
-    padding: 3px 5px 3px 5px;
-}
-
 .player-item-container{
     font-size: 12px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
     border-bottom: solid 1px black;
     padding: 5px 5px 5px 5px;
 }
 
+.info-button{
+    border-radius: 3px;
+    border: solid 1px rgb(128, 85, 199);
+    background-color: rgba(129, 85, 199, 0.075);
+    color: black;
+    text-align: center;
+    padding: 3px 5px 3px 5px;
+    margin-right: auto;
+}
+
 .info-button:hover{
     cursor: pointer;
+    background-color: rgba(129, 85, 199, 0.26);
+    color: white;
+    transition: all;
+    transition-duration: 1s;
 }
 
 .use-item-button{
@@ -103,6 +120,7 @@
     padding: 3px 5px 3px 5px;
     background-color: black;
     color: white;
+    margin-left: auto;
 }
 
 .use-item-button:hover{

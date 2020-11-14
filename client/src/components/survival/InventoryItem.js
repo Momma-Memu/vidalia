@@ -27,7 +27,6 @@ const InventoryItem = ({item, setDamageType, setStatus, items, ogHealth,
 
     return(
         <div className='player-item-container'>
-            <div className='item-name'>{item.name}</div>
             <InfoButton data={item} />
             {arrowBoolean ? <div className='use-item-button' onClick={handleQuiver}>{`Equip`}</div> :
             !bool ? null : <div className='use-item-button' onClick={itemUser}>{`Use: ${uses}x`}</div>}

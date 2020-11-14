@@ -8,6 +8,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import Slide from '@material-ui/core/Slide';
 import Drop from './Drop';
 import { survivalPlayer } from '../../Context';
+import updateDungeon from '../../helpers/updateDungeons';
 
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -15,12 +16,13 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 });
 
 
-export default function AlertDialogSlide({name, depth, setWeapon}) {
+export default function AlertDialogSlide({name, setWeapon}) {
   const [open, setOpen] = React.useState(false);
   const [loot, setLoot] = useState([])
 
   const { getEnemies, killSets, setKillSets, lootRef,
-     initiativeRollButn, setTurn, setTurnList } = useContext(survivalPlayer);
+     initiativeRollButn, setTurn, setTurnList, lower, upper, setLower,
+     setUpper, depth, setDepth } = useContext(survivalPlayer);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -69,6 +71,9 @@ export default function AlertDialogSlide({name, depth, setWeapon}) {
     setTurnList([])
     setTurn(null);
     getLoot();
+    if(killSets === 2){
+      updateDungeon(setKillSets, lower, setLower, upper, setUpper, depth, setDepth)
+    }
     handleClose();
   }
 

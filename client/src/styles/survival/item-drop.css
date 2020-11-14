@@ -4,6 +4,8 @@
     font-family: Arial, Helvetica, sans-serif;
     min-height: 215px;
     min-width: 350px;
+    padding: 10px 10px 10px 10px;
+    margin-right: 10px;
 }
 
 .drop-container::-webkit-scrollbar{

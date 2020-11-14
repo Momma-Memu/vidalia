@@ -25,7 +25,7 @@ export default function AlertDialogSlide({data}) {
   return (
     <div>
       <div className='info-button' onClick={handleClickOpen}>
-        Info
+        {data.name}
       </div>
       <Dialog
         open={open}
