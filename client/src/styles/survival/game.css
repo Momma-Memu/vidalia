@@ -49,7 +49,7 @@
     display: flex;
     flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
-    border: solid 1px black;
+    /* border: solid 1px black; */
     box-shadow: 5px 5px 5px #88888848;
     margin-bottom: 20px;
     height: 180px;
