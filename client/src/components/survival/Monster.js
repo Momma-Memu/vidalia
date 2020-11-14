@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
 import { Dice, d20 } from '../../helpers/dice'
 import { survivalPlayer } from '../../Context';
+import confirmLevel from '../../helpers/confirmLevel';
 
 const Monster = ({ playerData, currentHealth, setCurrentHealth, turnList, setTurnList, turn, setTurn, data, enemies, setEnemies, setStatus, status, setClearedRoom, clearedRoom}) => {
 
@@ -8,7 +9,7 @@ const Monster = ({ playerData, currentHealth, setCurrentHealth, turnList, setTur
     const newTurnList = [...turnList]
     const [monstHealth, setMonstHealth] = useState(data.hitPoints);
     const [monstStatus, setMonstStatus] = useState('');
-    const { weapon, lootRef } = useContext(survivalPlayer);
+    const { weapon, lootRef, xp, setXp, nextXp, setNextXp, levelBool, setLevelBool } = useContext(survivalPlayer);
 
     let attackBoolean = turnList.length > 0 && turnList[0] === playerData[0].turn;
     const highlighter = useRef();
@@ -91,7 +92,10 @@ const Monster = ({ playerData, currentHealth, setCurrentHealth, turnList, setTur
             const newHealth = monstHealth - damage;
 
             if(newHealth <= 0){
+                let newXp = data.xpReward + xp;
+                setXp(newXp);
                 killMonster();
+                console.log(newXp);
             } else {
                 setMonstHealth(newHealth);
             }
@@ -119,6 +123,7 @@ const Monster = ({ playerData, currentHealth, setCurrentHealth, turnList, setTur
                 lootRef.current.classList.remove('hide')
             }
             setClearedRoom(true)
+            confirmLevel(xp, setLevelBool, nextXp, setNextXp);
         }
         setTurnList(newTurns)
         setEnemies(newEnemies)
@@ -126,9 +131,10 @@ const Monster = ({ playerData, currentHealth, setCurrentHealth, turnList, setTur
 
     return (
         <div className='monster-card' ref={highlighter}>
-            <div className='monster-card-name'>{data.name}</div>
+            <div className='monster-card-name'>{data.name}
+                <div className='monster-type'>{data.type}</div>
+            </div>
             <div className='monster-health'>{monstHealth}</div>
-            <div>{data.type}</div>
             <div>{!data.turn ? '' : `Initiative: ${data.turn}`}</div>
             <div>{monstStatus}</div>
             {!attackBoolean ? null : <div className='attack-buttn' onClick={handleAttack}>Attack</div>}

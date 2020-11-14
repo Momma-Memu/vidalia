@@ -49,7 +49,7 @@
     display: flex;
     flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
-    /* border: solid 1px black; */
+    border: solid 1px black;
     box-shadow: 5px 5px 5px #88888848;
     margin-bottom: 20px;
     height: 180px;
@@ -66,6 +66,10 @@
     border-bottom: solid 2px black;
     background-color: rgb(143, 53, 53);
     color: white;
+}
+
+.monster-type{
+    font-size: 12px;
 }
 
 .monster-health{
@@ -143,5 +147,19 @@
 }
 
 .loot-button:hover{
+    cursor: pointer;
+}
+
+
+.level-up-button{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+    border-radius: 4px;
+    box-shadow: 5px 5px 5px #88888848;
+    color: white;
+    padding: 5px 5px 5px 5px;
+}
+
+.level-up-button:hover{
     cursor: pointer;
 }

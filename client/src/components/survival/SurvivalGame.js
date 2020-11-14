@@ -5,6 +5,7 @@ import turns from '../../helpers/turns';
 import { NavLink } from 'react-router-dom';
 import ItemDrop from './ItemDrop';
 import { survivalPlayer } from '../../Context';
+import LevelUp from './LevelUp';
 
 
 const SurvivalGame = (props) => {
@@ -27,6 +28,9 @@ const SurvivalGame = (props) => {
     const [damageType, setDamageType] = useState('');
     const [turnList, setTurnList] = useState([]);
     const [turn, setTurn] = useState(null)
+    const [xp, setXp] = useState(0);
+    const [nextXp, setNextXp] = useState(10);
+    const [levelBool, setLevelBool] = useState(true);
 
     const deadBoolean = currentHealth <= 0;
 
@@ -118,7 +122,8 @@ const SurvivalGame = (props) => {
 
     const playerContext = { setTurnList, turn, setTurn, getEnemies,
         initiativeRollButn, playerData, currentHealth, setLower, setUpper, upper, lower, depth, setDepth,
-        setCurrentHealth, setPlayerData, items, setItems, weapon, setWeapon, killSets, setKillSets, clearedRoom, lootRef};
+        setCurrentHealth, setPlayerData, items, setItems, weapon, setWeapon, killSets, setKillSets,
+        clearedRoom, lootRef, xp, setXp, nextXp, setNextXp, levelBool, setLevelBool};
 
     return (
         <survivalPlayer.Provider value={playerContext}>
@@ -136,6 +141,7 @@ const SurvivalGame = (props) => {
                 </div>
                 <div className='monster-cards'>
                     {monsters}
+                    {levelBool ? <LevelUp /> : null}
                 </div>
                 <div className='roll-container' ref={initiativeRollButn}>
                     <div className='roll-button' onClick={handleTurns}>Roll for initiative</div>
