@@ -6,3 +6,5 @@ export const authContext = createContext({});
 
 
 export const survivalPlayer = createContext({});
+
+export const levelUpContext = createContext({})

@@ -30,7 +30,7 @@ const SurvivalGame = (props) => {
     const [turn, setTurn] = useState(null)
     const [xp, setXp] = useState(0);
     const [nextXp, setNextXp] = useState(10);
-    const [levelBool, setLevelBool] = useState(true);
+    const [levelBool, setLevelBool] = useState(false);
 
     const deadBoolean = currentHealth <= 0;
 

@@ -9,16 +9,42 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.player-card-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 
 .player-card-level-up-container{
     display: flex;
     flex-direction: column;
     margin-top: 100px;
     border: solid 1px black;
+    width: 300px;
+    min-width: 300px;
     padding: 10px 10px 10px 10px;
     justify-content: center;
     align-items: center;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.level-up-stat-button{
+    text-align: center;
+    margin-top: 5px;
+    padding: 2px 2px 2px 2px;
+    border-radius: 3px;
+    border: solid 1px rgb(133, 84, 180);
+    background-color: rgba(134, 84, 180, 0.24);
+    color: black;
+}
+
+.level-up-stat-button:hover{
+    cursor: pointer;
+    transition: all;
+    background-color: rgba(134, 84, 180, 0.883);
+    color: white;
+    transition-duration: 1s;
 }
 
 .player-card-level-up-header{
