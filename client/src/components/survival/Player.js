@@ -52,7 +52,7 @@ const Player = ({ playerData, setPlayerData, status, setStatus, setTurn,
 
     return (
         <>
-            <div className='char-card-container'>
+            <div className='char-card-game-container'>
                 <div className='survival-char-card-header'>
                     <div>{data.name}</div>
                     <div className='char-card-class-name'>{data.Class.name}</div>
@@ -82,7 +82,6 @@ const Player = ({ playerData, setPlayerData, status, setStatus, setTurn,
                     <InfoButton data={data.Ability} />
                     {!abilityBoolean ? null : <div className='use-ability-button' onClick={useAbility}>{`Use: ${data.Ability.uses}x`}</div>}
                 </div>
-                <div></div>
                 <div>
                     {itemElements}
                     <div className='weapon-container'>
