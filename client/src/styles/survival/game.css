@@ -74,6 +74,7 @@
 
 .monster-health{
     background-color: rgb(65, 163, 65);
+    width: 100%;
     text-align: center;
     color: white;
 }

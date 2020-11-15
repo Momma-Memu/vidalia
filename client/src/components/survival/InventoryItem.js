@@ -7,7 +7,7 @@ import { survivalPlayer } from '../../Context';
 const InventoryItem = ({item, setDamageType, setStatus, items, ogHealth,
     setItems, bool, currentHealth, setCurrentHealth, healthRef}) => {
 
-    const {copyObj, setCopyObj} = useContext(survivalPlayer)
+    const {copyObj, setCopyObj, playerData, setPlayerData} = useContext(survivalPlayer)
 
     const [uses, setUses] = useState(1)
 
@@ -32,7 +32,9 @@ const InventoryItem = ({item, setDamageType, setStatus, items, ogHealth,
     }
 
     const itemUser = () => {
-        itemButton(item, setStatus, uses, setUses, setItems, items, ogHealth, currentHealth, setCurrentHealth, healthRef);
+        itemButton(item, setStatus, uses, setUses,
+            setItems, items, ogHealth, currentHealth,
+            setCurrentHealth, healthRef, playerData[0], setPlayerData);
 
     }
 

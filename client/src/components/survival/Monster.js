@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useContext } from 'react';
+import React, { useState, useEffect, useContext, useRef } from 'react';
 import { Dice, d20 } from '../../helpers/dice'
 import { survivalPlayer } from '../../Context';
 import confirmLevel from '../../helpers/confirmLevel';
@@ -11,6 +11,7 @@ const Monster = ({ playerData, currentHealth, setCurrentHealth, turnList, setTur
     const [monstHealth, setMonstHealth] = useState(data.hitPoints);
     const [monstStatus, setMonstStatus] = useState('');
     const { weapon, lootRef, xp, setXp, nextXp, setNextXp, levelBool, setLevelBool, healthRef, levelRef } = useContext(survivalPlayer);
+    const monstHpRef = useRef();
 
     let attackBoolean = turnList.length > 0 && turnList[0] === playerData[0].turn;
     const highlighter = useRef();
@@ -106,6 +107,7 @@ const Monster = ({ playerData, currentHealth, setCurrentHealth, turnList, setTur
                 killMonster();
                 console.log(newXp);
             } else {
+                hpBarChanger(monstHpRef, data.hitPoints, newHealth)
                 setMonstHealth(newHealth);
             }
         }
@@ -143,7 +145,7 @@ const Monster = ({ playerData, currentHealth, setCurrentHealth, turnList, setTur
             <div className='monster-card-name'>{data.name}
                 <div className='monster-type'>{data.type}</div>
             </div>
-            <div className='monster-health'>{monstHealth}</div>
+            <div className='monster-health' ref={monstHpRef}>{monstHealth}</div>
             <div>{!data.turn ? '' : `Initiative: ${data.turn}`}</div>
             <div>{monstStatus}</div>
             {!attackBoolean ? null : <div className='attack-buttn' onClick={handleAttack}>Attack</div>}

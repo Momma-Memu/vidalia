@@ -1,6 +1,7 @@
 import hpBarChanger from './hpBarChanger';
+import {addUse} from './useAbility';
 
-const itemButton = (item, statusMethod, currentUses, usesMethod, itemSetter, itemList, ogHealth, health, setHealth, ref) => {
+const itemButton = (item, statusMethod, currentUses, usesMethod, itemSetter, itemList, ogHealth, health, setHealth, ref, obj, objSetter) => {
     if(currentUses === 1){
         const temp = [];
         console.log(itemList)
@@ -19,6 +20,7 @@ const itemButton = (item, statusMethod, currentUses, usesMethod, itemSetter, ite
 
     if(item.name.includes('(Small)')){
         let newHealth = health + 10;
+        usesMethod(currentUses - 1);
         console.log(ogHealth)
         if(newHealth >= ogHealth){
             setHealth(ogHealth)
@@ -32,6 +34,7 @@ const itemButton = (item, statusMethod, currentUses, usesMethod, itemSetter, ite
 
     if(item.name.includes('(Medium)')){
         let newHealth = health + 20;
+        usesMethod(currentUses - 1);
         if(newHealth > ogHealth){
             setHealth(ogHealth)
             hpBarChanger(ref, ogHealth, ogHealth)
@@ -45,6 +48,7 @@ const itemButton = (item, statusMethod, currentUses, usesMethod, itemSetter, ite
 
     if(item.name.includes('(Large)')){
         let newHealth = health + 60;
+        usesMethod(currentUses - 1);
         if(newHealth > ogHealth){
             setHealth(ogHealth)
             hpBarChanger(ref, ogHealth, ogHealth)
@@ -53,6 +57,11 @@ const itemButton = (item, statusMethod, currentUses, usesMethod, itemSetter, ite
             hpBarChanger(ref, ogHealth, newHealth)
         }
         return;
+    }
+
+    if(item.name.includes('Cake')){
+        addUse(obj, objSetter)
+        usesMethod(currentUses - 1);
     }
 }
 
