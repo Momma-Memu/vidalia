@@ -4,7 +4,7 @@ import itemButton from '../../helpers/useItem';
 
 
 const InventoryItem = ({item, setDamageType, setStatus, items, ogHealth,
-    setItems, bool, currentHealth, setCurrentHealth}) => {
+    setItems, bool, currentHealth, setCurrentHealth, healthRef}) => {
     const [uses, setUses] = useState(1)
 
     const arrowBoolean = item.name.includes('Arrow');
@@ -22,7 +22,7 @@ const InventoryItem = ({item, setDamageType, setStatus, items, ogHealth,
     }
 
     const itemUser = () => {
-        itemButton(item, setStatus, uses, setUses, setItems, items, ogHealth, currentHealth, setCurrentHealth);
+        itemButton(item, setStatus, uses, setUses, setItems, items, ogHealth, currentHealth, setCurrentHealth, healthRef);
 
     }
 

@@ -8,7 +8,9 @@ const confirmLevel = (xp, setBool, nextXp, setNextXp) => {
         setBool(true)
         let newNext = nextXp * 2;
         setNextXp(newNext);
+        return true;
     }
+    return false;
 }
 
 export default confirmLevel;

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, useContext } from 'react';
 import { Dice, d20 } from '../../helpers/dice'
 import { survivalPlayer } from '../../Context';
 import confirmLevel from '../../helpers/confirmLevel';
+import hpBarChanger from '../../helpers/hpBarChanger';
 
 const Monster = ({ playerData, currentHealth, setCurrentHealth, turnList, setTurnList, turn, setTurn, data, enemies, setEnemies, setStatus, status, setClearedRoom, clearedRoom}) => {
 
@@ -9,7 +10,7 @@ const Monster = ({ playerData, currentHealth, setCurrentHealth, turnList, setTur
     const newTurnList = [...turnList]
     const [monstHealth, setMonstHealth] = useState(data.hitPoints);
     const [monstStatus, setMonstStatus] = useState('');
-    const { weapon, lootRef, xp, setXp, nextXp, setNextXp, levelBool, setLevelBool } = useContext(survivalPlayer);
+    const { weapon, lootRef, xp, setXp, nextXp, setNextXp, levelBool, setLevelBool, healthRef, levelRef } = useContext(survivalPlayer);
 
     let attackBoolean = turnList.length > 0 && turnList[0] === playerData[0].turn;
     const highlighter = useRef();
@@ -64,6 +65,7 @@ const Monster = ({ playerData, currentHealth, setCurrentHealth, turnList, setTur
             if(currentHealth <= 0) return;
             const newHealth = currentHealth - damage;
             setCurrentHealth(newHealth);
+            hpBarChanger(healthRef, playerData[0].hitPoints, newHealth);
         }
     }
 

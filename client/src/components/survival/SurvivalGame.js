@@ -39,6 +39,9 @@ const SurvivalGame = (props) => {
         getEnemies();
     }, [])
 
+    const healthRef = useRef();
+    const levelRef = useRef()
+
     const getPlayerData = async() => {
         const res = await fetch('/api/character/', {
             method: 'post',
@@ -123,7 +126,7 @@ const SurvivalGame = (props) => {
     const playerContext = { setTurnList, turn, setTurn, getEnemies,
         initiativeRollButn, playerData, currentHealth, setLower, setUpper, upper, lower, depth, setDepth,
         setCurrentHealth, setPlayerData, items, setItems, weapon, setWeapon, killSets, setKillSets,
-        clearedRoom, lootRef, xp, setXp, nextXp, setNextXp, levelBool, setLevelBool};
+        clearedRoom, lootRef, xp, setXp, nextXp, setNextXp, levelBool, setLevelBool, healthRef, levelRef};
 
     return (
         <survivalPlayer.Provider value={playerContext}>

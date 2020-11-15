@@ -1,4 +1,6 @@
-const itemButton = (item, statusMethod, currentUses, usesMethod, itemSetter, itemList, ogHealth, health, setHealth) => {
+import hpBarChanger from './hpBarChanger';
+
+const itemButton = (item, statusMethod, currentUses, usesMethod, itemSetter, itemList, ogHealth, health, setHealth, ref) => {
     if(currentUses === 1){
         const temp = [];
         console.log(itemList)
@@ -20,8 +22,10 @@ const itemButton = (item, statusMethod, currentUses, usesMethod, itemSetter, ite
         console.log(ogHealth)
         if(newHealth >= ogHealth){
             setHealth(ogHealth)
+            hpBarChanger(ref, ogHealth, ogHealth)
         } else {
             setHealth(newHealth)
+            hpBarChanger(ref, ogHealth, newHealth)
         }
         return;
     }
@@ -30,8 +34,11 @@ const itemButton = (item, statusMethod, currentUses, usesMethod, itemSetter, ite
         let newHealth = health + 20;
         if(newHealth > ogHealth){
             setHealth(ogHealth)
+            hpBarChanger(ref, ogHealth, ogHealth)
+
         } else {
             setHealth(newHealth)
+            hpBarChanger(ref, ogHealth, newHealth)
         }
         return;
     }
@@ -40,8 +47,10 @@ const itemButton = (item, statusMethod, currentUses, usesMethod, itemSetter, ite
         let newHealth = health + 60;
         if(newHealth > ogHealth){
             setHealth(ogHealth)
+            hpBarChanger(ref, ogHealth, ogHealth)
         } else {
             setHealth(newHealth)
+            hpBarChanger(ref, ogHealth, newHealth)
         }
         return;
     }

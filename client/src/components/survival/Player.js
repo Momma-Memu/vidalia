@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useEffect, useContext, useRef } from 'react';
 import { subtractUse } from '../../helpers/useAbility';
 import { statusSetter } from '../../helpers/statusSetter';
 import InfoButton from '../../helpers/InfoButton';
@@ -9,7 +9,7 @@ import customSort from '../../helpers/customSort';
 const Player = ({ playerData, setPlayerData, status, setStatus, setTurn,
     turnList, setTurnList, data, damageType, setDamageType}) => {
 
-    const { items, setItems, currentHealth, setCurrentHealth, weapon, setWeapon, clearedRoom } = useContext(survivalPlayer);
+    const { items, setItems, healthRef,  currentHealth, setCurrentHealth, weapon } = useContext(survivalPlayer);
 
     useEffect(() => {
         if(turnList.length <= 0){
@@ -24,6 +24,7 @@ const Player = ({ playerData, setPlayerData, status, setStatus, setTurn,
     if(currentHealth <= 0){
         abilityBoolean = false;
     }
+
 
     const useAbility = () => {
         if(data.Ability.name === status) return;
@@ -41,7 +42,7 @@ const Player = ({ playerData, setPlayerData, status, setStatus, setTurn,
 
     const itemElements = items.map((item) => {
         return (
-            <InventoryItem bool={abilityBoolean} item={item}
+            <InventoryItem hpRef={healthRef} bool={abilityBoolean} item={item}
             setDamageType={setDamageType} setStatus={setStatus}
             items={items} setItems={setItems} ogHealth={playerData[0].hitPoints}
             currentHealth={currentHealth} setCurrentHealth={setCurrentHealth}/>
@@ -57,7 +58,7 @@ const Player = ({ playerData, setPlayerData, status, setStatus, setTurn,
                     <div>{data.name}</div>
                     <div className='char-card-class-name'>{data.Class.name}</div>
                 </div>
-                <div className='HP-bar'>{currentHealth}</div>
+                <div className='HP-bar' ref={healthRef}>{currentHealth}</div>
                 <div className='survival-char-card-stats'>
                     <div className='survival-char-card-stat1'>{`Armor Class: ${data.armorClass}`}</div>
                     <div className='survival-char-card-stat2'>{`Charisma: ${data.charisma}`}</div>

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { survivalPlayer, levelUpContext } from '../../Context';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
@@ -11,6 +11,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import Slide from '@material-ui/core/Slide';
 import PlayerCard from './PlayerCard';
 import generateNewStats from '../../helpers/generateNewStats';
+import hpBarChanger from '../../helpers/hpBarChanger';
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -37,7 +38,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 export default function FullScreenDialog() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
-  const { playerData, setPlayerData, setCurrentHealth } = useContext(survivalPlayer);
+  const { playerData, setPlayerData, setCurrentHealth, healthRef, levelRef, levelBool } = useContext(survivalPlayer);
   const [points, setPoints] = useState(5);
   const [ac, setAc] = useState(playerData[0].armorClass);
   const [charisma, setCharisma] = useState(playerData[0].charisma);
@@ -54,6 +55,14 @@ export default function FullScreenDialog() {
     console.log(playerData)
   };
 
+  useEffect(() => {
+    if(levelBool){
+      if(levelRef.current){
+        levelRef.current.classList.remove('hide')
+      }
+    }
+  }, [])
+
   const handleClose = () => {
     if(points !== 0){
         setHeader('Please use all skill points before saving.')
@@ -61,6 +70,9 @@ export default function FullScreenDialog() {
     }
     generateNewStats(playerData[0], ac, charisma, constitution, dex,
         hp, intel, strength, wis, setPlayerData, setCurrentHealth)
+    hpBarChanger(healthRef, hp, hp)
+    levelRef.current.classList.add('hide');
+    setPoints(5);
     setOpen(false);
   };
 
@@ -70,7 +82,7 @@ export default function FullScreenDialog() {
 
   return (
     <levelUpContext.Provider value={levelUpData}>
-      <div className='level-up-button' onClick={handleClickOpen}>
+      <div ref={levelRef} className='level-up-button' onClick={handleClickOpen}>
         Level Up
       </div>
       <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
