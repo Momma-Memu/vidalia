@@ -9,6 +9,7 @@ const PlayerCard = ({data}) => {
 
     const skillLevel = (e) => {
         const stat = e.target.innerHTML.split(':')[0];
+        console.log(stat)
         if(points <= 0) return;
         if(stat === 'Armor Class'){
             setAc(ac + 1)
@@ -36,6 +37,7 @@ const PlayerCard = ({data}) => {
         }
 
         if(stat === 'Intelligence'){
+            console.log('hello')
             setIntel(intel + 1);
             setPoints(points - 1);
         }
@@ -63,7 +65,7 @@ const PlayerCard = ({data}) => {
                 <div className='level-up-stat-button' onClick={skillLevel}>{`Constitution: ${constitution}`}</div>
                 <div className='level-up-stat-button' onClick={skillLevel}>{`Dexterity: ${dex}`}</div>
                 <div className='level-up-stat-button' onClick={skillLevel}>{`Hit Points: ${hp}`}</div>
-                <div className='level-up-stat-button' onClick={skillLevel}>{`Intelligence ${intel}`}</div>
+                <div className='level-up-stat-button' onClick={skillLevel}>{`Intelligence: ${intel}`}</div>
                 <div className='level-up-stat-button' onClick={skillLevel}>{`Strength: ${strength}`}</div>
                 <div className='level-up-stat-button' onClick={skillLevel}>{`Wisdom: ${wis}`}</div>
             </div>

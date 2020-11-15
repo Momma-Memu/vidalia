@@ -5,6 +5,7 @@ import InfoButton from '../../helpers/InfoButton';
 import InventoryItem from './InventoryItem';
 import { survivalPlayer } from '../../Context';
 import customSort from '../../helpers/customSort';
+import hpBarChanger from '../../helpers/hpBarChanger';
 
 const Player = ({ playerData, setPlayerData, status, setStatus, setTurn,
     turnList, setTurnList, data, damageType, setDamageType}) => {
@@ -27,11 +28,25 @@ const Player = ({ playerData, setPlayerData, status, setStatus, setTurn,
 
 
     const useAbility = () => {
+        if(data.Ability.name === 'Prayer'){
+            if(currentHealth + 5 > playerData[0].hitPoints){
+                setCurrentHealth(playerData[0].hitPoints)
+                hpBarChanger(healthRef, playerData[0].hitPoints, currentHealth)
+                subtractUse(playerData[0], setPlayerData);
+                return;
+            }
+            setCurrentHealth(currentHealth + 5);
+            hpBarChanger(healthRef, playerData[0].hitPoints, currentHealth)
+            subtractUse(playerData[0], setPlayerData);
+            return;
+        }
+
         if(data.Ability.name === status) return;
         if(data.Ability.uses <= 0) return;
 
         subtractUse(playerData[0], setPlayerData);
         statusSetter(data.Ability.name, setStatus)
+
         if(data.Ability.name === 'Poison Bite') return;
 
         const turnSpent = newTurnList.shift()
