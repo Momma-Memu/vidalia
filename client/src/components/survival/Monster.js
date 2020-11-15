@@ -52,14 +52,14 @@ const Monster = ({ playerData, currentHealth, setCurrentHealth, turnList, setTur
         const attackDice = new Dice(diceName, sides)
         const initialDamage = attackDice.roll(rolls);
         let damage = initialDamage - (Math.floor(playerData[0].armorClass / 2))
-        if(status === 'Crushing Blow') damage = (damage / 2);
+        if(status === 'Crushing Blow') damage = Math.floor(damage / 2);
 
         if(damage < 0){
             damage = 0
         }
 
-        const monsterAccuracy = d20.roll(1) + (data.dexterity - 10)
-        const playerDodge = d20.roll(1) + (playerData[0].armorClass - 10)
+        const monsterAccuracy = d20.roll(1) + (data.strength - 10)
+        const playerDodge = d20.roll(1) + (playerData[0].armorClass)
 
         if(monsterAccuracy > playerDodge){
             if(currentHealth <= 0) return;
@@ -89,7 +89,14 @@ const Monster = ({ playerData, currentHealth, setCurrentHealth, turnList, setTur
             if(monsterDodge < playerAccuracy) setMonstStatus('poisoned')
         }
         const monsterDodge = d20.roll(1) + (data.armorClass - 10)
-        const playerAccuracy = d20.roll(1) + (playerData[0].dexterity - 10)
+        let playerAccuracy;
+        if(playerData[0].Class.name === 'Ranger') playerAccuracy = d20.roll(1) + (playerData[0].dexterity - 10)
+        if(playerData[0].Class.name === 'Assassin') playerAccuracy = d20.roll(1) + (playerData[0].dexterity - 10)
+        if(playerData[0].Class.name === 'Barbarian') playerAccuracy = d20.roll(1) + (playerData[0].strength - 10)
+        if(playerData[0].Class.name === 'Fighter') playerAccuracy = d20.roll(1) + (playerData[0].strength - 10)
+        if(playerData[0].Class.name === 'Cleric') playerAccuracy = d20.roll(1) + (playerData[0].strength - 10)
+        if(playerData[0].Class.name === 'Sorcerer') playerAccuracy = d20.roll(1) + (playerData[0].intelligence - 10)
+
         if(playerAccuracy > monsterDodge){
             const newHealth = monstHealth - damage;
 
