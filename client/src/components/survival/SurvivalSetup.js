@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { authContext } from '../../Context'
+import Footer from '../landingComponents/Footer';
 
 
 const SurvivalSetup = () => {
@@ -60,6 +61,7 @@ const SurvivalSetup = () => {
             <div className='char-scroller'>
                 {charCards}
             </div>
+            <Footer />
         </div>
     )
 }

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import Nav from './Nav';
 import { NavLink } from 'react-router-dom'
 import { authContext } from '../../Context'
+import Footer from '../landingComponents/Footer';
 
 const Characters = () => {
 
@@ -70,6 +71,7 @@ const Characters = () => {
                 <div className='new-character'>New Character</div>
             </NavLink>
             {charElements}
+            <Footer />
         </>
     )
 }

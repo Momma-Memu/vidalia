@@ -1,6 +1,7 @@
 import React from 'react';
 import Nav from './Nav';
 import Beastiary from './Beastiary';
+import Footer from '../landingComponents/Footer';
 
 const Home = () => {
 
@@ -8,6 +9,7 @@ const Home = () => {
         <div>
             <Nav />
             <Beastiary />
+            <Footer />
         </div>
     )
 }
