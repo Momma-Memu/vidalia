@@ -15,7 +15,7 @@ const Player = ({ playerData, setPlayerData, status, setStatus, setTurn,
         if(turnList.length <= 0){
             setCurrentHealth(data.hitPoints)
         }
-    }, [status])
+    }, [status, healthRef])
 
     const newTurnList = [...turnList]
 
@@ -42,7 +42,7 @@ const Player = ({ playerData, setPlayerData, status, setStatus, setTurn,
 
     const itemElements = items.map((item) => {
         return (
-            <InventoryItem hpRef={healthRef} bool={abilityBoolean} item={item}
+            <InventoryItem healthRef={healthRef} bool={abilityBoolean} item={item}
             setDamageType={setDamageType} setStatus={setStatus}
             items={items} setItems={setItems} ogHealth={playerData[0].hitPoints}
             currentHealth={currentHealth} setCurrentHealth={setCurrentHealth}/>
