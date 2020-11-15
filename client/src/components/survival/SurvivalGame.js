@@ -31,6 +31,7 @@ const SurvivalGame = (props) => {
     const [xp, setXp] = useState(0);
     const [nextXp, setNextXp] = useState(10);
     const [levelBool, setLevelBool] = useState(false);
+    const [copyObj, setCopyObj] = useState({})
 
     const deadBoolean = currentHealth <= 0;
 
@@ -126,7 +127,8 @@ const SurvivalGame = (props) => {
     const playerContext = { setTurnList, turn, setTurn, getEnemies,
         initiativeRollButn, playerData, currentHealth, setLower, setUpper, upper, lower, depth, setDepth,
         setCurrentHealth, setPlayerData, items, setItems, weapon, setWeapon, killSets, setKillSets,
-        clearedRoom, lootRef, xp, setXp, nextXp, setNextXp, levelBool, setLevelBool, healthRef, levelRef};
+        clearedRoom, lootRef, xp, setXp, nextXp, setNextXp, levelBool, setLevelBool, healthRef, levelRef,
+        copyObj, setCopyObj};
 
     return (
         <survivalPlayer.Provider value={playerContext}>

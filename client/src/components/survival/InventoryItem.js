@@ -1,11 +1,21 @@
-import React, { useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import InfoButton from '../../helpers/InfoButton';
 import itemButton from '../../helpers/useItem';
+import { survivalPlayer } from '../../Context';
 
 
 const InventoryItem = ({item, setDamageType, setStatus, items, ogHealth,
     setItems, bool, currentHealth, setCurrentHealth, healthRef}) => {
+
+    const {copyObj, setCopyObj} = useContext(survivalPlayer)
+
     const [uses, setUses] = useState(1)
+
+    useEffect(() => {
+        if(copyObj.name === item.name){
+            setUses(uses + 1)
+        }
+    }, [copyObj])
 
     const arrowBoolean = item.name.includes('Arrow');
 

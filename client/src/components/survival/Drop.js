@@ -3,7 +3,7 @@ import { survivalPlayer } from '../../Context';
 
 
 const Drop = ({data}) => {
-    const { items, setItems, setWeapon } = useContext(survivalPlayer);
+    const { items, setItems, setWeapon, copyObj, setCopyObj } = useContext(survivalPlayer);
     const itemRef = useRef();
     const [pickedUp, setPickedUp] = useState(false);
 
@@ -13,6 +13,16 @@ const Drop = ({data}) => {
 
     const pickUpItem = () => {
         setPickedUp(true)
+        console.log('before the loop')
+        for(let i = 0; i < items.length; i++){
+            console.log('checking')
+            let item = items[i];
+            if(item.name === data.name){
+                console.log('Item func')
+                setCopyObj(item);
+                return;
+            }
+        }
         setItems([...items, data])
     }
 
