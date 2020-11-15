@@ -17,7 +17,7 @@ const itemButton = (item, statusMethod, currentUses, usesMethod, itemSetter, ite
         return;
     }
 
-    if(item.name.includes('(Small)')){
+    if(item.name.includes('(S)')){
         let newHealth = health + 10;
         usesMethod(currentUses - 1);
         if(newHealth >= ogHealth){
@@ -30,7 +30,7 @@ const itemButton = (item, statusMethod, currentUses, usesMethod, itemSetter, ite
         return;
     }
 
-    if(item.name.includes('(Medium)')){
+    if(item.name.includes('(M)')){
         let newHealth = health + 20;
         usesMethod(currentUses - 1);
         if(newHealth > ogHealth){
@@ -44,7 +44,7 @@ const itemButton = (item, statusMethod, currentUses, usesMethod, itemSetter, ite
         return;
     }
 
-    if(item.name.includes('(Large)')){
+    if(item.name.includes('(L)')){
         let newHealth = health + 60;
         usesMethod(currentUses - 1);
         if(newHealth > ogHealth){
