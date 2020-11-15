@@ -52,7 +52,6 @@ export default function FullScreenDialog() {
 
   const handleClickOpen = () => {
     setOpen(true);
-    console.log(playerData)
   };
 
   useEffect(() => {

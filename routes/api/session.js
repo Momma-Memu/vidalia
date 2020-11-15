@@ -35,7 +35,6 @@ router.post('/', asyncHandler(async function (req, res, next) {
 
 router.post('/make', asyncHandler(async function (req, res, next) {
     let { username, email, password, confirmPassword, dob } = req.body;
-    console.log(`================ ${username}`)
     if(password !== confirmPassword){
         res.status(403).json({success: false, message: 'Passwords do not match.' });
         return;

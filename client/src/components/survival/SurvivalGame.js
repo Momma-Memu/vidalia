@@ -29,7 +29,7 @@ const SurvivalGame = (props) => {
     const [turnList, setTurnList] = useState([]);
     const [turn, setTurn] = useState(null)
     const [xp, setXp] = useState(0);
-    const [nextXp, setNextXp] = useState(10);
+    const [nextXp, setNextXp] = useState(50);
     const [levelBool, setLevelBool] = useState(false);
     const [copyObj, setCopyObj] = useState({})
 

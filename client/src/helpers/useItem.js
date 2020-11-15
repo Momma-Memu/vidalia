@@ -4,7 +4,6 @@ import {addUse} from './useAbility';
 const itemButton = (item, statusMethod, currentUses, usesMethod, itemSetter, itemList, ogHealth, health, setHealth, ref, obj, objSetter) => {
     if(currentUses === 1){
         const temp = [];
-        console.log(itemList)
         for(let i = 0; i < itemList.length; i++){
             let itemObj = itemList[i];
             if(itemObj.name !== item.name) temp.push(itemObj);
@@ -21,7 +20,6 @@ const itemButton = (item, statusMethod, currentUses, usesMethod, itemSetter, ite
     if(item.name.includes('(Small)')){
         let newHealth = health + 10;
         usesMethod(currentUses - 1);
-        console.log(ogHealth)
         if(newHealth >= ogHealth){
             setHealth(ogHealth)
             hpBarChanger(ref, ogHealth, ogHealth)

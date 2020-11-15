@@ -48,7 +48,6 @@ export default function AlertDialogSlide({name, setWeapon}) {
 
 
   const getLoot = async() => {
-    console.log('new call')
     const res = await fetch('/api/item-drop', {
         method: 'post',
         headers: {
@@ -57,7 +56,6 @@ export default function AlertDialogSlide({name, setWeapon}) {
         body: JSON.stringify({ name, cost })
     })
     const data = await res.json();
-    console.log(data)
     setLoot(data)
   }
 

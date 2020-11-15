@@ -1,12 +1,10 @@
 const hpBarChanger = (ref, ogHp, currentHp) => {
-    console.log(ref)
     if(!ref) return;
     if(!ref.current) return;
     const percent = (currentHp / ogHp) * 100;
     const styler = `${percent}%`;
     ref.current.style.width = styler;
     if(percent <= 50 && percent > 25){
-        console.log('hello')
         ref.current.style.backgroundColor = '#FFB02E';
     } else if(percent <= 25){
         ref.current.style.backgroundColor = '#F95454';

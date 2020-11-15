@@ -105,7 +105,7 @@ const Monster = ({ playerData, currentHealth, setCurrentHealth, turnList, setTur
                 let newXp = data.xpReward + xp;
                 setXp(newXp);
                 killMonster();
-                console.log(newXp);
+                return;
             } else {
                 hpBarChanger(monstHpRef, data.hitPoints, newHealth)
                 setMonstHealth(newHealth);
@@ -136,7 +136,14 @@ const Monster = ({ playerData, currentHealth, setCurrentHealth, turnList, setTur
             setClearedRoom(true)
             confirmLevel(xp, setLevelBool, nextXp, setNextXp);
         }
-        setTurnList(newTurns)
+        const turnSpent = newTurnList.shift()
+        newTurnList.push(turnSpent)
+        let newTurnListFinal = []
+        for(let i = 0; i < newTurnList.length; i++){
+            if(newTurnList[i] !== initiative) newTurnListFinal.push(newTurnList[i])
+        }
+        setTurnList(newTurnListFinal)
+        setTurn(newTurnListFinal[0])
         setEnemies(newEnemies)
     }
 
