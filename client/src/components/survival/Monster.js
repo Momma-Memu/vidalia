@@ -52,7 +52,17 @@ const Monster = ({ playerData, currentHealth, setCurrentHealth, turnList, setTur
                 killMonster();
                 return;
             }
-            hpBarChanger(monstHpRef, playerData[0].hitPoints, temp);
+            hpBarChanger(monstHpRef, data.hitPoints, temp);
+
+        }
+        if(monstStatus === 'burned') {
+            setMonstHealth(monstHealth - 5);
+            let temp = monstHealth - 5;
+            if(monstHealth <= 0){
+                killMonster();
+                return;
+            }
+            hpBarChanger(monstHpRef, data.hitPoints, temp);
 
         }
         if(status === 'Nightmares') setMonstStatus('nightmares')
@@ -100,6 +110,11 @@ const Monster = ({ playerData, currentHealth, setCurrentHealth, turnList, setTur
             const monsterDodge = d20.roll(1)
             const playerAccuracy = d20.roll(1)
             if(monsterDodge < playerAccuracy) setMonstStatus('poisoned')
+        }
+        if(status === 'Blazing Vortex'){
+            const monsterDodge = d20.roll(1)
+            const playerAccuracy = d20.roll(1)
+            if(monsterDodge < playerAccuracy) setMonstStatus('burned')
         }
         const monsterDodge = d20.roll(1) + (data.armorClass - 10)
         let playerAccuracy;

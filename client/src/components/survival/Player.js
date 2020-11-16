@@ -49,6 +49,7 @@ const Player = ({ playerData, setPlayerData, status, setStatus, setTurn,
 
         if(data.Ability.name === 'Poison Bite') return;
         if(data.Ability.name === 'Nightmares') return;
+        if(data.Ability.name === 'Blazing Vortex') return;
 
         const turnSpent = newTurnList.shift()
         newTurnList.push(turnSpent)
