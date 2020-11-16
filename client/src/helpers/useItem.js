@@ -2,7 +2,7 @@ import hpBarChanger from './hpBarChanger';
 import {addUse} from './useAbility';
 
 const itemButton = (item, statusMethod, currentUses, usesMethod, itemSetter, itemList, ogHealth, health, setHealth, ref, obj, objSetter) => {
-    if(currentUses === 1){
+    if(currentUses <= 1){
         const temp = [];
         for(let i = 0; i < itemList.length; i++){
             let itemObj = itemList[i];

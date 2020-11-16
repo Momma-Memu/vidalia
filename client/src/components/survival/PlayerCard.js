@@ -9,7 +9,6 @@ const PlayerCard = ({data}) => {
 
     const skillLevel = (e) => {
         const stat = e.target.innerHTML.split(':')[0];
-        console.log(stat)
         if(points <= 0) return;
         if(stat === 'Armor Class'){
             setAc(ac + 1)
@@ -37,7 +36,6 @@ const PlayerCard = ({data}) => {
         }
 
         if(stat === 'Intelligence'){
-            console.log('hello')
             setIntel(intel + 1);
             setPoints(points - 1);
         }

@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   buttonStyle: {
     backgroundColor: 'white',
     '&:hover': {
-        backgroundColor: 'rgb(149, 197, 219, 0.8)',
+        backgroundColor: 'rgb(215, 147, 255, 0.7)',
     },
   },
 
@@ -88,7 +88,6 @@ export default function FullScreenDialog() {
         <AppBar className={classes.appBar}>
           <Toolbar>
             <IconButton edge="start" color="inherit" onClick={handleClose} aria-label="close">
-              <CloseIcon />
             </IconButton>
             <Typography variant="h6" className={classes.title}>
               Level Up
