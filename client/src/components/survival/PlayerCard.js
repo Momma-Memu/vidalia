@@ -43,7 +43,7 @@ const PlayerCard = ({data}) => {
         }
 
         if(stat === 'Strength'){
-            setStrength(strength - 1);
+            setStrength(strength + 1);
             setPoints(points - 1);
         }
 

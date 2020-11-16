@@ -67,10 +67,14 @@ const Characters = () => {
     return(
         <>
             <Nav />
-            <NavLink className='nav-button' to='/character-creator'>
-                <div className='new-character'>New Character</div>
-            </NavLink>
-            {charElements}
+            <div className='button-wrapper'>
+                <NavLink className='nav-button' to='/character-creator'>
+                    <div className='new-character'>New Character</div>
+                </NavLink>
+            </div>
+            <div className='char-element-scroller'>
+                {charElements}
+            </div>
             <Footer />
         </>
     )

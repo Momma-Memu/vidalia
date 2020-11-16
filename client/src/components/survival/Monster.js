@@ -30,8 +30,9 @@ const Monster = ({ playerData, currentHealth, setCurrentHealth, turnList, setTur
                 attackPlayer();
                 setTurnList(newTurnList)
                 setTurn(newTurnList[0])
-                if(turnList[1] === playerData[0].turn) setStatus('');
             }, 1000);
+            setStatus('');
+            setMonstStatus('')
         }
     }, [turn, initiative, monstHealth])
 
@@ -44,8 +45,17 @@ const Monster = ({ playerData, currentHealth, setCurrentHealth, turnList, setTur
     const attackPlayer = () => {
         if(status === 'Teleport') return;
         if(status === 'Dispair') return;
-        if(monstStatus === 'poisoned') setMonstHealth(monstHealth - 5);
-        setMonstStatus('')
+        if(monstStatus === 'poisoned') {
+            setMonstHealth(monstHealth - 5);
+            let temp = monstHealth - 5;
+            if(monstHealth <= 0){
+                killMonster();
+                return;
+            }
+            hpBarChanger(monstHpRef, playerData[0].hitPoints, temp);
+
+        }
+        if(status === 'Nightmares') setMonstStatus('nightmares')
         if(monstHealth <= 0) {
             killMonster();
             return;
@@ -59,8 +69,9 @@ const Monster = ({ playerData, currentHealth, setCurrentHealth, turnList, setTur
             damage = 0
         }
 
-        const monsterAccuracy = d20.roll(1) + (data.strength - 10)
+        let monsterAccuracy = d20.roll(1) + (data.strength - 10)
         const playerDodge = d20.roll(1) + (playerData[0].armorClass)
+        if(status === 'Nightmares') monsterAccuracy = (monsterAccuracy / 2)
 
         if(monsterAccuracy > playerDodge){
             if(currentHealth <= 0) return;
@@ -68,6 +79,7 @@ const Monster = ({ playerData, currentHealth, setCurrentHealth, turnList, setTur
             setCurrentHealth(newHealth);
             hpBarChanger(healthRef, playerData[0].hitPoints, newHealth);
         }
+
     }
 
     const handleAttack = () => {
@@ -84,7 +96,7 @@ const Monster = ({ playerData, currentHealth, setCurrentHealth, turnList, setTur
 
         if(damage < 0) damage = 0;
         if(status === 'explosion') damage += 100;
-        if(status === 'Poison bite'){
+        if(status === 'Poison Bite'){
             const monsterDodge = d20.roll(1)
             const playerAccuracy = d20.roll(1)
             if(monsterDodge < playerAccuracy) setMonstStatus('poisoned')
@@ -153,8 +165,8 @@ const Monster = ({ playerData, currentHealth, setCurrentHealth, turnList, setTur
                 <div className='monster-type'>{data.type}</div>
             </div>
             <div className='monster-health' ref={monstHpRef}>{monstHealth}</div>
-            <div>{!data.turn ? '' : `Initiative: ${data.turn}`}</div>
-            <div>{monstStatus}</div>
+            <div className='monster-initiative'>{!data.turn ? '' : `Initiative: ${data.turn}`}</div>
+            <div className='monster-status'>{!monstStatus ? '' : monstStatus}</div>
             {!attackBoolean ? null : <div className='attack-buttn' onClick={handleAttack}>Attack</div>}
         </div>
     )

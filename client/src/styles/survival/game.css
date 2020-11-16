@@ -64,7 +64,7 @@
     padding-top: 5px;
     margin-bottom: 5px;
     border-bottom: solid 2px black;
-    background-color: rgb(143, 53, 53);
+    background-color: rgb(173, 57, 57);
     color: white;
 }
 
@@ -79,6 +79,16 @@
     color: white;
 }
 
+.monster-initiative{
+    margin-top: 5px;
+    text-align: center;
+}
+
+.monster-status{
+    text-align: center;
+    margin-top: 35px;
+    font-size: 13px;
+}
 
 .hide{
     display: none;
@@ -93,7 +103,7 @@
     height: 180px;
     width: 130px;
     border-radius: 3px;
-    border: solid 2px rgb(104, 157, 255);
+    border: solid 1px rgb(104, 157, 255);
 }
 
 .attack-buttn{
