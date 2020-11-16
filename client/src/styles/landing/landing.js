@@ -7,6 +7,5 @@ export const loginStyles = makeStyles((theme) => ({
     },
     login2: {
         marginTop: 20,
-        width: "65vw",
     }
 }))
