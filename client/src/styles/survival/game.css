@@ -29,15 +29,19 @@
 
 .roll-button:hover{
     cursor: pointer;
+    transition: all;
+    transition-duration: 1s;
+    background-color: black;
+    color: white;
 }
 
 .roll-button{
     font-family: Arial, Helvetica, sans-serif;
     border: solid 1px black;
     border-radius: 3px;
-    background-color: black;
+    background-color:rgba(0, 0, 0, 0.246);
     padding: 8px 10px 8px 10px;
-    color: white;
+    color: black;
 }
 
 .monster-cards{
@@ -155,28 +159,37 @@
 
 .loot-button{
     font-family: Arial, Helvetica, sans-serif;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.246);
     border: solid 1px black;
     border-radius: 3px;
-    color: white;
+    color: black;
     padding: 5px 5px 5px 5px;
     box-shadow: 5px 5px 5px #88888848;
 }
 
 .loot-button:hover{
     cursor: pointer;
+    transition: all;
+    transition-duration: 1s;
+    background-color: black;
+    color: white;
 }
 
 
 .level-up-button{
     font-family: Arial, Helvetica, sans-serif;
-    background-color: black;
+    border: solid 1px black;
+    background-color: rgba(0, 0, 0, 0.246);
     border-radius: 4px;
     box-shadow: 5px 5px 5px #88888848;
-    color: white;
+    color: black;
     padding: 5px 5px 5px 5px;
 }
 
 .level-up-button:hover{
     cursor: pointer;
+    transition: all;
+    transition-duration: 1s;
+    background-color: black;
+    color: white;
 }

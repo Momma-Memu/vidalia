@@ -332,7 +332,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          name: 'Curious Orange Cake',
+          name: 'Orange Cake',
           description: 'Restore an ability for two additional uses.',
           cost: 20,
           createdAt: new Date(),
