@@ -97,12 +97,12 @@ export default function AlertDialogSlide({name, setWeapon}) {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="primary">
+          <div className='use-item-button2' onClick={handleClose}>
             Close
-          </Button>
-          <Button onClick={handleContinue} color="primary">
+          </div>
+          <div className='use-item-button2' onClick={handleContinue}>
             Continue
-          </Button>
+          </div>
         </DialogActions>
       </Dialog>
     </div>
