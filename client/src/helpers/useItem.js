@@ -15,9 +15,7 @@ const itemButton = (item, statusMethod, currentUses, usesMethod, itemSetter, ite
         statusMethod('explosion')
         usesMethod(currentUses - 1);
         return;
-    }
-
-    if(item.name.includes('(S)')){
+    } else if(item.name === 'Healing Potion (S)'){
         let newHealth = health + 10;
         usesMethod(currentUses - 1);
         if(newHealth >= ogHealth){
@@ -28,9 +26,7 @@ const itemButton = (item, statusMethod, currentUses, usesMethod, itemSetter, ite
             hpBarChanger(ref, ogHealth, newHealth)
         }
         return;
-    }
-
-    if(item.name.includes('(M)')){
+    } else if(item.name === 'Healing Potion (M)'){
         let newHealth = health + 20;
         usesMethod(currentUses - 1);
         if(newHealth > ogHealth){
@@ -42,9 +38,7 @@ const itemButton = (item, statusMethod, currentUses, usesMethod, itemSetter, ite
             hpBarChanger(ref, ogHealth, newHealth)
         }
         return;
-    }
-
-    if(item.name.includes('(L)')){
+    }else if(item.name === 'Healing Potion (L)'){
         let newHealth = health + 60;
         usesMethod(currentUses - 1);
         if(newHealth > ogHealth){
@@ -55,9 +49,7 @@ const itemButton = (item, statusMethod, currentUses, usesMethod, itemSetter, ite
             hpBarChanger(ref, ogHealth, newHealth)
         }
         return;
-    }
-
-    if(item.name.includes('Cake')){
+    } else if(item.name === 'Orange Cake'){
         addUse(obj, objSetter)
         usesMethod(currentUses - 1);
     }
