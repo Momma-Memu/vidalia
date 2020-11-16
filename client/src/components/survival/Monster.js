@@ -4,12 +4,14 @@ import { survivalPlayer } from '../../Context';
 import confirmLevel from '../../helpers/confirmLevel';
 import hpBarChanger from '../../helpers/hpBarChanger';
 
+
 const Monster = ({ playerData, currentHealth, setCurrentHealth, turnList, setTurnList, turn, setTurn, data, enemies, setEnemies, setStatus, status, setClearedRoom, clearedRoom}) => {
 
     const initiative = data.turn;
     const newTurnList = [...turnList]
     const [monstHealth, setMonstHealth] = useState(data.hitPoints);
     const [monstStatus, setMonstStatus] = useState('');
+    const [timer, setTimer] = useState(0);
     const { weapon, lootRef, xp, setXp, nextXp, setNextXp, levelBool, setLevelBool, healthRef, levelRef } = useContext(survivalPlayer);
     const monstHpRef = useRef();
 
@@ -32,7 +34,11 @@ const Monster = ({ playerData, currentHealth, setCurrentHealth, turnList, setTur
                 setTurn(newTurnList[0])
             }, 1000);
             setStatus('');
-            setMonstStatus('')
+            if(timer > 0){
+                setTimer(timer - 1)
+            } else {
+                setMonstStatus('');
+            }
         }
     }, [turn, initiative, monstHealth])
 
@@ -45,6 +51,11 @@ const Monster = ({ playerData, currentHealth, setCurrentHealth, turnList, setTur
     const attackPlayer = () => {
         if(status === 'Teleport') return;
         if(status === 'Dispair') return;
+        if(status === 'Lullaby'){
+            setTimer(2);
+            setMonstStatus('sleeping');
+            return;
+        }
         if(monstStatus === 'poisoned') {
             setMonstHealth(monstHealth - 5);
             let temp = monstHealth - 5;
