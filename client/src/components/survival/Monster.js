@@ -32,7 +32,7 @@ const Monster = ({ playerData, currentHealth, setCurrentHealth, turnList, setTur
                 attackPlayer();
                 setTurnList(newTurnList)
                 setTurn(newTurnList[0])
-            }, 1000);
+            }, 800);
             setStatus('');
             if(timer > 0){
                 setTimer(timer - 1)
