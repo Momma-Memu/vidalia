@@ -22,7 +22,7 @@ router.post('/get-enemies', asyncHandler(async function (req, res, next) {
     const { lower, upper } = req.body;
 
     const data = await Enemy.findAll({ where: { challenge: { [Op.between]: [lower, upper] } } })
-    let numOfMonsters = Math.floor(Math.random() * 3)
+    let numOfMonsters = Math.floor(Math.random() * 4)
 
     if (numOfMonsters === 0){
         numOfMonsters += 1;

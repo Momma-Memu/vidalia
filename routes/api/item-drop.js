@@ -32,7 +32,7 @@ router.post('/', asyncHandler(async function (req, res, next) {
         data = [...items, ...spells]
     }
 
-    let numOfDrops = Math.floor(Math.random() * 5)
+    let numOfDrops = Math.floor(Math.random() * 6)
 
     if (numOfDrops === 0){
         numOfDrops += 1;
