@@ -102,7 +102,7 @@ module.exports = {
         {
           name: 'Frail Wand',
           description: 'Well, if you got nothing else.',
-          hitDice: '1d4',
+          hitDice: '2d4',
           damageType: 'none',
           cost: 4,
           createdAt: new Date(),
@@ -632,7 +632,7 @@ module.exports = {
         {
           name: 'Sorcerer Starter',
           description: 'The starter equipment for sorcerers.',
-          weaponId: weapons[8].id,
+          weaponId: weapons[7].id,
           itemId: items[3].id,
           createdAt: new Date(),
           updatedAt: new Date(),
