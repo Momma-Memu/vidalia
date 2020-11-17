@@ -24,7 +24,7 @@ const Beastiary = () => {
     const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
     'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
     'U', 'V', 'W', 'X', 'Y', 'Z']
-    const letterDivs = letters.map((lett) => <div onClick={getMonsters} className='letter'>{lett}</div> )
+    const letterDivs = letters.map((lett) => <div key={lett} onClick={getMonsters} className='letter'>{lett}</div> )
 
     const monsters = beastList.map((beast) => <BeastCard key={beast.id} beast={beast} />)
 

@@ -103,7 +103,7 @@ const SurvivalGame = (props) => {
                 <div className='survival-nav-bar'>
                     <div className='back-button2'>
                         <NavLink to='/' className='button-links2'>
-                            <i class="fas fa-arrow-circle-left back-icon"></i>
+                            <i className="fas fa-arrow-circle-left back-icon"></i>
                             <div>Quit</div>
                         </NavLink>
                     </div>
@@ -135,7 +135,7 @@ const SurvivalGame = (props) => {
                 <div className='survival-nav-bar'>
                     <div className='back-button2'>
                         <NavLink to='/' className='button-links2'>
-                            <i class="fas fa-arrow-circle-left back-icon"></i>
+                            <i className="fas fa-arrow-circle-left back-icon"></i>
                             <div>Quit</div>
                         </NavLink>
                     </div>

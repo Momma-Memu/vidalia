@@ -3,7 +3,7 @@ import { survivalPlayer } from '../../Context';
 
 
 const Drop = ({data}) => {
-    const { items, setItems, setWeapon, copyObj, setCopyObj } = useContext(survivalPlayer);
+    const { items, setItems, setWeapon, setCopyObj } = useContext(survivalPlayer);
     const itemRef = useRef();
     const [pickedUp, setPickedUp] = useState(false);
 

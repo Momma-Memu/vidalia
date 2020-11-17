@@ -14,17 +14,17 @@ const Footer = () => {
             <div className='footer-container'>
                 <div className='footer-link-container'>
                     <a className='footer-link' href='https://github.com/OnionQueenMemu'>
-                        <i class="fab fa-github-square"></i>
+                        <i className="fab fa-github-square"></i>
                     </a>
                 </div>
                 <div className='footer-link-container'>
                     <a className='footer-link' href='https://twitter.com/OnionQueenMemu'>
-                        <i class="fab fa-twitter-square"></i>
+                        <i className="fab fa-twitter-square"></i>
                     </a>
                 </div>
                 <div className='footer-link-container'>
                     <a className='footer-link' href='https://www.linkedin.com/in/miah-barnes-2260111aa/'>
-                        <i class="fab fa-linkedin"></i>
+                        <i className="fab fa-linkedin"></i>
                     </a>
                 </div>
             </div>

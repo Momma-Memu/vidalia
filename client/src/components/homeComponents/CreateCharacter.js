@@ -29,7 +29,7 @@ const CreateCharacter = () => {
     const handleCreateCharacter = async() => {
         const data = { creatorId: id, name: name, story: story,
              abilityId: abilityId, classId: classId }
-        const res = await fetch('/api/create-character/make', {
+        await fetch('/api/create-character/make', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

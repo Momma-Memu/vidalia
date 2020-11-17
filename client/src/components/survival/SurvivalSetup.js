@@ -54,7 +54,7 @@ const SurvivalSetup = () => {
             <div className='setup-header'>Choose your warrior</div>
             <div className='back-button'>
                 <NavLink to='/' className='button-links2'>
-                    <i class="fas fa-arrow-circle-left back-icon"></i>
+                    <i className="fas fa-arrow-circle-left back-icon"></i>
                     <div>Head Back</div>
                 </NavLink>
             </div>
