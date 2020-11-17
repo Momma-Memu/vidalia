@@ -55,7 +55,7 @@ const CreateCharacter = () => {
 
     const abilityElements = abilityChoices.map((ability) => {
         return(
-            <div className='ability-list'>
+            <div key={ability.name} className='ability-list'>
                 <div className='ability-name'>{`Ability: ${ability.name}`}</div>
                 <div className='ability-description'>{`Description: ${ability.description}`}</div>
             </div>
@@ -64,7 +64,7 @@ const CreateCharacter = () => {
 
     const classElements = classChoices.map((classEl) => {
         return (
-            <div className='ability-list'>
+            <div key={classEl.description} className='ability-list'>
                 <div className='ability-name'>{`Class: ${classEl.name}`}</div>
                 <div className='ability-description'>{`Description: ${classEl.description}`}</div>
             </div>

@@ -59,7 +59,7 @@ const Player = ({ playerData, setPlayerData, status, setStatus, setTurn,
 
     const itemElements = items.map((item) => {
         return (
-            <InventoryItem healthRef={healthRef} bool={abilityBoolean} item={item}
+            <InventoryItem key={item.id} healthRef={healthRef} bool={abilityBoolean} item={item}
             setDamageType={setDamageType} setStatus={setStatus}
             items={items} setItems={setItems} ogHealth={playerData[0].hitPoints}
             currentHealth={currentHealth} setCurrentHealth={setCurrentHealth}/>
