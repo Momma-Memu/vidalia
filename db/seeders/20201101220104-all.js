@@ -758,7 +758,7 @@ module.exports = {
           intelligence: 11,
           wisdom: 12,
           charisma: 15,
-          abilityId: abilities[11].id,
+          abilityId: abilities[9].id,
           classId: classes[3].id,
           creatorId: users[0].id,
           createdAt: new Date(),
