@@ -27,18 +27,18 @@ const Monster = ({ playerData, currentHealth, setCurrentHealth, turnList, setTur
             highlighter.current.classList.add('highlight-card')
             setTimeout(() => {
                 highlighter.current.classList.remove('highlight-card')
+                attackPlayer();
                 const turnSpent = newTurnList.shift()
                 newTurnList.push(turnSpent)
-                attackPlayer();
                 setTurnList(newTurnList)
                 setTurn(newTurnList[0])
+                setStatus('');
+                if(timer > 0){
+                    setTimer(timer - 1)
+                } else {
+                    setMonstStatus('');
+                }
             }, 800);
-            setStatus('');
-            if(timer > 0){
-                setTimer(timer - 1)
-            } else {
-                setMonstStatus('');
-            }
         }
     }, [turn, initiative, monstHealth])
 

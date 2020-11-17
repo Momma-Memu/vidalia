@@ -70,7 +70,7 @@ const SurvivalGame = (props) => {
     }
 
     const monsters = enemies.map((enemy) =>
-    <Monster currentHealth={currentHealth} setCurrentHealth={setCurrentHealth}
+    <Monster key={enemy.id} currentHealth={currentHealth} setCurrentHealth={setCurrentHealth}
     playerData={playerData} turnList={turnList} setTurnList={setTurnList}
      setTurn={setTurn} turn={turn} data={enemy} enemies={enemies} setEnemies={setEnemies}
      status={status} setStatus={setStatus} clearedRoom={clearedRoom} weapon={weapon} setClearedRoom={setClearedRoom}/>)
