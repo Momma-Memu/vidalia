@@ -12,7 +12,7 @@ const Monster = ({ playerData, currentHealth, setCurrentHealth, turnList, setTur
     const [monstHealth, setMonstHealth] = useState(data.hitPoints);
     const [monstStatus, setMonstStatus] = useState('');
     const [timer, setTimer] = useState(0);
-    const { weapon, lootRef, xp, setXp, nextXp, setNextXp, levelBool, setLevelBool, healthRef, levelRef } = useContext(survivalPlayer);
+    const { weapon, lootRef, xp, setXp, nextXp, setNextXp, setLevelBool, healthRef } = useContext(survivalPlayer);
     const monstHpRef = useRef();
 
     let attackBoolean = turnList.length > 0 && turnList[0] === playerData[0].turn;

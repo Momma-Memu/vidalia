@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useRef } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { subtractUse } from '../../helpers/useAbility';
 import { statusSetter } from '../../helpers/statusSetter';
 import InfoButton from '../../helpers/InfoButton';
