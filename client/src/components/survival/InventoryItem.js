@@ -14,6 +14,7 @@ const InventoryItem = ({item, setDamageType, setStatus, items, ogHealth,
     useEffect(() => {
         if(copyObj.name === item.name){
             setUses(uses + 1)
+            setCopyObj({});
         }
     }, [copyObj])
 
