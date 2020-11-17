@@ -295,13 +295,13 @@ module.exports = {
     const items = await queryInterface.bulkInsert(
       'Items',
       [
-        {
-          name: 'Antidote',
-          description: 'Renders poison useless.',
-          cost: 5,
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
+        // {
+        //   name: 'Antidote',
+        //   description: 'Renders poison useless.',
+        //   cost: 5,
+        //   createdAt: new Date(),
+        //   updatedAt: new Date(),
+        // },
         {
           name: 'Arrow',
           description: 'A standard, sturdy, all purpose arrow.',
@@ -310,13 +310,13 @@ module.exports = {
           updatedAt: new Date(),
 
         },
-        {
-          name: 'Bottled Wish',
-          description: 'Resurrect a teamate on the brink of death.',
-          cost: 60,
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
+        // {
+        //   name: 'Bottled Wish',
+        //   description: 'Resurrect a teamate on the brink of death.',
+        //   cost: 60,
+        //   createdAt: new Date(),
+        //   updatedAt: new Date(),
+        // },
         {
           name: 'Black Powder Bomb',
           description: 'Deals 100 damage...if it hits them.',
@@ -443,20 +443,20 @@ module.exports = {
           createdAt: new Date(),
           updatedAt: new Date(),
         },
-        {
-          name: 'Soothing Water',
-          description: 'Heals Burn effect.',
-          uses: 6,
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          name: 'Shock',
-          description: 'Chance to stun. They cannot use abilities this turn.',
-          uses: 3,
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
+        // {
+        //   name: 'Soothing Water',
+        //   description: 'Heals Burn effect.',
+        //   uses: 6,
+        //   createdAt: new Date(),
+        //   updatedAt: new Date(),
+        // },
+        // {
+        //   name: 'Shock',
+        //   description: 'Chance to stun. They cannot use abilities this turn.',
+        //   uses: 3,
+        //   createdAt: new Date(),
+        //   updatedAt: new Date(),
+        // },
         {
           name: 'Nightmares',
           description: 'The user traps the recipient of this ability in a nightmare. Causing hellucinations. Halves their chances to land attacks for one turn.',
@@ -588,7 +588,7 @@ module.exports = {
           name: 'Barbaric Starter',
           description: 'The starter equipment for barbarians.',
           weaponId: weapons[12].id,
-          itemId: items[3].id,
+          itemId: items[1].id,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -597,7 +597,7 @@ module.exports = {
           description: 'The starter equipment for clerics.',
           weaponId: weapons[13].id,
           spellId: spells[2].id,
-          itemId: items[5].id,
+          itemId: items[3].id,
           createdAt: new Date(),
           updatedAt: new Date(),
 
@@ -606,7 +606,7 @@ module.exports = {
           name: 'Fighter Starter',
           description: 'The starter equipment for fighters.',
           weaponId: weapons[9].id,
-          itemId: items[0].id,
+          itemId: items[1].id,
           createdAt: new Date(),
           updatedAt: new Date(),
 
@@ -615,7 +615,7 @@ module.exports = {
           name: 'Ranger Starter',
           description: 'The starter equipment for rangers.',
           weaponId: weapons[1].id,
-          itemId: items[1].id,
+          itemId: items[0].id,
           createdAt: new Date(),
           updatedAt: new Date(),
 
@@ -633,7 +633,7 @@ module.exports = {
           name: 'Sorcerer Starter',
           description: 'The starter equipment for sorcerers.',
           weaponId: weapons[8].id,
-          itemId: items[5].id,
+          itemId: items[3].id,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
