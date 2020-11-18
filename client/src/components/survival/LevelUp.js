@@ -37,7 +37,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 export default function FullScreenDialog() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
-  const { playerData, setPlayerData, setCurrentHealth, healthRef, levelRef, levelBool } = useContext(survivalPlayer);
+  const { playerData, setPlayerData, setCurrentHealth, healthRef, levelRef, levelBool, setLevelBool } = useContext(survivalPlayer);
   const [points, setPoints] = useState(5);
   const [ac, setAc] = useState(playerData[0].armorClass);
   const [charisma, setCharisma] = useState(playerData[0].charisma);
@@ -59,7 +59,7 @@ export default function FullScreenDialog() {
         levelRef.current.classList.remove('hide')
       }
     }
-  }, [])
+  }, [levelBool])
 
   const handleClose = () => {
     if(points !== 0){
@@ -70,6 +70,7 @@ export default function FullScreenDialog() {
         hp, intel, strength, wis, setPlayerData, setCurrentHealth)
     hpBarChanger(healthRef, hp, hp)
     levelRef.current.classList.add('hide');
+    setLevelBool(false)
     setPoints(5);
     setOpen(false);
   };
