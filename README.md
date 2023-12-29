@@ -1,5 +1,5 @@
 # vidalia
-Vidalia is a randomized encounter, combat simulator inspired by Dungeons and Dragons. It's friendly to new players and gives people an opportunity to enjoy the game without the need of writing their own campaign or learning the ends and outs of Dungeons and Dragons. This project was originally created at a time when I was still learning how to use React. As such, I would not recommend using it as reference to understand React or any other packages I utilized.
+Vidalia is a randomized encounter, combat simulator inspired by Dungeons and Dragons. This project was built with the intention of learning more about React and especially React Context. This project was originally created at a time when I was still learning how to use React. As such, I would not recommend using it as reference to understand React or any other packages I utilized.
 
 ## The Database:
 The database currently supports spells, consumables, monsters, classes, weapons, and abilities. 
