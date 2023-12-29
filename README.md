@@ -1,4 +1,4 @@
-# vidalia
+# Vidalia
 Vidalia is a randomized encounter, combat simulator inspired by Dungeons and Dragons. This project was built with the intention of learning more about React and especially React Context. This project was originally created at a time when I was still learning how to use React. As such, I would not recommend using it as reference to understand React or any other packages I utilized.
 
 ## The Database:
