@@ -1,5 +1,5 @@
 # vidalia
-Vidalia is a random Dungeons and Dragons inspired tabletop simulator. It's friendly to new players and gives people an opportunity to enjoy the game without the need of writing their own campaign or learning the ends and outs of Dungeons and Dragons.
+Vidalia is a randomized encounter, combat simulator inspired by Dungeons and Dragons. It's friendly to new players and gives people an opportunity to enjoy the game without the need of writing their own campaign or learning the ends and outs of Dungeons and Dragons. This project was originally created at a time when I was still learning how to use React. As such, I would not recommend using it as reference to understand React or any other packages I utilized.
 
 ## The Database:
 The database currently supports spells, consumables, monsters, classes, weapons, and abilities. 
@@ -7,17 +7,17 @@ The database currently supports spells, consumables, monsters, classes, weapons,
 
 ## How does this work?
 
-* New users can create an array of characters, as many as they like, and choose from a single base plot point. From there, "events" are triggered. Each event has an amount of branching events that can occur after depending on your choices. 
+* New users can create an array of character classes.
 
-* Not all events are choice based, in that situation, a random selected outcome is given on each playthrough, changing your experience on each playthrough of the base campaign.
+* Players will engage in combat with enemies that are proportional to the current "depth" of the dungeon they have reached.
 
-* Players health and inventory are tracked, eliminating the need for manual tracking of your own. 
+* Initiative determines the turn order of the player and enemies. 
 
-* Player rolls, modifiers, and damage types are all factored in. 
+* Players can attack with their choice of abilities, consumables, and weapons, the result of which will be determined for you based on your character and your targets stats.
 
-* Players can interract with NPC's (Non Playable Characters) through a selection of conversation topics which can alter the path of the campaign. 
+* Players can increase their character's stats after reaching the necessary amount of experience points.
 
-* Players can attack with their choice of abilities and weapons, all of which will be determined FOR YOU, without the need for dice.
+* Clearing encounters will gradually increase the difficulty, and availability of more desirable item drops.
 
 
 
